@@ -3,7 +3,7 @@ import { run } from "../dist-smoke/smoke-entry.js";
 
 const EXPECT = {
   "/": ["Open Compute Markets", "H100 marketplace ask", "Understand the whole chain", "/guide/silicon/"],
-  "/guide/": ["Everything that matters", "The silicon supply chain", "Accounting"],
+  "/guide/": ["How compute markets", "The silicon supply chain", "CapEx"],
   "/glossary/": ["Say it precisely", "CapEx", "Depreciation", "EBITDA"],
   "/sources/": ["Go to the primary", "asml.com", "iea.org"],
   "/guide/silicon/": ["EUV", "CoWoS", "On this page", "Terms used here"],

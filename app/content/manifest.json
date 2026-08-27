@@ -1,19 +1,19 @@
 [
  {
   "slug": "how-to-use",
-  "label": "How to use this guide",
+  "label": "How to read this",
   "cluster": "Orientation",
   "summary": "Four kinds of statement, and the reading discipline the rest of the guide assumes.",
-  "heading": "How to use this guide",
+  "heading": "How to read this guide",
   "topics": 0,
   "links": 0
  },
  {
   "slug": "overview",
-  "label": "The whole argument",
+  "label": "The whole chain",
   "cluster": "Orientation",
-  "summary": "The end-to-end chain in one map, and the four kinds of claim it mixes together.",
-  "heading": "The entire podcast in one picture",
+  "summary": "The end-to-end chain in one map, and the four kinds of claim that get mixed together whenever people argue about it.",
+  "heading": "The whole chain in one picture",
   "topics": 2,
   "links": 0
  },
@@ -22,7 +22,7 @@
   "label": "Units",
   "cluster": "Foundations",
   "summary": "Why compute is not one substance, and how power, energy, stock and flow differ.",
-  "heading": "Units: what \"compute\" actually means",
+  "heading": "Units: what compute actually means",
   "topics": 6,
   "links": 4
  },
@@ -31,7 +31,7 @@
   "label": "History",
   "cluster": "Foundations",
   "summary": "How integrated circuits became specialised accelerators, and why the industry fragmented.",
-  "heading": "Historical context: why the stack looks like this",
+  "heading": "Why the stack looks like this",
   "topics": 4,
   "links": 5
  },
@@ -58,7 +58,7 @@
   "label": "Accounting",
   "cluster": "Money",
   "summary": "The three statements, what gets capitalised, and why EBITDA flatters this business.",
-  "heading": "Accounting: CapEx, OpEx, depreciation, and margins",
+  "heading": "CapEx, OpEx, depreciation, and margins",
   "topics": 11,
   "links": 4
  },
@@ -75,8 +75,8 @@
   "slug": "value-capture",
   "label": "Value capture",
   "cluster": "Money",
-  "summary": "Marginal value versus average revenue, and who actually captures the surplus.",
-  "heading": "Why the best model might outbid everyone",
+  "summary": "Marginal value versus average revenue, and which layer actually captures the surplus.",
+  "heading": "Who captures the surplus",
   "topics": 7,
   "links": 1
  },
@@ -84,7 +84,7 @@
   "slug": "rates",
   "label": "Rates & credit",
   "cluster": "Macro",
-  "summary": " There is no single interest rate; spreads, discount rates, and asset-liability risk.",
+  "summary": "There is no single interest rate: spreads, discount rates, and asset-liability risk.",
   "heading": "Interest rates, credit spreads, and asset prices",
   "topics": 6,
   "links": 2
@@ -93,7 +93,7 @@
   "slug": "sovereign-debt",
   "label": "Sovereign debt",
   "cluster": "Macro",
-  "summary": "Debt dynamics, rollover risk, and whether AI investment could trigger a crisis.",
+  "summary": "Debt dynamics, rollover risk, and whether an investment boom could trigger a crisis.",
   "heading": "Government debt and sovereign crises",
   "topics": 9,
   "links": 5
@@ -120,8 +120,8 @@
   "slug": "claim-audit",
   "label": "Claim audit",
   "cluster": "Argument",
-  "summary": "The strongest and most fragile parts of the argument, and a forecasting discipline.",
-  "heading": "Claim audit: what would have to be true?",
+  "summary": "The strongest and most fragile parts of the argument, and a better forecasting discipline.",
+  "heading": "What would have to be true?",
   "topics": 3,
   "links": 0
  },
@@ -129,8 +129,8 @@
   "slug": "claims",
   "label": "Claim-by-claim",
   "cluster": "Argument",
-  "summary": "Each headline claim restated precisely, with what would confirm or break it.",
-  "heading": "Podcast-by-podcast translation",
+  "summary": "Nine headline claims about compute markets, each restated precisely with what would confirm or break it.",
+  "heading": "The headline claims, translated",
   "topics": 9,
   "links": 9
  },
@@ -138,8 +138,8 @@
   "slug": "study-plan",
   "label": "Study plan",
   "cluster": "Practice",
-  "summary": "A five-week path from accounting basics to rebuilding the model yourself.",
-  "heading": "A study plan from beginner to expert",
+  "summary": "A five-week path from accounting basics to rebuilding the numbers yourself.",
+  "heading": "A study plan, beginner to expert",
   "topics": 6,
   "links": 7
  }

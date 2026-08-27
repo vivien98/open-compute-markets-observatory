@@ -12,24 +12,26 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
 const { sections } = JSON.parse(readFileSync("app/content/guide.json", "utf8"));
 const byTitle = new Map(sections.map((s) => [s.title, s]));
 
-// Slug, nav label, and one-line summary for every routed guide page, in reading order.
+// [slug, source heading, nav label, cluster, summary, display heading]
+// The display heading is what the site shows: the source document frames several
+// chapters around a specific talk, but the site is about the markets themselves.
 const PAGES = [
-  ["how-to-use", "How to use this guide", "How to use this guide", "Orientation", "Four kinds of statement, and the reading discipline the rest of the guide assumes."],
-  ["overview", "1. The entire podcast in one picture", "The whole argument", "Orientation", "The end-to-end chain in one map, and the four kinds of claim it mixes together."],
-  ["units", "2. Units: what \"compute\" actually means", "Units", "Foundations", "Why compute is not one substance, and how power, energy, stock and flow differ."],
-  ["history", "3. Historical context: why the stack looks like this", "History", "Foundations", "How integrated circuits became specialised accelerators, and why the industry fragmented."],
-  ["silicon", "4. The silicon supply chain, step by step", "Silicon", "The physical stack", "Design, EDA, masks, wafers, EUV, packaging, and the actor map from sand to rack."],
-  ["data-centers", "5. From chip to data center", "Data centers", "The physical stack", "Critical IT versus the facility, the power chain, cooling, and usable capacity."],
-  ["accounting", "6. Accounting: CapEx, OpEx, depreciation, and margins", "Accounting", "Money", "The three statements, what gets capitalised, and why EBITDA flatters this business."],
-  ["financing", "7. How AI compute is financed", "Financing", "Money", "Cash, equity, bonds, leases, take-or-pay, SPVs, and the maturity wall."],
-  ["value-capture", "8. Why the best model might outbid everyone", "Value capture", "Money", "Marginal value versus average revenue, and who actually captures the surplus."],
-  ["rates", "9. Interest rates, credit spreads, and asset prices", "Rates & credit", "Macro"," There is no single interest rate; spreads, discount rates, and asset-liability risk."],
-  ["sovereign-debt", "10. Government debt and sovereign crises", "Sovereign debt", "Macro", "Debt dynamics, rollover risk, and whether AI investment could trigger a crisis."],
-  ["china", "11. China, export controls, and quality-adjusted compute", "China & controls", "Macro", "What controls target, why smuggling is not a supply chain, and what to measure."],
-  ["centralization", "12. Centralization: the final argument", "Centralization", "Argument", "Forces pushing both ways, and why ownership, control, and service must be separated."],
-  ["claim-audit", "13. Claim audit: what would have to be true?", "Claim audit", "Argument", "The strongest and most fragile parts of the argument, and a forecasting discipline."],
-  ["claims", "14. Podcast-by-podcast translation", "Claim-by-claim", "Argument", "Each headline claim restated precisely, with what would confirm or break it."],
-  ["study-plan", "16. A study plan from beginner to expert", "Study plan", "Practice", "A five-week path from accounting basics to rebuilding the model yourself."],
+  ["how-to-use", "How to use this guide", "How to read this", "Orientation", "Four kinds of statement, and the reading discipline the rest of the guide assumes.", "How to read this guide"],
+  ["overview", "1. The entire podcast in one picture", "The whole chain", "Orientation", "The end-to-end chain in one map, and the four kinds of claim that get mixed together whenever people argue about it.", "The whole chain in one picture"],
+  ["units", "2. Units: what \"compute\" actually means", "Units", "Foundations", "Why compute is not one substance, and how power, energy, stock and flow differ.", "Units: what compute actually means"],
+  ["history", "3. Historical context: why the stack looks like this", "History", "Foundations", "How integrated circuits became specialised accelerators, and why the industry fragmented.", "Why the stack looks like this"],
+  ["silicon", "4. The silicon supply chain, step by step", "Silicon", "The physical stack", "Design, EDA, masks, wafers, EUV, packaging, and the actor map from sand to rack.", "The silicon supply chain, step by step"],
+  ["data-centers", "5. From chip to data center", "Data centers", "The physical stack", "Critical IT versus the facility, the power chain, cooling, and usable capacity.", "From chip to data center"],
+  ["accounting", "6. Accounting: CapEx, OpEx, depreciation, and margins", "Accounting", "Money", "The three statements, what gets capitalised, and why EBITDA flatters this business.", "CapEx, OpEx, depreciation, and margins"],
+  ["financing", "7. How AI compute is financed", "Financing", "Money", "Cash, equity, bonds, leases, take-or-pay, SPVs, and the maturity wall.", "How AI compute is financed"],
+  ["value-capture", "8. Why the best model might outbid everyone", "Value capture", "Money", "Marginal value versus average revenue, and which layer actually captures the surplus.", "Who captures the surplus"],
+  ["rates", "9. Interest rates, credit spreads, and asset prices", "Rates & credit", "Macro", "There is no single interest rate: spreads, discount rates, and asset-liability risk.", "Interest rates, credit spreads, and asset prices"],
+  ["sovereign-debt", "10. Government debt and sovereign crises", "Sovereign debt", "Macro", "Debt dynamics, rollover risk, and whether an investment boom could trigger a crisis.", "Government debt and sovereign crises"],
+  ["china", "11. China, export controls, and quality-adjusted compute", "China & controls", "Macro", "What controls target, why smuggling is not a supply chain, and what to measure.", "China, export controls, and quality-adjusted compute"],
+  ["centralization", "12. Centralization: the final argument", "Centralization", "Argument", "Forces pushing both ways, and why ownership, control, and service must be separated.", "Centralization: the final argument"],
+  ["claim-audit", "13. Claim audit: what would have to be true?", "Claim audit", "Argument", "The strongest and most fragile parts of the argument, and a better forecasting discipline.", "What would have to be true?"],
+  ["claims", "14. Podcast-by-podcast translation", "Claim-by-claim", "Argument", "Nine headline claims about compute markets, each restated precisely with what would confirm or break it.", "The headline claims, translated"],
+  ["study-plan", "16. A study plan from beginner to expert", "Study plan", "Practice", "A five-week path from accounting basics to rebuilding the numbers yourself.", "A study plan, beginner to expert"],
 ];
 
 rmSync("app/content/sections", { recursive: true, force: true });
@@ -61,16 +63,21 @@ writeFileSync("app/content/sources.json", JSON.stringify(shelf));
 // Per-section files, plus a manifest carrying nav data and derived counts.
 const termRe = terms.map((t) => [t.term, new RegExp(`\\b${t.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i")]);
 const manifest = [];
-for (const [slug, title, label, cluster, summary] of PAGES) {
+for (const [slug, title, label, cluster, summary, heading] of PAGES) {
   const section = byTitle.get(title);
   if (!section) throw new Error(`Missing section: ${title}`);
   const text = section.blocks.map((b) => (b.spans ? b.spans.map((s) => s.text).join("") : (b.rows || []).flat().join(" "))).join(" ");
   const used = termRe.filter(([, re]) => re.test(text)).map(([t]) => t).slice(0, 18);
   const links = section.blocks.flatMap((b) => (b.spans || []).filter((s) => s.href)).length;
-  writeFileSync(`app/content/sections/${slug}.json`, JSON.stringify({ slug, title, label, summary, blocks: section.blocks, terms: used }));
+  // Subsection headings in the claim-by-claim chapter carry talk timestamps;
+  // the claim itself is the useful part on the web.
+  const blocks = section.blocks.map((b) =>
+    b.type === "h2" ? { ...b, text: b.text.replace(/\s*[-–]\s*\d{2}:\d{2}:\d{2}\s*$/, "") } : b,
+  );
+  writeFileSync(`app/content/sections/${slug}.json`, JSON.stringify({ slug, title, heading, label, summary, blocks, terms: used }));
   manifest.push({
     slug, label, cluster, summary,
-    heading: title.replace(/^\d+\.\s*/, ""),
+    heading,
     topics: section.blocks.filter((b) => b.type === "h2").length,
     links,
   });

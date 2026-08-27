@@ -123,3 +123,98 @@
 .learn-cta a:hover{border-color:var(--ink);background:var(--lime)}
 .learn-cta a.primary{background:var(--ink);color:var(--lime);border-color:var(--ink)}
 .learn-cta a.primary:hover{background:var(--lime);color:var(--ink)}
+
+/* ── Charts ───────────────────────────────────────────────────────────────
+   Categorical slots 1–4 and the diverging pair are the documented palette,
+   validated against this cream surface (#f2f0e8) for lightness, chroma, CVD
+   separation, normal-vision separation, and contrast. Do not hand-edit these
+   hexes: re-run the validator if they must change. The sub-3:1 contrast on
+   slots 2–4 is relieved by direct labels on every line plus the table view. */
+:root{
+  --c1:#2a78d6;--c2:#eb6834;--c3:#1baf7a;--c4:#eda100;
+  --rise:#2a78d6;--fall:#e34948;
+  --grid:rgba(23,33,27,.10);--axis:rgba(23,33,27,.28);--tick:#6c756d;
+}
+
+/* Sparkline (stat tile) */
+.spark{margin:6px 0 0;display:grid;gap:4px}
+.spark svg{width:100%;height:52px;display:block;touch-action:none}
+.spark-area{opacity:.10}
+.spark.up .spark-stop-a{stop-color:var(--rise);stop-opacity:.85}
+.spark.down .spark-stop-a{stop-color:var(--fall);stop-opacity:.85}
+.spark-stop-b{stop-color:transparent}
+.spark-line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.spark.up .spark-line{stroke:var(--rise)}
+.spark.down .spark-line{stroke:var(--fall)}
+.spark-dot{stroke:var(--paper);stroke-width:2}
+.spark.up .spark-dot{fill:var(--rise)}
+.spark.down .spark-dot{fill:var(--fall)}
+.spark-cross{stroke:var(--axis);stroke-width:1}
+.spark-axis{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:9px;color:var(--tick)}
+.spark-axis b{font-size:10px;color:var(--ink);font-variant-numeric:tabular-nums;font-weight:700}
+.spark-axis b.on{background:var(--lime);padding:1px 5px}
+.change.up{color:#1b5aa6}
+.change.down{color:#a33231}
+.gap-state{margin:10px 0 0;padding:13px;border:1px dashed var(--line);display:grid;gap:4px;min-height:76px;align-content:center}
+.gap-state b{font-size:12px}
+.gap-state span{font-size:10px;color:var(--muted);line-height:1.45}
+.card-guide{font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#2f6a45;border-bottom:1px solid transparent}
+.card-guide:hover{border-bottom-color:#2f6a45}
+
+/* Chart cards */
+.chart-stack{display:grid;grid-template-columns:1.55fr 1fr;gap:13px;margin-top:14px}
+.chart-card{background:var(--paper);border:1px solid var(--line);padding:20px;min-width:0}
+.chart-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px}
+.chart-head h3{font-family:Georgia,serif;font-size:20px;font-weight:500;margin:0 0 4px;letter-spacing:-.02em}
+.chart-head p{font-size:11px;color:var(--muted);margin:0;max-width:44ch;line-height:1.45}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:10px;color:#4d574f}
+.legend li{display:flex;align-items:center;gap:7px}
+.swatch{width:14px;height:2px;border-radius:2px;flex:none}
+.swatch.s1{background:var(--c1)}.swatch.s2{background:var(--c2)}
+.swatch.s3{background:var(--c3)}.swatch.s4{background:var(--c4)}
+.price-svg{width:100%;height:auto;display:block;touch-action:none}
+.price-svg .grid{stroke:var(--grid);stroke-width:1}
+.price-svg .axis{stroke:var(--axis);stroke-width:1}
+.price-svg .cross{stroke:var(--axis);stroke-width:1}
+.price-svg .tick{font-size:9px;fill:var(--tick);font-family:Arial,Helvetica,sans-serif}
+.series-line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.series-dot{stroke:var(--paper);stroke-width:2}
+.series-label{font-size:11px;font-weight:700;fill:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.series-sub{font-size:8.5px;fill:var(--tick);font-family:Arial,Helvetica,sans-serif}
+.series.s1 .series-line{stroke:var(--c1)}.series.s1 .series-dot{fill:var(--c1)}
+.series.s2 .series-line{stroke:var(--c2)}.series.s2 .series-dot{fill:var(--c2)}
+.series.s3 .series-line{stroke:var(--c3)}.series.s3 .series-dot{fill:var(--c3)}
+.series.s4 .series-line{stroke:var(--c4)}.series.s4 .series-dot{fill:var(--c4)}
+.chart-note{font-size:10px;color:var(--muted);margin:12px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:9px;min-height:15px}
+.readout{display:inline-flex;align-items:center;gap:5px}
+.readout b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* Diverging change bars */
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.bar-row{display:grid;grid-template-columns:118px minmax(0,1fr) 62px;gap:11px;align-items:center;padding:7px 5px}
+.bar-row:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.bar-row.on{background:var(--panel)}
+.bar-name{font-size:11px;line-height:1.3}
+.bar-layer{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:right}
+.bar-track{position:relative;height:22px}
+.bar-zero{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--axis)}
+.bar-fill{position:absolute;top:3px;bottom:3px;border-radius:0}
+.bar-fill.pos{background:var(--rise);border-radius:0 4px 4px 0}
+.bar-fill.neg{background:var(--fall);border-radius:4px 0 0 4px}
+.bar-value{position:absolute;top:50%;transform:translateY(-50%);font-size:10px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar-value.pos{margin-left:6px;color:#1b5aa6}
+.bar-value.neg{margin-right:6px;color:#a33231}
+.chip.s1{background:var(--c1);border-color:var(--c1)}
+.chip.s2{background:var(--c2);border-color:var(--c2)}
+.chip.s3{background:var(--c3);border-color:var(--c3)}
+.chip.s4{background:var(--c4);border-color:var(--c4)}
+
+@media(max-width:980px){.chart-stack{grid-template-columns:1fr}}
+@media(max-width:680px){
+  .bar-row{grid-template-columns:1fr 58px;gap:6px}
+  .bar-track{grid-column:1/-1}
+  .chart-head{flex-direction:column}
+}
+.series-leader{stroke-width:1;opacity:.5}
+.series.s1 .series-leader{stroke:var(--c1)}.series.s2 .series-leader{stroke:var(--c2)}
+.series.s3 .series-leader{stroke:var(--c3)}.series.s4 .series-leader{stroke:var(--c4)}

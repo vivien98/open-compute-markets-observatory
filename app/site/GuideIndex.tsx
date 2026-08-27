@@ -9,11 +9,13 @@ export default function GuideIndex() {
       <main id="top" className="doc">
         <div className="doc-head wide">
           <span className="kicker">FIELD GUIDE</span>
-          <h1>Everything that matters,<br />from the ground up.</h1>
+          <h1>How compute markets<br />actually work.</h1>
           <p className="doc-summary">
-            A structured explainer for the AI compute supply chain — units and accounting first, then
-            silicon, sites, financing, and the macro arguments that rest on them. Written to be read
-            in order, or opened at whichever layer you need.
+            Most arguments about AI infrastructure are unit arguments in disguise: a price quoted
+            without its denominator, capital spending mistaken for delivered capacity, a proxy read as
+            a market. This guide builds the vocabulary from the ground up — units and accounting
+            first, then silicon, sites, financing, and the macro claims that rest on them. Read it in
+            order, or open the layer you need.
           </p>
           <div className="hero-meta">
             <span><b>{guide.length}</b> chapters</span><i />

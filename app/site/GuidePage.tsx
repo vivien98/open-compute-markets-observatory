@@ -3,7 +3,7 @@ import Chrome from "./Chrome";
 import { guide, url } from "./nav";
 
 type Section = {
-  slug: string; title: string; label: string; summary: string;
+  slug: string; title: string; heading: string; label: string; summary: string;
   blocks: Block[]; terms: string[];
 };
 
@@ -23,7 +23,7 @@ export default function GuidePage({ section }: { section: Section }) {
             ← Guide
           </a>
           <span className="kicker">{entry?.cluster}</span>
-          <h1>{section.title.replace(/^\d+\.\s*/, "")}</h1>
+          <h1>{section.heading}</h1>
           <p className="doc-summary">{section.summary}</p>
         </div>
 
