@@ -10,10 +10,12 @@
     "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern dist-pages --ignore-pattern dist-smoke --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
-    "build:pages": "vite build --config vite.pages.config.ts",
-    "preview:pages": "vite preview --config vite.pages.config.ts"
+    "build:pages": "node scripts/build-pages.mjs && vite build --config vite.pages.config.ts",
+    "preview:pages": "vite preview --config vite.pages.config.ts",
+    "content": "node scripts/extract-guide.mjs && node scripts/build-content.mjs",
+    "test:pages": "vite build --config vite.smoke.config.ts && node scripts/test-pages.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

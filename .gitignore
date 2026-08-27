@@ -47,3 +47,12 @@ yarn-error.log*
 
 # third-party background guide, not redistributed
 docs/reference/*.docx
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+
+# smoke-test SSR bundle
+/dist-smoke/
+
+# intermediate guide extraction (the split files in app/content/ are committed)
+app/content/guide.json

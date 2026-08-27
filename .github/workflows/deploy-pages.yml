@@ -25,6 +25,10 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
+      - run: npm run lint
+      # Renders every page to a string: a runtime error fails here rather than
+      # deploying a blank page.
+      - run: npm run test:pages
       - run: npm run build:pages
         env:
           # Keeps asset URLs correct if the repository is ever renamed.

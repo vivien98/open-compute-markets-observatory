@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+import { clusters, url } from "./site/nav";
 
 type Signal = {
   id: number; layer: string; title: string; value: string; unit: string; change: string;
@@ -25,13 +27,13 @@ const unknowns = [
 ];
 
 const chain = [
-  {n:"01",name:"Compute",detail:"Rental price",state:"Easing",tone:"cool"},
-  {n:"02",name:"Accelerators",detail:"Selling price",state:"Opaque",tone:"quiet"},
-  {n:"03",name:"Memory",detail:"HBM allocation",state:"Binding",tone:"warm"},
-  {n:"04",name:"Networks",detail:"Optics lead time",state:"Watch",tone:"warm"},
-  {n:"05",name:"Sites",detail:"Delivered MW",state:"Tight",tone:"warm"},
-  {n:"06",name:"Power",detail:"Hub basis",state:"Rising",tone:"warm"},
-  {n:"07",name:"Capital",detail:"Credit hurdle",state:"Open",tone:"cool"},
+  {n:"01",name:"Compute",detail:"Rental price",state:"Easing",tone:"cool",guide:"units"},
+  {n:"02",name:"Accelerators",detail:"Selling price",state:"Opaque",tone:"quiet",guide:"silicon"},
+  {n:"03",name:"Memory",detail:"HBM allocation",state:"Binding",tone:"warm",guide:"silicon"},
+  {n:"04",name:"Networks",detail:"Optics lead time",state:"Watch",tone:"warm",guide:"silicon"},
+  {n:"05",name:"Sites",detail:"Delivered MW",state:"Tight",tone:"warm",guide:"data-centers"},
+  {n:"06",name:"Power",detail:"Hub basis",state:"Rising",tone:"warm",guide:"data-centers"},
+  {n:"07",name:"Capital",detail:"Credit hurdle",state:"Open",tone:"cool",guide:"financing"},
 ];
 
 function Sparkline({points, direction}:{points:number[];direction:Signal["direction"]}) {
@@ -45,11 +47,17 @@ export default function Dashboard() {
   const [period,setPeriod] = useState("30 days");
   const [showMethods,setShowMethods] = useState(false);
   const [showContribute,setShowContribute] = useState(false);
+  useEffect(()=>{
+    if(!showContribute) return;
+    const onKey=(e:KeyboardEvent)=>{ if(e.key==="Escape") setShowContribute(false); };
+    document.addEventListener("keydown",onKey);
+    return ()=>document.removeEventListener("keydown",onKey);
+  },[showContribute]);
   const filtered = useMemo(()=>signals.filter(s=>(layer==="All layers"||s.layer===layer)&&(fit==="All evidence"||s.fit===fit)),[layer,fit]);
   return <main id="top">
     <header className="topbar">
       <a className="brand" href="#top"><span className="brand-mark">O</span><span>Open Compute Markets</span></a>
-      <nav aria-label="Primary navigation"><a className="active" href="#overview">Overview</a><a href="#markets">Markets</a><a href="#chain">Supply chain</a><a href="#unknowns">Known unknowns</a></nav>
+      <nav aria-label="Primary navigation"><a className="active" href="#overview">Overview</a><a href="#markets">Markets</a><a href="#chain">Supply chain</a><a href={url("guide/")}>Guide</a><a href={url("glossary/")}>Glossary</a><a href={url("sources/")}>Sources</a></nav>
       <button className="contribute" onClick={()=>setShowContribute(true)}>Contribute a source <span>↗</span></button>
     </header>
 
@@ -86,7 +94,7 @@ export default function Dashboard() {
 
     <section className="chain" id="chain">
       <div className="chain-head"><div><span className="kicker">THE PHYSICAL STACK</span><h2>One chain. Many constraints.</h2></div><p>Read left to right—from the service users buy back to the physical and financial capacity that makes it possible.</p></div>
-      <div className="chain-track">{chain.map((item,i)=><article className="chain-node" key={item.name}><span>{item.n}</span><div className="node-icon">{["◇","▦","▤","⌁","⌂","ϟ","$ "][i]}</div><h3>{item.name}</h3><small>{item.detail}</small><b className={item.tone}>{item.state}</b>{i<chain.length-1&&<i>→</i>}</article>)}</div>
+      <div className="chain-track">{chain.map((item,i)=><a className="chain-node" href={url(`guide/${item.guide}/`)} key={item.name}><span>{item.n}</span><div className="node-icon">{["◇","▦","▤","⌁","⌂","ϟ","$ "][i]}</div><h3>{item.name}</h3><small>{item.detail}</small><b className={item.tone}>{item.state}</b><em className="node-learn">Read →</em>{i<chain.length-1&&<i>→</i>}</a>)}</div>
       <div className="chain-insight"><span>WATCH</span><p><b>Power is moving upstream.</b> More projects are being shaped by energization dates and grid equipment availability before the accelerator order is finalized.</p><em>Consistent with multiple public planning dockets—not a causal claim.</em></div>
     </section>
 
@@ -110,8 +118,16 @@ export default function Dashboard() {
       {showMethods&&<div className="method-detail"><p><b>Interest score:</b> magnitude 30% · historical rarity 20% · cross-source confirmation 20% · supply-chain centrality 15% · source confidence 10% · recency 5%.</p><p><b>Verification:</b> a community observation needs two independent sources or one primary document. Licensed and private sources default to link-out.</p></div>}
     </section>
 
+    <section className="learn" id="learn">
+      <div className="section-head"><div><span className="kicker">FIELD GUIDE</span><h2>Understand the whole chain.</h2></div><p>Every indicator above rests on definitions,<br/>accounting boundaries, and financing structures.</p></div>
+      <div className="learn-grid">{clusters.map(cluster=><div className="learn-col" key={cluster.name}><span className="kicker">{cluster.name}</span><ul>{cluster.pages.map(page=><li key={page.slug}><a href={url(`guide/${page.slug}/`)}>{page.label}</a></li>)}</ul></div>)}</div>
+      <div className="learn-cta"><a className="primary" href={url("guide/")}>Open the guide ↗</a><a href={url("glossary/")}>121 glossary terms</a><a href={url("sources/")}>23 primary sources</a></div>
+    </section>
+
     <footer className="site-footer"><div className="brand"><span className="brand-mark">O</span><span>Open Compute Markets Observatory</span></div><p>Public research infrastructure. Not investment advice.</p><a href="#top">Back to top ↑</a></footer>
 
-    {showContribute&&<div className="modal-backdrop" role="presentation" onMouseDown={()=>setShowContribute(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="close" aria-label="Close" onClick={()=>setShowContribute(false)}>×</button><span className="kicker">SOURCE LEAD</span><h2 id="modal-title">Help close a gap.</h2><p>Submit a URL, date, market, short description, and access status. Unsupported numbers are not accepted as observations.</p><form onSubmit={e=>{e.preventDefault();setShowContribute(false)}}><label>Source URL<input required type="url" placeholder="https://…"/></label><label>Market<input required placeholder="e.g. HBM contracts"/></label><label>Why it matters<textarea required rows={3} placeholder="What does this source add?"/></label><button type="submit">Prepare source lead</button></form></div></div>}
+    {showContribute&&
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- pointer-only convenience; Escape and the close button are the accessible paths
+      <div className="modal-backdrop" role="presentation" onMouseDown={()=>setShowContribute(false)}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={e=>e.stopPropagation()}><button className="close" aria-label="Close" onClick={()=>setShowContribute(false)}>×</button><span className="kicker">SOURCE LEAD</span><h2 id="modal-title">Help close a gap.</h2><p>Submit a URL, date, market, short description, and access status. Unsupported numbers are not accepted as observations.</p><form onSubmit={e=>{e.preventDefault();setShowContribute(false)}}><label>Source URL<input required type="url" placeholder="https://…"/></label><label>Market<input required placeholder="e.g. HBM contracts"/></label><label>Why it matters<textarea required rows={3} placeholder="What does this source add?"/></label><button type="submit">Prepare source lead</button></form></div></div>}
   </main>;
 }

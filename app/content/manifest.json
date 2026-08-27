@@ -1,0 +1,146 @@
+[
+ {
+  "slug": "how-to-use",
+  "label": "How to use this guide",
+  "cluster": "Orientation",
+  "summary": "Four kinds of statement, and the reading discipline the rest of the guide assumes.",
+  "heading": "How to use this guide",
+  "topics": 0,
+  "links": 0
+ },
+ {
+  "slug": "overview",
+  "label": "The whole argument",
+  "cluster": "Orientation",
+  "summary": "The end-to-end chain in one map, and the four kinds of claim it mixes together.",
+  "heading": "The entire podcast in one picture",
+  "topics": 2,
+  "links": 0
+ },
+ {
+  "slug": "units",
+  "label": "Units",
+  "cluster": "Foundations",
+  "summary": "Why compute is not one substance, and how power, energy, stock and flow differ.",
+  "heading": "Units: what \"compute\" actually means",
+  "topics": 6,
+  "links": 4
+ },
+ {
+  "slug": "history",
+  "label": "History",
+  "cluster": "Foundations",
+  "summary": "How integrated circuits became specialised accelerators, and why the industry fragmented.",
+  "heading": "Historical context: why the stack looks like this",
+  "topics": 4,
+  "links": 5
+ },
+ {
+  "slug": "silicon",
+  "label": "Silicon",
+  "cluster": "The physical stack",
+  "summary": "Design, EDA, masks, wafers, EUV, packaging, and the actor map from sand to rack.",
+  "heading": "The silicon supply chain, step by step",
+  "topics": 15,
+  "links": 6
+ },
+ {
+  "slug": "data-centers",
+  "label": "Data centers",
+  "cluster": "The physical stack",
+  "summary": "Critical IT versus the facility, the power chain, cooling, and usable capacity.",
+  "heading": "From chip to data center",
+  "topics": 6,
+  "links": 0
+ },
+ {
+  "slug": "accounting",
+  "label": "Accounting",
+  "cluster": "Money",
+  "summary": "The three statements, what gets capitalised, and why EBITDA flatters this business.",
+  "heading": "Accounting: CapEx, OpEx, depreciation, and margins",
+  "topics": 11,
+  "links": 4
+ },
+ {
+  "slug": "financing",
+  "label": "Financing",
+  "cluster": "Money",
+  "summary": "Cash, equity, bonds, leases, take-or-pay, SPVs, and the maturity wall.",
+  "heading": "How AI compute is financed",
+  "topics": 12,
+  "links": 0
+ },
+ {
+  "slug": "value-capture",
+  "label": "Value capture",
+  "cluster": "Money",
+  "summary": "Marginal value versus average revenue, and who actually captures the surplus.",
+  "heading": "Why the best model might outbid everyone",
+  "topics": 7,
+  "links": 1
+ },
+ {
+  "slug": "rates",
+  "label": "Rates & credit",
+  "cluster": "Macro",
+  "summary": " There is no single interest rate; spreads, discount rates, and asset-liability risk.",
+  "heading": "Interest rates, credit spreads, and asset prices",
+  "topics": 6,
+  "links": 2
+ },
+ {
+  "slug": "sovereign-debt",
+  "label": "Sovereign debt",
+  "cluster": "Macro",
+  "summary": "Debt dynamics, rollover risk, and whether AI investment could trigger a crisis.",
+  "heading": "Government debt and sovereign crises",
+  "topics": 9,
+  "links": 5
+ },
+ {
+  "slug": "china",
+  "label": "China & controls",
+  "cluster": "Macro",
+  "summary": "What controls target, why smuggling is not a supply chain, and what to measure.",
+  "heading": "China, export controls, and quality-adjusted compute",
+  "topics": 5,
+  "links": 0
+ },
+ {
+  "slug": "centralization",
+  "label": "Centralization",
+  "cluster": "Argument",
+  "summary": "Forces pushing both ways, and why ownership, control, and service must be separated.",
+  "heading": "Centralization: the final argument",
+  "topics": 5,
+  "links": 0
+ },
+ {
+  "slug": "claim-audit",
+  "label": "Claim audit",
+  "cluster": "Argument",
+  "summary": "The strongest and most fragile parts of the argument, and a forecasting discipline.",
+  "heading": "Claim audit: what would have to be true?",
+  "topics": 3,
+  "links": 0
+ },
+ {
+  "slug": "claims",
+  "label": "Claim-by-claim",
+  "cluster": "Argument",
+  "summary": "Each headline claim restated precisely, with what would confirm or break it.",
+  "heading": "Podcast-by-podcast translation",
+  "topics": 9,
+  "links": 9
+ },
+ {
+  "slug": "study-plan",
+  "label": "Study plan",
+  "cluster": "Practice",
+  "summary": "A five-week path from accounting basics to rebuilding the model yourself.",
+  "heading": "A study plan from beginner to expert",
+  "topics": 6,
+  "links": 7
+ }
+]
