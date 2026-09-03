@@ -1,5 +1,6 @@
 import Chrome from "./Chrome";
 import { clusters, guide, url } from "./nav";
+import glossary from "../content/glossary.json";
 
 /** Landing page for the guide: every section, grouped into reading clusters. */
 export default function GuideIndex() {
@@ -14,13 +15,15 @@ export default function GuideIndex() {
             Most arguments about AI infrastructure are unit arguments in disguise: a price quoted
             without its denominator, capital spending mistaken for delivered capacity, a proxy read as
             a market. This guide builds the vocabulary from the ground up — units and accounting
-            first, then silicon, sites, financing, and the macro claims that rest on them. Read it in
-            order, or open the layer you need.
+            first, then silicon, sites, financing, the open-weight token market with its harnesses,
+            routers, model builders and inference providers, the price stack that ties a token back to a
+            megawatt-hour, and the macro claims that rest on all of it. Read it in order, or open the layer
+            you need.
           </p>
           <div className="hero-meta">
             <span><b>{guide.length}</b> chapters</span><i />
             <span><b>{topics}</b> topics</span><i />
-            <span><b>121</b> glossary terms</span>
+            <span><b>{glossary.length}</b> glossary terms</span>
           </div>
         </div>
 

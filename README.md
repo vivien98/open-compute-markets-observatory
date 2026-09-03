@@ -1,6 +1,6 @@
 # Open Compute Markets Observatory
 
-An evidence-first public dashboard for the AI compute supply chain. The first web release separates direct prices, operating quantities, proxies, and unobserved markets; it never presents private-market guesses as quoted prices.
+An evidence-first public dashboard and field guide for every market in the AI compute chain: lithography, wafers, memory, packaging, systems, sites and power, GPU-hour rental and the new compute futures, the open-weight token market (harness → router → model builder → inference provider), and the capital that finances all of it. It separates direct prices, operating quantities, proxies, and unobserved markets, and never presents private-market guesses as quoted prices.
 
 **Live dashboard:** https://vivien98.github.io/open-compute-markets-observatory/
 
@@ -8,11 +8,11 @@ An evidence-first public dashboard for the AI compute supply chain. The first we
 
 | Route | Contents |
 | --- | --- |
-| `/` | Market pulse dashboard — signals, supply chain, known unknowns |
-| `/guide/` | 16-chapter field guide, grouped into six reading clusters |
+| `/` | Market pulse dashboard — signals, market wiring (linkage graph, souq price ladder, cross-market ledger, price stack), two supply-chain tracks, known unknowns |
+| `/guide/` | 19-chapter field guide, grouped into eight reading clusters, from units to the token market to macro |
 | `/guide/<chapter>/` | One chapter, with an on-this-page rail and linked glossary terms |
-| `/glossary/` | 121 definitions across 7 domains, filterable and directly linkable |
-| `/sources/` | 23 primary references — filings, manufacturer docs, agency reports, papers |
+| `/glossary/` | 167 definitions across 8 domains, filterable and directly linkable |
+| `/sources/` | 63 primary references — filings, manufacturer docs, agency reports, exchange announcements, papers |
 
 ## Reference material
 
@@ -34,7 +34,7 @@ There are two, sharing the same `app/Dashboard.tsx`:
 | Command | Output | Use |
 | --- | --- | --- |
 | `npm run build` | Cloudflare Worker (vinext/RSC, D1 binding available) | Full server-rendered app |
-| `npm run build:pages` | 20 static pages in `dist-pages/` | GitHub Pages deployment |
+| `npm run build:pages` | 23 static pages in `dist-pages/` | GitHub Pages deployment |
 
 The static target works because every page holds its content inline and makes no
 server or database calls. It is a true multi-page build — one HTML file per
@@ -46,18 +46,27 @@ it should, so a runtime error fails the build rather than shipping a blank page.
 The `.github/workflows/deploy-pages.yml` workflow runs lint, that test, and the
 build on every push to `main`.
 
-## Regenerating guide content
+## Editing the guide
 
-Guide prose lives in `app/content/` as committed JSON, extracted from a local
-source document that is deliberately not tracked:
+Guide chapters are Markdown files in `content/guide/`, one per chapter, ordered by
+their numeric prefix. Frontmatter carries the slug, title, nav label, cluster, and
+summary; the body supports `##` subsections, `>` callouts, pipe tables, `-` lists,
+inline links, and `**bold**`. Any "Chapter N" in prose is linked automatically.
 
 ```bash
-npm run content   # extract-guide.mjs → build-content.mjs
+npm run content   # content/guide/*.md → app/content/sections/*.json + manifest.json
 ```
 
-`scripts/build-pages.mjs` then generates one HTML file and entry module per route
-from `app/content/manifest.json`; `npm run build:pages` runs it for you. Because
-the split content files are committed, a fresh clone builds without the source
-document.
+The glossary (`app/content/glossary.json`) and source shelf (`app/content/sources.json`)
+are edited directly. `scripts/build-pages.mjs` then generates one HTML file and entry
+module per route from the manifest; `npm run build:pages` runs both for you.
+
+## The charts
+
+Everything on the dashboard is illustrative until a source adapter replaces it.
+`app/content/signals.ts` holds the signal cards, posted prices, the linkage graph
+(nodes and transmission edges, mirroring the guide's Chapter 14), the souq price
+ladder (provider archetypes and cache honesty), the session-cost multiple, and the
+cross-market indexed series. Chart components live in `app/site/charts/`.
 
 This project is public research infrastructure, not investment advice.

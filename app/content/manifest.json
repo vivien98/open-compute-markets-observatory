@@ -3,19 +3,19 @@
   "slug": "how-to-use",
   "label": "How to read this",
   "cluster": "Orientation",
-  "summary": "Four kinds of statement, and the reading discipline the rest of the guide assumes.",
+  "summary": "Four kinds of statement, the reading discipline the rest of the guide assumes, and why prices are the thread that ties every chapter together.",
   "heading": "How to read this guide",
-  "topics": 0,
-  "links": 0
+  "topics": 4,
+  "links": 1
  },
  {
   "slug": "overview",
   "label": "The whole chain",
   "cluster": "Orientation",
-  "summary": "The end-to-end chain in one map, and the four kinds of claim that get mixed together whenever people argue about it.",
+  "summary": "The end-to-end chain from sand to tokens in one map, the markets that price each link, and the four kinds of claim that get mixed together whenever people argue about it.",
   "heading": "The whole chain in one picture",
-  "topics": 2,
-  "links": 0
+  "topics": 5,
+  "links": 14
  },
  {
   "slug": "units",
@@ -42,7 +42,7 @@
   "summary": "Design, EDA, masks, wafers, EUV, packaging, and the actor map from sand to rack.",
   "heading": "The silicon supply chain, step by step",
   "topics": 15,
-  "links": 6
+  "links": 5
  },
  {
   "slug": "data-centers",
@@ -51,7 +51,7 @@
   "summary": "Critical IT versus the facility, the power chain, cooling, and usable capacity.",
   "heading": "From chip to data center",
   "topics": 6,
-  "links": 0
+  "links": 6
  },
  {
   "slug": "accounting",
@@ -69,7 +69,7 @@
   "summary": "Cash, equity, bonds, leases, take-or-pay, SPVs, and the maturity wall.",
   "heading": "How AI compute is financed",
   "topics": 12,
-  "links": 0
+  "links": 1
  },
  {
   "slug": "value-capture",
@@ -78,7 +78,25 @@
   "summary": "Marginal value versus average revenue, and which layer actually captures the surplus.",
   "heading": "Who captures the surplus",
   "topics": 7,
-  "links": 1
+  "links": 0
+ },
+ {
+  "slug": "souq",
+  "label": "The token market",
+  "cluster": "The token market",
+  "summary": "The open-weight supply chain from agent harness to router to model builder to inference provider, how a router allocates tokens, why the three quoted token prices can be quietly false, and what a Hayekian and a DeFi researcher should make of it.",
+  "heading": "The souq: harness, router, model, inference provider",
+  "topics": 13,
+  "links": 23
+ },
+ {
+  "slug": "token-prices",
+  "label": "Price stack & futures",
+  "cluster": "The token market",
+  "summary": "How a token price is built from a megawatt-hour and a GPU-hour, what the GPU rental indices and the new compute futures actually price, and why the spread between tokens and compute is the crack spread of intelligence.",
+  "heading": "From electrons to tokens",
+  "topics": 6,
+  "links": 11
  },
  {
   "slug": "rates",
@@ -105,7 +123,16 @@
   "summary": "What controls target, why smuggling is not a supply chain, and what to measure.",
   "heading": "China, export controls, and quality-adjusted compute",
   "topics": 5,
-  "links": 0
+  "links": 2
+ },
+ {
+  "slug": "linkages",
+  "label": "Market linkages",
+  "cluster": "Macro",
+  "summary": "A map of which price moves which, across Taiwan, Korea, the Netherlands, Japan, the United States, and China; the firms that sit on each link; and the order in which shocks travel through the chain.",
+  "heading": "How the markets are intertwined",
+  "topics": 5,
+  "links": 11
  },
  {
   "slug": "centralization",
@@ -129,18 +156,18 @@
   "slug": "claims",
   "label": "Claim-by-claim",
   "cluster": "Argument",
-  "summary": "Nine headline claims about compute markets, each restated precisely with what would confirm or break it.",
+  "summary": "Ten headline claims you will hear about compute markets, each restated precisely, with its hidden assumptions and what would confirm or break it.",
   "heading": "The headline claims, translated",
-  "topics": 9,
-  "links": 9
+  "topics": 10,
+  "links": 0
  },
  {
   "slug": "study-plan",
   "label": "Study plan",
   "cluster": "Practice",
-  "summary": "A five-week path from accounting basics to rebuilding the numbers yourself.",
+  "summary": "A six-week path from accounting basics to rebuilding the numbers yourself, ending in the token market and its derivatives.",
   "heading": "A study plan, beginner to expert",
-  "topics": 6,
-  "links": 7
+  "topics": 7,
+  "links": 13
  }
 ]

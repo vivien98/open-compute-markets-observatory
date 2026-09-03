@@ -3,7 +3,7 @@
 ## Research map and build plan for a public, contributor-owned dashboard
 
 **Research date:** 25 August 2026  
-**Purpose:** turn the AI-compute supply chain described in the Dwarkesh Patel–Dylan Patel podcast into a public, open-source set of prices, quantities, financing conditions, and explicitly documented data gaps.  
+**Purpose:** turn the full AI-compute supply chain — lithography, wafers, memory, packaging, systems, sites, power, GPU-hour rental, compute derivatives, the open-weight token market (harness → router → model builder → inference provider), and the capital that finances all of it — into a public, open-source set of prices, quantities, financing conditions, and explicitly documented data gaps.  
 **Audience:** curious readers, researchers, journalists, investors, policymakers, and contributors.  
 **Important:** this is a research product, not investment advice. A public webpage is not automatically a redistributable dataset; every adapter must respect the source's license and terms.
 
@@ -24,7 +24,7 @@ The dashboard should never pretend that every bottleneck has a quoted market. It
 
 ### Working name
 
-**Open Compute Markets Observatory (OCMO)**. Use a neutral research identity. Avoid names that sound like a trading service or imply affiliation with the podcast.
+**Open Compute Markets Observatory (OCMO)**. Use a neutral research identity. Avoid names that sound like a trading service or imply affiliation with any single commentator or firm.
 
 ---
 
@@ -674,7 +674,7 @@ Do not begin with 100 brittle feeds. Publish when these 20 reliable panels work:
 19. SEC-derived CapEx/revenue/debt for the five hyperscalers/cloud companies.
 20. A Known Unknowns board for HBM, wafer, packaging, powered land, PPA and private-loan prices.
 
-This MVP already tests the podcast's core chain: compute demand → physical build → power constraints → corporate financing → wider rate and sovereign pressure.
+This MVP already tests the core chain: compute demand → physical build → power constraints → corporate financing → wider rate and sovereign pressure.
 
 ---
 

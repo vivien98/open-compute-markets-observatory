@@ -12,9 +12,9 @@
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern dist-pages --ignore-pattern dist-smoke --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
-    "build:pages": "node scripts/build-pages.mjs && vite build --config vite.pages.config.ts",
+    "build:pages": "node scripts/build-content.mjs && node scripts/build-pages.mjs && vite build --config vite.pages.config.ts",
     "preview:pages": "vite preview --config vite.pages.config.ts",
-    "content": "node scripts/extract-guide.mjs && node scripts/build-content.mjs",
+    "content": "node scripts/build-content.mjs",
     "test:pages": "vite build --config vite.smoke.config.ts && node scripts/test-pages.mjs"
   },
   "dependencies": {

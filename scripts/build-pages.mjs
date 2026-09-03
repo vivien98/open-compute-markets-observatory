@@ -11,8 +11,8 @@ const manifest = JSON.parse(readFileSync("app/content/manifest.json", "utf8"));
 
 const routes = [
   { dir: "", entry: "home", title: "Open Compute Markets Observatory", desc: "An evidence-first public dashboard for AI compute supply, bottlenecks, prices, and financing conditions." },
-  { dir: "guide", entry: "guide", title: "Field guide · Open Compute Markets", desc: "A structured explainer for the AI compute supply chain, from units and accounting up to macro." },
-  { dir: "glossary", entry: "glossary", title: "Glossary · Open Compute Markets", desc: "121 definitions across compute, silicon, data centers, accounting, finance, macro, and strategy." },
+  { dir: "guide", entry: "guide", title: "Field guide · Open Compute Markets", desc: "A structured explainer for every AI compute market, from units and accounting through the open-weight token market up to macro." },
+  { dir: "glossary", entry: "glossary", title: "Glossary · Open Compute Markets", desc: "Definitions across compute, silicon, data centers, accounting, finance, macro, strategy, and the token market." },
   { dir: "sources", entry: "sources", title: "Source shelf · Open Compute Markets", desc: "Primary references behind the guide: filings, manufacturer documentation, agency reports, papers." },
   ...manifest.map((m) => ({
     dir: `guide/${m.slug}`,

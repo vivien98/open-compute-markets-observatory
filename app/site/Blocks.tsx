@@ -1,11 +1,14 @@
 import { Fragment } from "react";
 
+import { url } from "./nav";
+
 export type Span = { text: string; href?: string; bold?: boolean };
 export type Block =
   | { type: "h2"; text: string; spans?: Span[] }
   | { type: "p"; spans: Span[] }
   | { type: "callout"; spans: Span[] }
-  | { type: "table"; rows: string[][] };
+  | { type: "list"; items: Span[][] }
+  | { type: "table"; rows: Span[][][] };
 
 /** Stable, readable anchor id so every subsection is directly linkable. */
 export const slugify = (text: string) =>
@@ -16,9 +19,15 @@ function Spans({ spans }: { spans: Span[] }) {
     <>
       {spans.map((span, i) =>
         span.href ? (
-          <a key={i} className="inline-link" href={span.href} target="_blank" rel="noreferrer noopener">
-            {span.text}
-          </a>
+          span.href.startsWith("/") ? (
+            <a key={i} className="inline-link internal" href={url(span.href)}>
+              {span.text}
+            </a>
+          ) : (
+            <a key={i} className="inline-link" href={span.href} target="_blank" rel="noreferrer noopener">
+              {span.text}
+            </a>
+          )
         ) : span.bold ? (
           <strong key={i}>{span.text}</strong>
         ) : (
@@ -51,6 +60,17 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
             </aside>
           );
         }
+        if (block.type === "list") {
+          return (
+            <ul className="prose-list" key={i}>
+              {block.items.map((item, j) => (
+                <li key={j}>
+                  <Spans spans={item} />
+                </li>
+              ))}
+            </ul>
+          );
+        }
         if (block.type === "table") {
           const [head, ...rows] = block.rows;
           return (
@@ -59,7 +79,9 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
                 <thead>
                   <tr>
                     {head.map((cell, j) => (
-                      <th key={j}>{cell}</th>
+                      <th key={j}>
+                        <Spans spans={cell} />
+                      </th>
                     ))}
                   </tr>
                 </thead>
@@ -67,7 +89,9 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
                   {rows.map((row, j) => (
                     <tr key={j}>
                       {row.map((cell, k) => (
-                        <td key={k}>{cell}</td>
+                        <td key={k}>
+                          <Spans spans={cell} />
+                        </td>
                       ))}
                     </tr>
                   ))}

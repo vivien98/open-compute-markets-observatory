@@ -54,5 +54,4 @@ tsconfig.tsbuildinfo
 # smoke-test SSR bundle
 /dist-smoke/
 
-# intermediate guide extraction (the split files in app/content/ are committed)
-app/content/guide.json
+

@@ -4,9 +4,17 @@ import { useEffect, useMemo, useState } from "react";
 
 import { axisLabels, HORIZON_LABEL, HORIZONS, prices, signals, type Horizon } from "./content/signals";
 import ChangeBars from "./site/charts/ChangeBars";
+import CrossMarket from "./site/charts/CrossMarket";
+import LinkageMap from "./site/charts/LinkageMap";
 import PriceChart from "./site/charts/PriceChart";
+import PriceStack from "./site/charts/PriceStack";
 import Sparkline from "./site/charts/Sparkline";
-import { clusters, url } from "./site/nav";
+import TokenLadder from "./site/charts/TokenLadder";
+import { clusters, guide, url } from "./site/nav";
+import glossary from "./content/glossary.json";
+import shelf from "./content/sources.json";
+
+const SOURCES = shelf.reduce((n, g) => n + g.items.length, 0);
 
 const chain = [
   { n: "01", name: "Compute", detail: "Rental price", state: "Easing", tone: "cool", guide: "units", icon: "◇" },
@@ -18,11 +26,21 @@ const chain = [
   { n: "07", name: "Capital", detail: "Credit hurdle", state: "Open", tone: "cool", guide: "financing", icon: "$" },
 ];
 
+const tokenChain = [
+  { n: "08", name: "Harness", detail: "Owns the user & context", state: "Capturing", tone: "cool", guide: "souq", icon: "◉" },
+  { n: "09", name: "Router", detail: "Ranks on input price", state: "Thin fee", tone: "quiet", guide: "souq", icon: "⇶" },
+  { n: "10", name: "Model builder", detail: "Bears training CapEx", state: "Squeezed", tone: "warm", guide: "souq", icon: "⊛" },
+  { n: "11", name: "Inference provider", detail: "Cache unverifiable", state: "Capturing", tone: "cool", guide: "souq", icon: "▣" },
+  { n: "12", name: "Compute rental", detail: "GPU-hour index & futures", state: "Emerging", tone: "quiet", guide: "token-prices", icon: "◇" },
+];
+
 const unknowns = [
   { market: "HBM contract pricing", last: "Producer guidance only", next: "Quarterly earnings", tier: "Company disclosure", confidence: "Low", guide: "silicon" },
   { market: "Advanced packaging slots", last: "Capacity estimate · Q2", next: "Supplier updates", tier: "Industry estimate", confidence: "Medium", guide: "silicon" },
   { market: "Powered land · $/MW", last: "3 verified records", next: "Deeds + PUC dockets", tier: "Primary records", confidence: "Medium", guide: "data-centers" },
   { market: "Project loan spreads", last: "Selected deal reports", next: "Rating presales", tier: "Professional reporting", confidence: "Low", guide: "financing" },
+  { market: "Cache-hit rate by inference provider", last: "One independent canary study", next: "Router audits or attestations", tier: "Independent research", confidence: "Low", guide: "souq" },
+  { market: "Accelerator transaction prices", last: "List prices; allocation private", next: "Customer 10-K commitments", tier: "Company disclosure", confidence: "Low", guide: "silicon" },
 ];
 
 export default function Dashboard() {
@@ -50,6 +68,7 @@ export default function Dashboard() {
         <a className="brand" href={url("")}><span className="brand-mark">O</span><span>Open Compute Markets</span></a>
         <nav aria-label="Primary navigation">
           <a className="active" href="#markets">Markets</a>
+          <a href="#wiring">Wiring</a>
           <a href="#chain">Supply chain</a>
           <a href={url("guide/")}>Guide</a>
           <a href={url("glossary/")}>Glossary</a>
@@ -61,8 +80,8 @@ export default function Dashboard() {
       <section className="hero" id="overview">
         <div className="eyebrow"><span className="pulse" /> RESEARCH PREVIEW · ILLUSTRATIVE DATA</div>
         <h1>Where AI infrastructure<br />meets the market.</h1>
-        <p className="lede">An open, evidence-first view of the prices, bottlenecks, and financing conditions shaping the AI compute supply chain — with the markets nobody can observe marked as gaps rather than filled with guesses.</p>
-        <div className="hero-meta"><span><b>64</b> indicators mapped</span><i /><span><b>8</b> supply-chain layers</span><i /><span><b>16</b> guide chapters</span></div>
+        <p className="lede">An open, evidence-first view of every market in the AI compute chain — from lithography and memory to power, GPU-hours, compute futures, and the open-weight token market — with the markets nobody can observe marked as gaps rather than filled with guesses.</p>
+        <div className="hero-meta"><span><b>{signals.length}</b> indicators shown</span><i /><span><b>12</b> supply-chain layers</span><i /><span><b>{guide.length}</b> guide chapters</span></div>
         <div className="orbit" aria-hidden="true"><span /><span /><span /><b>OCMO</b></div>
       </section>
 
@@ -152,10 +171,26 @@ export default function Dashboard() {
         <p className="data-caveat">Preview figures demonstrate the interface and evidence model; connect approved source adapters before treating them as current observations.</p>
       </section>
 
+      <section className="wiring" id="wiring">
+        <div className="section-head">
+          <div><span className="kicker">MARKET WIRING</span><h2>How the markets move each other.</h2></div>
+          <p>Prices are telegrams. These charts show who sends them,<br />who reads them, and where the line is cut.</p>
+        </div>
+        <div className="wiring-grid">
+          <LinkageMap />
+          <TokenLadder />
+          <div className="wiring-pair">
+            <CrossMarket horizon={horizon} />
+            <PriceStack />
+          </div>
+        </div>
+        <p className="data-caveat">The linkage map is drawn from the guide&apos;s transmission table; the souq and price-stack figures are illustrative parameters, not observations.</p>
+      </section>
+
       <section className="chain" id="chain">
         <div className="chain-head">
-          <div><span className="kicker">THE PHYSICAL STACK</span><h2>One chain. Many constraints.</h2></div>
-          <p>Read left to right—from the service users buy back to the physical and financial capacity that makes it possible. Every layer links to the chapter that explains it.</p>
+          <div><span className="kicker">THE PHYSICAL STACK · THE TOKEN STACK</span><h2>Two chains. Many constraints.</h2></div>
+          <p>The first track is the physical chain from rental price back to capital. The second is the open-weight token chain from the harness a user touches down to the GPU-hour it consumes. Every node links to the chapter that explains it.</p>
         </div>
         <div className="chain-track">
           {chain.map((item, i) => (
@@ -167,6 +202,20 @@ export default function Dashboard() {
               <b className={item.tone}>{item.state}</b>
               <em className="node-learn">Read →</em>
               {i < chain.length - 1 && <i>→</i>}
+            </a>
+          ))}
+        </div>
+        <p className="chain-sub">THE TOKEN STACK</p>
+        <div className="chain-track five">
+          {tokenChain.map((item, i) => (
+            <a className="chain-node" href={url(`guide/${item.guide}/`)} key={item.name}>
+              <span>{item.n}</span>
+              <div className="node-icon">{item.icon}</div>
+              <h3>{item.name}</h3>
+              <small>{item.detail}</small>
+              <b className={item.tone}>{item.state}</b>
+              <em className="node-learn">Read →</em>
+              {i < tokenChain.length - 1 && <i>→</i>}
             </a>
           ))}
         </div>
@@ -229,8 +278,8 @@ export default function Dashboard() {
         </div>
         <div className="learn-cta">
           <a className="primary" href={url("guide/")}>Open the guide ↗</a>
-          <a href={url("glossary/")}>121 glossary terms</a>
-          <a href={url("sources/")}>23 primary sources</a>
+          <a href={url("glossary/")}>{glossary.length} glossary terms</a>
+          <a href={url("sources/")}>{SOURCES} primary sources</a>
         </div>
       </section>
 

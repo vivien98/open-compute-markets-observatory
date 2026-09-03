@@ -1,90 +1,155 @@
 /**
- * Splits the extracted guide into per-page content modules.
+ * Compiles the guide from Markdown into per-page content modules.
  *
- * Input:  app/content/guide.json  (produced by extract-guide.mjs)
- * Output: app/content/sections/<slug>.json, glossary.json, sources.json, manifest.json
+ * Input:  content/guide/NN-<slug>.md   (one file per chapter, ordered by prefix)
+ *         app/content/glossary.json    (hand-maintained)
+ * Output: app/content/sections/<slug>.json, app/content/manifest.json
  *
  * Splitting per page matters: every route imports only its own section, so the
- * 175 KB guide never ships as one shared chunk.
+ * guide never ships as one shared chunk.
+ *
+ * Supported Markdown subset (deliberately small so the renderer stays simple):
+ *   ---            YAML-ish frontmatter: slug, title, heading, label, cluster, summary
+ *   ## Heading     subsection (gets a stable anchor and a rail entry)
+ *   > text         callout
+ *   | a | b |      table; first row is the header
+ *   - item         list item (consecutive items form one list)
+ *   plain text     paragraph; blank line separates blocks
+ *   [text](url)    inline link, **bold** emphasis
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync } from "node:fs";
 
-const { sections } = JSON.parse(readFileSync("app/content/guide.json", "utf8"));
-const byTitle = new Map(sections.map((s) => [s.title, s]));
+const SRC = "content/guide";
+const OUT = "app/content/sections";
 
-// [slug, source heading, nav label, cluster, summary, display heading]
-// The display heading is what the site shows: the source document frames several
-// chapters around a specific talk, but the site is about the markets themselves.
-const PAGES = [
-  ["how-to-use", "How to use this guide", "How to read this", "Orientation", "Four kinds of statement, and the reading discipline the rest of the guide assumes.", "How to read this guide"],
-  ["overview", "1. The entire podcast in one picture", "The whole chain", "Orientation", "The end-to-end chain in one map, and the four kinds of claim that get mixed together whenever people argue about it.", "The whole chain in one picture"],
-  ["units", "2. Units: what \"compute\" actually means", "Units", "Foundations", "Why compute is not one substance, and how power, energy, stock and flow differ.", "Units: what compute actually means"],
-  ["history", "3. Historical context: why the stack looks like this", "History", "Foundations", "How integrated circuits became specialised accelerators, and why the industry fragmented.", "Why the stack looks like this"],
-  ["silicon", "4. The silicon supply chain, step by step", "Silicon", "The physical stack", "Design, EDA, masks, wafers, EUV, packaging, and the actor map from sand to rack.", "The silicon supply chain, step by step"],
-  ["data-centers", "5. From chip to data center", "Data centers", "The physical stack", "Critical IT versus the facility, the power chain, cooling, and usable capacity.", "From chip to data center"],
-  ["accounting", "6. Accounting: CapEx, OpEx, depreciation, and margins", "Accounting", "Money", "The three statements, what gets capitalised, and why EBITDA flatters this business.", "CapEx, OpEx, depreciation, and margins"],
-  ["financing", "7. How AI compute is financed", "Financing", "Money", "Cash, equity, bonds, leases, take-or-pay, SPVs, and the maturity wall.", "How AI compute is financed"],
-  ["value-capture", "8. Why the best model might outbid everyone", "Value capture", "Money", "Marginal value versus average revenue, and which layer actually captures the surplus.", "Who captures the surplus"],
-  ["rates", "9. Interest rates, credit spreads, and asset prices", "Rates & credit", "Macro", "There is no single interest rate: spreads, discount rates, and asset-liability risk.", "Interest rates, credit spreads, and asset prices"],
-  ["sovereign-debt", "10. Government debt and sovereign crises", "Sovereign debt", "Macro", "Debt dynamics, rollover risk, and whether an investment boom could trigger a crisis.", "Government debt and sovereign crises"],
-  ["china", "11. China, export controls, and quality-adjusted compute", "China & controls", "Macro", "What controls target, why smuggling is not a supply chain, and what to measure.", "China, export controls, and quality-adjusted compute"],
-  ["centralization", "12. Centralization: the final argument", "Centralization", "Argument", "Forces pushing both ways, and why ownership, control, and service must be separated.", "Centralization: the final argument"],
-  ["claim-audit", "13. Claim audit: what would have to be true?", "Claim audit", "Argument", "The strongest and most fragile parts of the argument, and a better forecasting discipline.", "What would have to be true?"],
-  ["claims", "14. Podcast-by-podcast translation", "Claim-by-claim", "Argument", "Nine headline claims about compute markets, each restated precisely with what would confirm or break it.", "The headline claims, translated"],
-  ["study-plan", "16. A study plan from beginner to expert", "Study plan", "Practice", "A five-week path from accounting basics to rebuilding the numbers yourself.", "A study plan, beginner to expert"],
-];
+const terms = JSON.parse(readFileSync("app/content/glossary.json", "utf8"));
+const termRe = terms.map((t) => [
+  t.term,
+  new RegExp(`\\b${t.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i"),
+]);
 
-rmSync("app/content/sections", { recursive: true, force: true });
-mkdirSync("app/content/sections", { recursive: true });
-
-// Glossary: the section is a single table whose first row is a header.
-const gRows = byTitle.get("15. Glossary").blocks.find((b) => b.type === "table").rows.slice(1);
-let domain = "";
-const terms = [];
-for (const [d, term, def] of gRows) {
-  if (d) domain = d;
-  if (term && def) terms.push({ domain, term, definition: def });
+/** Inline markup → spans. Links and bold only; nothing nests. */
+function spans(text) {
+  const out = [];
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)|\*\*([^*]+)\*\*/g;
+  let last = 0;
+  let m;
+  while ((m = re.exec(text))) {
+    if (m.index > last) out.push({ text: text.slice(last, m.index) });
+    if (m[1]) out.push({ text: m[1], href: m[2] });
+    else out.push({ text: m[3], bold: true });
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) out.push({ text: text.slice(last) });
+  return out;
 }
-writeFileSync("app/content/glossary.json", JSON.stringify(terms));
 
-// Source shelf: grouped by the H2 that precedes each run of links.
-const shelf = [];
-let group = null;
-for (const b of byTitle.get("17. Source shelf").blocks) {
-  if (b.type === "h2") shelf.push((group = { group: b.text, items: [] }));
-  else if (b.type === "p" && group) {
-    const link = b.spans.find((s) => s.href);
-    const text = b.spans.map((s) => s.text).join("").trim();
-    if (text) group.items.push({ text, ...(link ? { href: link.href } : {}) });
+function parse(md) {
+  const fm = {};
+  let body = md;
+  const fmMatch = md.match(/^---\n([\s\S]*?)\n---\n/);
+  if (fmMatch) {
+    for (const line of fmMatch[1].split("\n")) {
+      const i = line.indexOf(":");
+      if (i > 0) fm[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+    }
+    body = md.slice(fmMatch[0].length);
+  }
+  const blocks = [];
+  const chunks = body.split(/\n{2,}/).map((c) => c.trim()).filter(Boolean);
+  for (const chunk of chunks) {
+    if (chunk.startsWith("## ")) {
+      blocks.push({ type: "h2", text: chunk.slice(3).trim() });
+    } else if (chunk.startsWith("> ")) {
+      blocks.push({ type: "callout", spans: spans(chunk.replace(/^> ?/gm, "").replace(/\n/g, " ")) });
+    } else if (chunk.startsWith("|")) {
+      const rows = chunk
+        .split("\n")
+        .filter((l) => l.trim().startsWith("|") && !/^\|[\s:-]+\|$/.test(l.trim().replace(/\|/g, "|")))
+        .filter((l) => !/^\|\s*-{2,}/.test(l.trim()))
+        .map((l) => l.trim().replace(/^\||\|$/g, "").split("|").map((c) => spans(c.trim())));
+      blocks.push({ type: "table", rows });
+    } else if (chunk.startsWith("- ")) {
+      blocks.push({ type: "list", items: chunk.split(/\n(?=- )/).map((l) => spans(l.replace(/^- /, "").replace(/\n/g, " "))) });
+    } else {
+      blocks.push({ type: "p", spans: spans(chunk.replace(/\n/g, " ")) });
+    }
+  }
+  return { fm, blocks };
+}
+
+rmSync(OUT, { recursive: true, force: true });
+mkdirSync(OUT, { recursive: true });
+
+const files = readdirSync(SRC).filter((f) => f.endsWith(".md")).sort();
+const parsed = files.map((file) => ({ file, ...parse(readFileSync(`${SRC}/${file}`, "utf8")) }));
+
+// "Chapter 9" in prose becomes a link to the chapter whose title starts with "9.".
+const chapterSlug = new Map();
+for (const { fm } of parsed) {
+  const n = fm.title?.match(/^(\d+)\./)?.[1];
+  if (n) chapterSlug.set(n, fm.slug);
+}
+function linkChapters(list) {
+  const out = [];
+  for (const span of list) {
+    if (span.href || span.bold) { out.push(span); continue; }
+    const re = /\bChapter (\d+)\b/g;
+    let last = 0;
+    let m;
+    while ((m = re.exec(span.text))) {
+      const slug = chapterSlug.get(m[1]);
+      if (!slug) continue;
+      if (m.index > last) out.push({ text: span.text.slice(last, m.index) });
+      out.push({ text: m[0], href: `/guide/${slug}/` });
+      last = m.index + m[0].length;
+    }
+    if (last < span.text.length) out.push({ text: span.text.slice(last) });
+  }
+  return out;
+}
+for (const { blocks, fm } of parsed) {
+  for (const b of blocks) {
+    if (b.spans) b.spans = linkChapters(b.spans);
+    if (b.items) b.items = b.items.map(linkChapters);
+    if (b.rows) b.rows = b.rows.map((r) => r.map(linkChapters));
+  }
+  // A chapter never links to itself.
+  const self = `/guide/${fm.slug}/`;
+  for (const b of blocks) {
+    for (const list of [b.spans, ...(b.items ?? []), ...(b.rows ?? []).flat()]) {
+      if (list) for (const sp of list) if (sp.href === self) delete sp.href;
+    }
   }
 }
-writeFileSync("app/content/sources.json", JSON.stringify(shelf));
 
-// Per-section files, plus a manifest carrying nav data and derived counts.
-const termRe = terms.map((t) => [t.term, new RegExp(`\\b${t.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i")]);
 const manifest = [];
-for (const [slug, title, label, cluster, summary, heading] of PAGES) {
-  const section = byTitle.get(title);
-  if (!section) throw new Error(`Missing section: ${title}`);
-  const text = section.blocks.map((b) => (b.spans ? b.spans.map((s) => s.text).join("") : (b.rows || []).flat().join(" "))).join(" ");
+for (const { file, fm, blocks } of parsed) {
+  for (const key of ["slug", "title", "heading", "label", "cluster", "summary"]) {
+    if (!fm[key]) throw new Error(`${file}: missing frontmatter "${key}"`);
+  }
+  const text = blocks
+    .map((b) =>
+      b.spans ? b.spans.map((s) => s.text).join("")
+      : b.items ? b.items.flat().map((s) => s.text).join(" ")
+      : b.rows ? b.rows.flat(2).map((s) => s.text).join(" ")
+      : b.text,
+    )
+    .join(" ");
   const used = termRe.filter(([, re]) => re.test(text)).map(([t]) => t).slice(0, 18);
-  const links = section.blocks.flatMap((b) => (b.spans || []).filter((s) => s.href)).length;
-  // Subsection headings in the claim-by-claim chapter carry talk timestamps;
-  // the claim itself is the useful part on the web.
-  const blocks = section.blocks.map((b) =>
-    b.type === "h2" ? { ...b, text: b.text.replace(/\s*[-–]\s*\d{2}:\d{2}:\d{2}\s*$/, "") } : b,
+  const links = blocks.flatMap((b) => (b.spans ?? b.items?.flat() ?? b.rows?.flat(2) ?? []).filter((s) => s.href && !s.href.startsWith("/"))).length;
+  writeFileSync(
+    `${OUT}/${fm.slug}.json`,
+    JSON.stringify({ slug: fm.slug, title: fm.title, heading: fm.heading, label: fm.label, summary: fm.summary, blocks, terms: used }),
   );
-  writeFileSync(`app/content/sections/${slug}.json`, JSON.stringify({ slug, title, heading, label, summary, blocks, terms: used }));
   manifest.push({
-    slug, label, cluster, summary,
-    heading,
-    topics: section.blocks.filter((b) => b.type === "h2").length,
+    slug: fm.slug, label: fm.label, cluster: fm.cluster, summary: fm.summary, heading: fm.heading,
+    topics: blocks.filter((b) => b.type === "h2").length,
     links,
   });
 }
 writeFileSync("app/content/manifest.json", JSON.stringify(manifest, null, 1));
 
 console.log(`glossary terms : ${terms.length}`);
-console.log(`source groups  : ${shelf.length} (${shelf.reduce((n, g) => n + g.items.length, 0)} entries)`);
 console.log(`guide pages    : ${manifest.length}`);
-for (const m of manifest) console.log(`  /${m.slug.padEnd(15)} ${String(m.topics).padStart(3)} topics  ${String(m.links).padStart(2)} links  ${m.cluster}`);
+for (const m of manifest) console.log(`  /${m.slug.padEnd(18)} ${String(m.topics).padStart(3)} topics  ${String(m.links).padStart(3)} links  ${m.cluster}`);

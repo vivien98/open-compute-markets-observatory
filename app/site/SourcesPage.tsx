@@ -48,7 +48,7 @@ export default function SourcesPage() {
         </div>
 
         <aside className="prose-callout shelf-rule">
-          Treat company forecasts, analyst estimates, and podcast numbers as inputs to a model, not as
+          Treat company forecasts, analyst estimates, and quoted prices as inputs to a model, not as
           facts carved into the world. Preserve units, dates, accounting boundaries, and source type.
         </aside>
 
