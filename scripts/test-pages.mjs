@@ -2,7 +2,7 @@
 import { run } from "../dist-smoke/smoke-entry.js";
 
 const EXPECT = {
-  "/": ["Open Compute Markets", "H100 marketplace ask", "Understand the whole chain", "/guide/silicon/", "How the markets are wired", "The souq", "From electrons to tokens", "/guide/souq/", "forward curve implied", "The tenor curve", "What a residual value is worth", "Who finances day one", "The price of credit", "DATA FEEDS"],
+  "/": ["Open Compute Markets", "H100 marketplace ask", "Understand the whole chain", "/guide/silicon/", "How the markets are wired", "The souq", "From electrons to tokens", "/guide/souq/", "forward curve implied", "The tenor curve", "What a residual value is worth", "Who finances day one", "The price of credit", "DATA FEEDS", "Thirty-day study plan", "/guide/open-problems/"],
   "/guide/": ["How compute markets", "The silicon supply chain", "CapEx"],
   "/glossary/": ["Say it precisely", "CapEx", "Depreciation", "EBITDA"],
   "/sources/": ["Go to the primary", "asml.com", "iea.org"],
@@ -14,6 +14,9 @@ const EXPECT = {
   "/guide/linkages/": ["Taiwan", "transmission"],
   "/guide/collateral/": ["Residual value", "prepayment", "sec.gov", "CCIR"],
   "/guide/commodity/": ["credit default swap", "tenor curve", "clearinghouse", "silicon spread"],
+  "/guide/accelerators/": ["Memory bandwidth", "NVFP4", "InfiniBand", "tokens per second", "nvidia.com"],
+  "/guide/study-plan/": ["Thirty days", "Week one", "Questions to ask a practitioner", "Mastery questions"],
+  "/guide/open-problems/": ["Measurement", "Mechanism design", "Choosing one", "mason.gmu.edu"],
 };
 
 let failures = 0;

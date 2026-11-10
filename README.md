@@ -9,10 +9,10 @@ An evidence-first public dashboard and field guide for every market in the AI co
 | Route | Contents |
 | --- | --- |
 | `/` | Dashboard: market pulse on public feeds; credit and term structure (implied forward curve, tenor decomposition, residual value, capital stack, credit ladder, resale-market depth); market wiring (linkage graph, live souq quote ladder, silicon spread, cross-market ledger, price stack); two supply-chain tracks; known unknowns; feed status |
-| `/guide/` | 21-chapter field guide in eight clusters, from units to tokens to credit to macro |
+| `/guide/` | 23-chapter field guide in eight clusters, from units to tokens to credit to macro, ending in a thirty-day study plan and a list of open problems |
 | `/guide/<chapter>/` | One chapter, with an on-this-page rail and linked glossary terms |
-| `/glossary/` | 207 definitions across 8 domains, filterable and directly linkable |
-| `/sources/` | 91 primary references: filings, exchange and regulator documents, public APIs, papers |
+| `/glossary/` | 237 definitions across 8 domains, filterable and directly linkable |
+| `/sources/` | 116 references: filings, exchange and regulator documents, manufacturer datasheets, public APIs, papers, and a shelf of ongoing reading |
 
 ## Data: what is real and what is not
 
@@ -56,9 +56,9 @@ Chapters are Markdown files in `content/guide/`, one per chapter, named by slug.
 Frontmatter carries `slug`, `title`, `heading`, `label`, `cluster`, and `summary` (optional: `numbered: false`, `sections: plain`). The body supports `##` subsections, `>` callouts, pipe tables, `-` lists, inline links, and `**bold**`. Cross-references are written by slug and rendered with the current number:
 
 ```
-{ch:souq}                    → Chapter 10
+{ch:souq}                    → Chapter 11
 {chs:silicon,data-centers}   → Chapters 4 and 5
-{chs:rates..claims}          → Chapters 13–19
+{chs:rates..claims}          → Chapters 14–20
 ```
 
 The glossary (`app/content/glossary.json`) and source shelf (`app/content/sources.json`) are edited directly.

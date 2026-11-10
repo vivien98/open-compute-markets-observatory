@@ -21,6 +21,8 @@ This guide assumes no background in semiconductors, data centers, accounting, or
 
 **Judgment pass.** Read {chs:rates..claims}. Your goal is to identify what must be true for the popular forecasts to hold, what could break the chain, and which statements are accounting identities versus contestable assumptions.
 
+**Practice.** {ch:study-plan} turns the three passes into thirty days, each with something to read and something to compute, and adds a way of reading any article on this market and a set of questions to put to the people who work in it. {ch:open-problems} is where the guide stops and the unanswered questions begin. If the aim is to contribute and not only to follow, read its last two sections first, so that you know what you are reading towards.
+
 ## Five questions for every number
 
 Whenever you encounter a number, ask:

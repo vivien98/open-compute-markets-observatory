@@ -62,7 +62,7 @@ Now do the arithmetic. If the rental price of the newer chip fell at that same r
 
 Three cautions belong with that calculation. The decline is borrowed from an older chip. The ladder is thin, quoted mostly by one market maker, and settles on an index that is not the same basket as the posted prices. And nothing has been discounted. The dashboard therefore shows the decomposition with every input on a slider and the ladder's bid and ask bracket drawn in, so that the inference can be checked instead of trusted.
 
-Even taken at face value, the result sharpens the argument more than it weakens it. Credit has a modest effect on the price of a long contract and a total effect on who may buy one. A buyer who cannot sign for three years is not offered the three-year price at a premium; it is not offered the three-year contract at all. Economists call this rationing by quantity, and its signature is exactly what the short end shows: a queue. The premium is visible in the price. The exclusion is visible only in who is missing.
+Even taken at face value, the result sharpens the argument more than it weakens it. Credit has a modest effect on the price of a long contract and a total effect on who may buy one. A buyer who cannot sign for three years is not offered the three-year price at a premium; it is not offered the three-year contract at all. Economists call this [rationing by quantity](https://en.wikipedia.org/wiki/Credit_rationing), and its signature is exactly what the short end shows: a queue. The premium is visible in the price. The exclusion is visible only in who is missing.
 
 ## Bought like power
 

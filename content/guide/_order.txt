@@ -6,6 +6,7 @@ units
 history
 silicon
 data-centers
+accelerators
 accounting
 financing
 collateral
@@ -21,3 +22,4 @@ centralization
 claim-audit
 claims
 study-plan
+open-problems

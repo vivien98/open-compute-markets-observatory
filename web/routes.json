@@ -9,6 +9,7 @@
  "guide/history",
  "guide/silicon",
  "guide/data-centers",
+ "guide/accelerators",
  "guide/accounting",
  "guide/financing",
  "guide/collateral",
@@ -23,5 +24,6 @@
  "guide/centralization",
  "guide/claim-audit",
  "guide/claims",
- "guide/study-plan"
+ "guide/study-plan",
+ "guide/open-problems"
 ]

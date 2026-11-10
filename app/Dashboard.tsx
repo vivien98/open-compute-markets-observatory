@@ -325,6 +325,8 @@ export default function Dashboard() {
         </div>
         <div className="learn-cta">
           <a className="primary" href={url("guide/")}>Open the guide ↗</a>
+          <a href={url("guide/study-plan/")}>Thirty-day study plan</a>
+          <a href={url("guide/open-problems/")}>Open problems</a>
           <a href={url("glossary/")}>{glossary.length} glossary terms</a>
           <a href={url("sources/")}>{SOURCES} primary sources</a>
         </div>
