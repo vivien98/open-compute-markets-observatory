@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { axisLabels, type Horizon, type PriceSeries } from "../../content/signals";
+import Provenance from "./Provenance";
 
 /**
  * Four posted configurations over the selected horizon.
@@ -58,7 +59,10 @@ export default function PriceChart({ data, horizon }: { data: PriceSeries[]; hor
           <h3>Posted compute prices</h3>
           <p>Normalised only where hardware, memory, region, tenancy, and commitment match.</p>
         </div>
-        <ul className="legend">
+        <Provenance state="illustrative" source="no keyless source for like-for-like posted prices yet" />
+      </div>
+      <div className="chart-head tight">
+        <ul className="legend legend-row">
           {data.map((d, i) => (
             <li key={`${d.config}-${d.commitment}`}>
               <i className={`swatch s${i + 1}`} aria-hidden="true" />

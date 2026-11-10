@@ -1,0 +1,23 @@
+# Chapter order. One slug per line; numbers are assigned from this order.
+# Chapters with `numbered: false` in their frontmatter are skipped when counting.
+how-to-use
+overview
+units
+history
+silicon
+data-centers
+accounting
+financing
+collateral
+value-capture
+souq
+token-prices
+commodity
+rates
+sovereign-debt
+china
+linkages
+centralization
+claim-audit
+claims
+study-plan

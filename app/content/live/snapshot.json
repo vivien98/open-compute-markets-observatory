@@ -1,0 +1,2240 @@
+{
+ "generatedAt": "2026-11-10T23:04:59.164Z",
+ "feeds": [
+  {
+   "id": "tokens",
+   "label": "OpenRouter provider quotes",
+   "url": "https://openrouter.ai/api/v1/models",
+   "state": "seed",
+   "asOf": "2026-11-10",
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "5 models, 132 endpoints"
+  },
+  {
+   "id": "gpu",
+   "label": "Vast.ai marketplace asks",
+   "url": "https://console.vast.ai/api/v0/bundles/",
+   "state": "seed",
+   "asOf": "2026-11-10",
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "H100 $2.20 (14), H200 $3.72 (14), B200 $8.49 (10)"
+  },
+  {
+   "id": "ladders",
+   "label": "Kalshi strike ladders",
+   "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXH100MS",
+   "state": "seed",
+   "asOf": "2026-09-09",
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "H100: 4 months"
+  },
+  {
+   "id": "sofr",
+   "label": "New York Fed SOFR",
+   "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/last/260.json",
+   "state": "seed",
+   "asOf": "2026-11-09",
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "3.88%"
+  },
+  {
+   "id": "fred",
+   "label": "FRED rates, spreads, FX",
+   "url": "https://fred.stlouisfed.org/",
+   "state": "pending",
+   "asOf": null,
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "not in the recorded capture; fills on the first live run"
+  },
+  {
+   "id": "power",
+   "label": "ERCOT hub prices",
+   "url": "https://www.ercot.com/api/1/services/read/dashboards/systemWidePrices.json",
+   "state": "seed",
+   "asOf": "2026-11-10",
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "real-time $36.11/MWh"
+  },
+  {
+   "id": "twse",
+   "label": "TWSE monthly revenue",
+   "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+   "state": "pending",
+   "asOf": null,
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "not in the recorded capture; fills on the first live run"
+  },
+  {
+   "id": "equities",
+   "label": "Chain equities (optional key)",
+   "url": "https://www.alphavantage.co/",
+   "state": "needs-key",
+   "asOf": null,
+   "fetchedAt": "2026-11-10T23:04:59.164Z",
+   "note": "set the ALPHAVANTAGE_API_KEY repository secret to enable"
+  }
+ ],
+ "series": {
+  "SOFR": {
+   "label": "SOFR",
+   "unit": "%",
+   "source": "New York Fed",
+   "url": "https://www.newyorkfed.org/markets/reference-rates/sofr",
+   "points": [
+    [
+     "2026-11-05",
+     3.92
+    ],
+    [
+     "2026-11-06",
+     3.89
+    ],
+    [
+     "2026-11-09",
+     3.88
+    ]
+   ]
+  },
+  "GPU_B200": {
+   "label": "B200 marketplace ask, median",
+   "unit": "$/GPU-hour",
+   "source": "Vast.ai (observatory history)",
+   "url": "https://vast.ai/",
+   "points": [
+    [
+     "2026-11-10",
+     8.492
+    ]
+   ],
+   "own": true
+  },
+  "GPU_H100": {
+   "label": "H100 marketplace ask, median",
+   "unit": "$/GPU-hour",
+   "source": "Vast.ai (observatory history)",
+   "url": "https://vast.ai/",
+   "points": [
+    [
+     "2026-11-10",
+     2.202
+    ]
+   ],
+   "own": true
+  },
+  "GPU_H200": {
+   "label": "H200 marketplace ask, median",
+   "unit": "$/GPU-hour",
+   "source": "Vast.ai (observatory history)",
+   "url": "https://vast.ai/",
+   "points": [
+    [
+     "2026-11-10",
+     3.718
+    ]
+   ],
+   "own": true
+  },
+  "TOK_REF_MIN_OUTPUT": {
+   "label": "DeepSeek: DeepSeek V4.1 Flash 1017: cheapest output ask",
+   "unit": "$/M tokens",
+   "source": "OpenRouter (observatory history)",
+   "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+   "points": [
+    [
+     "2026-11-10",
+     0.106
+    ]
+   ],
+   "own": true
+  },
+  "TOK_REF_LIST_OUTPUT": {
+   "label": "DeepSeek: DeepSeek V4.1 Flash 1017: list output price",
+   "unit": "$/M tokens",
+   "source": "OpenRouter (observatory history)",
+   "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+   "points": [
+    [
+     "2026-11-10",
+     0.6
+    ]
+   ],
+   "own": true
+  },
+  "TOK_REF_PROVIDERS": {
+   "label": "DeepSeek: DeepSeek V4.1 Flash 1017: providers",
+   "unit": "count",
+   "source": "OpenRouter (observatory history)",
+   "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+   "points": [
+    [
+     "2026-11-10",
+     30
+    ]
+   ],
+   "own": true
+  },
+  "ERCOT_HUB": {
+   "label": "ERCOT hub average",
+   "unit": "$/MWh",
+   "source": "ERCOT (observatory history)",
+   "url": "https://www.ercot.com/mktinfo/prices",
+   "points": [
+    [
+     "2026-11-10",
+     32.32
+    ]
+   ],
+   "own": true
+  },
+  "LADDER_H100_FRONT": {
+   "label": "H100 front-month implied median",
+   "unit": "$/GPU-hour",
+   "source": "Kalshi (observatory history)",
+   "url": "https://kalshi.com/",
+   "points": [
+    [
+     "2026-11-10",
+     3.259
+    ]
+   ],
+   "own": true
+  }
+ },
+ "tokens": {
+  "asOf": "2026-11-10",
+  "models": [
+   {
+    "id": "deepseek/deepseek-v4.1-flash-1017",
+    "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+    "created": 1792225624,
+    "author": "deepseek",
+    "list": {
+     "input": 0.15,
+     "output": 0.6,
+     "cached": 0.003,
+     "from": "builder",
+     "copies": 8
+    },
+    "providers": 30,
+    "timeOfDay": false,
+    "endpoints": [
+     {
+      "provider": "OpenInference",
+      "tag": "open-inference/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.02,
+      "output": 0.106042,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Reka",
+      "tag": "reka",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.04,
+      "output": 0.5,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Relace",
+      "tag": "relace",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.07,
+      "output": 0.5,
+      "cached": 0.008,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp8/flex",
+      "tier": "flex",
+      "quant": "fp8",
+      "input": 0.0784,
+      "output": 0.2352,
+      "cached": 0.002352,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/us",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.08,
+      "output": 0.55,
+      "cached": 0.008,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.08,
+      "output": 0.55,
+      "cached": 0.008,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.098,
+      "output": 0.294,
+      "cached": 0.00294,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Morph",
+      "tag": "morph/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.098,
+      "output": 0.6,
+      "cached": 0.007,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Cloudflare",
+      "tag": "cloudflare",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.1,
+      "output": 0.6,
+      "cached": 0.003,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Sail Research",
+      "tag": "sail-research/fp4/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.101,
+      "output": 0.15,
+      "cached": 0.006735,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Sail Research",
+      "tag": "sail-research/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.101,
+      "output": 0.15,
+      "cached": 0.006735,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Wafer",
+      "tag": "wafer/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 0.13,
+      "output": 0.5,
+      "cached": 0.008,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Decart",
+      "tag": "decart/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.1365,
+      "output": 0.546,
+      "cached": 0.00273,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Ionstream",
+      "tag": "ionstream",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.14,
+      "output": 0.39,
+      "cached": 0.012,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp8/priority",
+      "tier": "priority",
+      "quant": "fp8",
+      "input": 0.147,
+      "output": 0.441,
+      "cached": 0.00441,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepSeek",
+      "tag": "deepseek",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.003,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Makora",
+      "tag": "makora/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.15,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "StreamLake",
+      "tag": "streamlake/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.1785,
+      "output": 0.714,
+      "cached": 0.00357,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "GMICloud",
+      "tag": "gmicloud/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.18,
+      "output": 0.72,
+      "cached": 0.0036,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "AtlasCloud",
+      "tag": "atlas-cloud/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.195,
+      "output": 0.78,
+      "cached": 0.0039,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Novita",
+      "tag": "novita/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.195,
+      "output": 0.78,
+      "cached": 0.0039,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks/spot",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.21,
+      "output": 0.84,
+      "cached": 0.0042,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DigitalOcean",
+      "tag": "digitalocean",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.225,
+      "output": 0.9,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Modal",
+      "tag": "modal",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.25,
+      "output": 1,
+      "cached": 0.005,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Baidu",
+      "tag": "baidu/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.28,
+      "output": 1.13,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Crusoe",
+      "tag": "crusoe/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.29,
+      "output": 1.2,
+      "cached": 0.007,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Nebius",
+      "tag": "nebius/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Phala",
+      "tag": "phala",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "SiliconFlow",
+      "tag": "siliconflow/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Together",
+      "tag": "together",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "PrimeIntellect",
+      "tag": "primeintellect",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.007,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Parasail",
+      "tag": "parasail/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.3,
+      "output": 1.2,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Alibaba",
+      "tag": "alibaba",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.33,
+      "output": 1.32,
+      "cached": 0.033,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     }
+    ]
+   },
+   {
+    "id": "z-ai/glm-5.2",
+    "name": "Z.ai: GLM 5.2",
+    "created": 1781631930,
+    "author": "z-ai",
+    "list": {
+     "input": 1.4,
+     "output": 4.4,
+     "cached": 0.26,
+     "from": "builder",
+     "copies": 11
+    },
+    "providers": 25,
+    "timeOfDay": false,
+    "endpoints": [
+     {
+      "provider": "Relace",
+      "tag": "relace",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.0324,
+      "output": 7.1524,
+      "cached": 0.0324,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Wafer",
+      "tag": "wafer/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.0341,
+      "output": 7,
+      "cached": 0.033,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Wafer",
+      "tag": "wafer",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.19,
+      "output": 8,
+      "cached": 0.18,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Cloudflare",
+      "tag": "cloudflare",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.19,
+      "output": 8,
+      "cached": 0.19,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp4/flex",
+      "tier": "flex",
+      "quant": "fp4",
+      "input": 0.45,
+      "output": 1.44,
+      "cached": 0.084,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.5625,
+      "output": 1.8,
+      "cached": 0.105,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Ambient",
+      "tag": "ambient/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.6,
+      "output": 2,
+      "cached": 0.15,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "StreamLake",
+      "tag": "streamlake/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.61306,
+      "output": 1.92676,
+      "cached": 0.113854,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "CoreWeave",
+      "tag": "coreweave/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.62,
+      "output": 2.42,
+      "cached": 0.14,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Novita",
+      "tag": "novita/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.6496,
+      "output": 2.0416,
+      "cached": 0.12064,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Morph",
+      "tag": "morph/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.699,
+      "output": 4.4,
+      "cached": 0.175,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DigitalOcean",
+      "tag": "digitalocean",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.7,
+      "output": 2.2,
+      "cached": 0.105,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "SiliconFlow",
+      "tag": "siliconflow/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.7,
+      "output": 2.2,
+      "cached": 0.13,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "AtlasCloud",
+      "tag": "atlas-cloud/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.938,
+      "output": 2.948,
+      "cached": 0.1742,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Alibaba",
+      "tag": "alibaba/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.966,
+      "output": 3.036,
+      "cached": 0.1932,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Inceptron",
+      "tag": "inceptron/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.99,
+      "output": 2.88,
+      "cached": 0.16,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Alibaba",
+      "tag": "alibaba/fp8/us-east-1",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.12,
+      "output": 3.52,
+      "cached": 0.224,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Decart",
+      "tag": "decart/fast",
+      "tier": "priority",
+      "quant": "fp4",
+      "input": 1.2,
+      "output": 8,
+      "cached": 0.48,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Nebius",
+      "tag": "nebius/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.14,
+      "uptime": 86.67,
+      "status": -2,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Mistral",
+      "tag": "mistral/zdr",
+      "tier": null,
+      "quant": "nvfp4",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.14,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/fp8/us",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.14,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Together",
+      "tag": "together",
+      "tier": null,
+      "quant": "unknown",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Baidu",
+      "tag": "baidu/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.14,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Venice",
+      "tag": "venice/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "GMICloud",
+      "tag": "gmicloud/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Parasail",
+      "tag": "parasail/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Friendli",
+      "tag": "friendli",
+      "tier": null,
+      "quant": "unknown",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Z.AI",
+      "tag": "z-ai/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.4,
+      "output": 4.4,
+      "cached": 0.26,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Mistral",
+      "tag": "mistral/eu",
+      "tier": null,
+      "quant": "unknown",
+      "input": 1.54,
+      "output": 4.84,
+      "cached": 0.154,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/us/fast",
+      "tier": "priority",
+      "quant": "fp8",
+      "input": 2.1,
+      "output": 6.6,
+      "cached": 0.21,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/fast",
+      "tier": "priority",
+      "quant": "fp8",
+      "input": 2.1,
+      "output": 6.6,
+      "cached": 0.21,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Baidu",
+      "tag": "baidu/fast",
+      "tier": "priority",
+      "quant": "fp4",
+      "input": 2.25,
+      "output": 7.88,
+      "cached": 0.56,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Alibaba",
+      "tag": "alibaba/fast",
+      "tier": "priority",
+      "quant": "fp8",
+      "input": 2.31,
+      "output": 7.26,
+      "cached": 0.462,
+      "uptime": 100,
+      "status": -2,
+      "timeOfDay": false
+     }
+    ]
+   },
+   {
+    "id": "moonshotai/kimi-k3",
+    "name": "MoonshotAI: Kimi K3",
+    "created": 1784215858,
+    "author": "moonshotai",
+    "list": {
+     "input": 3,
+     "output": 15,
+     "cached": 0.3,
+     "from": "builder",
+     "copies": 8
+    },
+    "providers": 21,
+    "timeOfDay": false,
+    "endpoints": [
+     {
+      "provider": "Wafer",
+      "tag": "wafer",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 0.2,
+      "output": 20,
+      "cached": 0.19,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Relace",
+      "tag": "relace/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.227,
+      "output": 10.5572,
+      "cached": 0.22,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.239,
+      "output": 10.8,
+      "cached": 0.21,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.239,
+      "output": 10.8,
+      "cached": 0.21,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Wafer",
+      "tag": "wafer/us",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 0.36,
+      "output": 11.9,
+      "cached": 0.359,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/fast",
+      "tier": "priority",
+      "quant": "fp4",
+      "input": 0.5,
+      "output": 11.88,
+      "cached": 0.35,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Makora",
+      "tag": "makora/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.65,
+      "output": 15,
+      "cached": 0.23,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Sail Research",
+      "tag": "sail-research/fp4/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 1.2,
+      "output": 5.5,
+      "cached": 0.2,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Sail Research",
+      "tag": "sail-research/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 1.2,
+      "output": 5.5,
+      "cached": 0.2,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "AkashML",
+      "tag": "akashml/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 1.2,
+      "output": 14,
+      "cached": 1.2,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Morph",
+      "tag": "morph/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 1.521,
+      "output": 25.536,
+      "cached": 0.541,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Decart",
+      "tag": "decart/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 1.65,
+      "output": 8.25,
+      "cached": 0.165,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Chutes",
+      "tag": "chutes/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 1.85,
+      "output": 9.5,
+      "cached": 0.185,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks/spot",
+      "tier": null,
+      "quant": "unknown",
+      "input": 2.1,
+      "output": 10.5,
+      "cached": 0.21,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/us/fast",
+      "tier": "priority",
+      "quant": "fp4",
+      "input": 2.24,
+      "output": 14.519,
+      "cached": 0.35,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Phala",
+      "tag": "phala",
+      "tier": null,
+      "quant": "unknown",
+      "input": 2.55,
+      "output": 12.75,
+      "cached": 0.255,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DigitalOcean",
+      "tag": "digitalocean",
+      "tier": null,
+      "quant": "unknown",
+      "input": 2.55,
+      "output": 12.95,
+      "cached": 0.255,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 2.85,
+      "output": 14.25,
+      "cached": 0.285,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "ParetoAlpha",
+      "tag": "pareto-alpha/us",
+      "tier": null,
+      "quant": "unknown",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Amazon Bedrock",
+      "tag": "amazon-bedrock/us-east-2",
+      "tier": null,
+      "quant": "unknown",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Parasail",
+      "tag": "parasail/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Modal",
+      "tag": "modal/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Together",
+      "tag": "together",
+      "tier": null,
+      "quant": "unknown",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks",
+      "tier": null,
+      "quant": "unknown",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Moonshot AI",
+      "tag": "moonshotai/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 3,
+      "output": 15,
+      "cached": 0.3,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Alibaba",
+      "tag": "alibaba",
+      "tier": null,
+      "quant": "unknown",
+      "input": 3.45,
+      "output": 17.25,
+      "cached": 0.345,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks/us",
+      "tier": null,
+      "quant": "unknown",
+      "input": 4.5,
+      "output": 22.5,
+      "cached": 0.45,
+      "uptime": null,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks/fast",
+      "tier": "priority",
+      "quant": "unknown",
+      "input": 4.5,
+      "output": 22.5,
+      "cached": 0.45,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     }
+    ]
+   },
+   {
+    "id": "openai/gpt-oss-120b",
+    "name": "OpenAI: gpt-oss-120b",
+    "created": 1754414231,
+    "author": "openai",
+    "list": {
+     "input": 0.15,
+     "output": 0.6,
+     "cached": null,
+     "from": "mode",
+     "copies": 7
+    },
+    "providers": 21,
+    "timeOfDay": false,
+    "endpoints": [
+     {
+      "provider": "Near AI",
+      "tag": "near-ai/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.03,
+      "output": 0.15,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Venice",
+      "tag": "venice/int4",
+      "tier": null,
+      "quant": "int4",
+      "input": 0.03,
+      "output": 0.15,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "CoreWeave",
+      "tag": "coreweave/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.03,
+      "output": 0.17,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DekaLLM",
+      "tag": "dekallm/bf16",
+      "tier": null,
+      "quant": "bf16",
+      "input": 0.03,
+      "output": 0.18,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "AkashML",
+      "tag": "akashml/bf16",
+      "tier": null,
+      "quant": "bf16",
+      "input": 0.03,
+      "output": 0.187,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/bf16",
+      "tier": null,
+      "quant": "bf16",
+      "input": 0.037,
+      "output": 0.17,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Crusoe",
+      "tag": "crusoe/bf16",
+      "tier": null,
+      "quant": "bf16",
+      "input": 0.05,
+      "output": 0.25,
+      "cached": 0.05,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Mancer 2",
+      "tag": "mancer/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.05,
+      "output": 0.25,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Novita",
+      "tag": "novita/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.05,
+      "output": 0.25,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DigitalOcean",
+      "tag": "digitalocean",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.06,
+      "output": 0.42,
+      "cached": 0.012,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/fp4/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.1,
+      "output": 0.5,
+      "cached": 0.1,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "BaseTen",
+      "tag": "baseten/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.1,
+      "output": 0.5,
+      "cached": 0.1,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Parasail",
+      "tag": "parasail/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.1,
+      "output": 0.75,
+      "cached": 0.055,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "SambaNova",
+      "tag": "sambanova",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.14,
+      "output": 0.95,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Amazon Bedrock",
+      "tag": "amazon-bedrock/eu-west-1",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Nebius",
+      "tag": "nebius/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "SiliconFlow",
+      "tag": "siliconflow/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.075,
+      "uptime": 76.67,
+      "status": -2,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Phala",
+      "tag": "phala",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Together",
+      "tag": "together",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Groq",
+      "tag": "groq",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.075,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Mara",
+      "tag": "mara",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.75,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Amazon Bedrock",
+      "tag": "amazon-bedrock",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": null,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Cerebras",
+      "tag": "cerebras/fp16",
+      "tier": null,
+      "quant": "fp16",
+      "input": 0.35,
+      "output": 0.75,
+      "cached": 0.35,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     }
+    ]
+   },
+   {
+    "id": "minimax/minimax-m3.1-flash",
+    "name": "MiniMax: MiniMax M3.1 Flash",
+    "created": 1792379569,
+    "author": "minimax",
+    "list": {
+     "input": 0.15,
+     "output": 0.6,
+     "cached": 0.015,
+     "from": "builder",
+     "copies": 10
+    },
+    "providers": 10,
+    "timeOfDay": true,
+    "endpoints": [
+     {
+      "provider": "GMICloud",
+      "tag": "gmicloud/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.1425,
+      "output": 0.57,
+      "cached": 0.01425,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DigitalOcean",
+      "tag": "digitalocean",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Novita",
+      "tag": "novita/fp16",
+      "tier": null,
+      "quant": "fp16",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Nebius",
+      "tag": "nebius/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 96.3,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "SambaNova",
+      "tag": "sambanova",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "ModelRun",
+      "tag": "modelrun/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Parasail",
+      "tag": "parasail/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "InferenceNet",
+      "tag": "inference-net/fp4/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Together",
+      "tag": "together",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Minimax",
+      "tag": "minimax",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     }
+    ]
+   }
+  ]
+ },
+ "gpu": {
+  "asOf": "2026-11-10",
+  "skus": [
+   {
+    "sku": "H100",
+    "offers": 14,
+    "gpus": 25,
+    "verifiedShare": 0.643,
+    "min": 2.001,
+    "p25": 2.085,
+    "median": 2.202,
+    "p75": 2.309,
+    "max": 4.081
+   },
+   {
+    "sku": "H200",
+    "offers": 14,
+    "gpus": 19,
+    "verifiedShare": 0.357,
+    "min": 1.976,
+    "p25": 3.162,
+    "median": 3.718,
+    "p75": 4.344,
+    "max": 6.06
+   },
+   {
+    "sku": "B200",
+    "offers": 10,
+    "gpus": 17,
+    "verifiedShare": 0.6,
+    "min": 5.501,
+    "p25": 7.001,
+    "median": 8.492,
+    "p75": 11.098,
+    "max": 12.51
+   }
+  ]
+ },
+ "ladders": {
+  "asOf": "2026-11-10",
+  "curves": [
+   {
+    "ticker": "KXH100MS",
+    "label": "H100",
+    "unit": "$/GPU-hour",
+    "events": [
+     {
+      "event": "KXH100MS-26DEC",
+      "month": "2026-12",
+      "median": {
+       "value": 3.259,
+       "censored": null
+      },
+      "medianBid": 3.194,
+      "medianAsk": 3.346,
+      "mean": 3.346,
+      "volume": 8228,
+      "openInterest": 4281,
+      "quotedAt": "2026-09-09",
+      "strikes": [
+       {
+        "k": 2,
+        "bid": 0.95,
+        "ask": 0.99,
+        "p": 0.97
+       },
+       {
+        "k": 2.25,
+        "bid": 0.94,
+        "ask": 1,
+        "p": 0.97
+       },
+       {
+        "k": 2.5,
+        "bid": 0.8,
+        "ask": 0.9,
+        "p": 0.85
+       },
+       {
+        "k": 2.75,
+        "bid": 0.8,
+        "ask": 0.89,
+        "p": 0.845
+       },
+       {
+        "k": 3,
+        "bid": 0.64,
+        "ask": 0.72,
+        "p": 0.68
+       },
+       {
+        "k": 3.25,
+        "bid": 0.46,
+        "ask": 0.55,
+        "p": 0.505
+       },
+       {
+        "k": 3.5,
+        "bid": 0.32,
+        "ask": 0.42,
+        "p": 0.37
+       },
+       {
+        "k": 3.75,
+        "bid": 0.26,
+        "ask": 0.36,
+        "p": 0.31
+       },
+       {
+        "k": 4,
+        "bid": 0.13,
+        "ask": 0.21,
+        "p": 0.17
+       }
+      ]
+     },
+     {
+      "event": "KXH100MS-27MAR",
+      "month": "2027-03",
+      "median": {
+       "value": 2.771,
+       "censored": null
+      },
+      "medianBid": 2.607,
+      "medianAsk": 2.875,
+      "mean": 3.119,
+      "volume": 1847,
+      "openInterest": 400,
+      "quotedAt": "2026-09-09",
+      "strikes": [
+       {
+        "k": 2,
+        "bid": 0.74,
+        "ask": 0.84,
+        "p": 0.79
+       },
+       {
+        "k": 2.25,
+        "bid": 0.66,
+        "ask": 0.76,
+        "p": 0.71
+       },
+       {
+        "k": 2.5,
+        "bid": 0.53,
+        "ask": 0.63,
+        "p": 0.58
+       },
+       {
+        "k": 2.75,
+        "bid": 0.46,
+        "ask": 0.56,
+        "p": 0.51
+       },
+       {
+        "k": 3,
+        "bid": 0.34,
+        "ask": 0.44,
+        "p": 0.39
+       },
+       {
+        "k": 3.25,
+        "bid": 0.26,
+        "ask": 0.36,
+        "p": 0.31
+       },
+       {
+        "k": 3.5,
+        "bid": 0.2,
+        "ask": 0.3,
+        "p": 0.25
+       },
+       {
+        "k": 3.75,
+        "bid": 0.15,
+        "ask": 0.25,
+        "p": 0.2
+       },
+       {
+        "k": 4,
+        "bid": 0.12,
+        "ask": 0.22,
+        "p": 0.17
+       }
+      ]
+     },
+     {
+      "event": "KXH100MS-27JUL",
+      "month": "2027-07",
+      "median": {
+       "value": 2.625,
+       "censored": null
+      },
+      "medianBid": 2.542,
+      "medianAsk": 2.708,
+      "mean": 3.042,
+      "volume": 42641,
+      "openInterest": 22639,
+      "quotedAt": "2026-09-09",
+      "strikes": [
+       {
+        "k": 2,
+        "bid": 0.65,
+        "ask": 0.73,
+        "p": 0.69
+       },
+       {
+        "k": 2.25,
+        "bid": 0.6,
+        "ask": 0.68,
+        "p": 0.64
+       },
+       {
+        "k": 2.5,
+        "bid": 0.52,
+        "ask": 0.6,
+        "p": 0.56
+       },
+       {
+        "k": 2.75,
+        "bid": 0.4,
+        "ask": 0.48,
+        "p": 0.44
+       },
+       {
+        "k": 3,
+        "bid": 0.35,
+        "ask": 0.43,
+        "p": 0.39
+       },
+       {
+        "k": 3.25,
+        "bid": 0.29,
+        "ask": 0.37,
+        "p": 0.33
+       },
+       {
+        "k": 3.5,
+        "bid": 0.22,
+        "ask": 0.3,
+        "p": 0.26
+       },
+       {
+        "k": 3.75,
+        "bid": 0.15,
+        "ask": 0.23,
+        "p": 0.19
+       },
+       {
+        "k": 4,
+        "bid": 0.12,
+        "ask": 0.2,
+        "p": 0.16
+       }
+      ]
+     },
+     {
+      "event": "KXH100MS-27AUG",
+      "month": "2027-08",
+      "median": {
+       "value": 2.464,
+       "censored": null
+      },
+      "medianBid": 2.286,
+      "medianAsk": 2.75,
+      "mean": 2.886,
+      "volume": 1269,
+      "openInterest": 1036,
+      "quotedAt": "2026-09-09",
+      "strikes": [
+       {
+        "k": 1,
+        "bid": 0.88,
+        "ask": 0.98,
+        "p": 0.93
+       },
+       {
+        "k": 1.25,
+        "bid": 0.82,
+        "ask": 0.91,
+        "p": 0.865
+       },
+       {
+        "k": 1.5,
+        "bid": 0.73,
+        "ask": 0.83,
+        "p": 0.78
+       },
+       {
+        "k": 1.75,
+        "bid": 0.65,
+        "ask": 0.75,
+        "p": 0.7
+       },
+       {
+        "k": 2,
+        "bid": 0.58,
+        "ask": 0.68,
+        "p": 0.63
+       },
+       {
+        "k": 2.25,
+        "bid": 0.51,
+        "ask": 0.61,
+        "p": 0.56
+       },
+       {
+        "k": 2.5,
+        "bid": 0.44,
+        "ask": 0.54,
+        "p": 0.49
+       },
+       {
+        "k": 2.75,
+        "bid": 0.4,
+        "ask": 0.5,
+        "p": 0.45
+       },
+       {
+        "k": 3,
+        "bid": 0.34,
+        "ask": 0.44,
+        "p": 0.39
+       },
+       {
+        "k": 3.25,
+        "bid": 0.3,
+        "ask": 0.4,
+        "p": 0.35
+       },
+       {
+        "k": 3.5,
+        "bid": 0.25,
+        "ask": 0.35,
+        "p": 0.3
+       },
+       {
+        "k": 3.75,
+        "bid": 0.23,
+        "ask": 0.33,
+        "p": 0.28
+       },
+       {
+        "k": 4,
+        "bid": 0.18,
+        "ask": 0.28,
+        "p": 0.23
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "power": {
+  "asOf": "2026-11-10",
+  "realTimeLatest": 36.11,
+  "realTimeAvg": 32.32,
+  "realTimeMin": 28.37,
+  "realTimeMax": 36.11,
+  "dayAheadAvg": null
+ },
+ "twse": null
+}

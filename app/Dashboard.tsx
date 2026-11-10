@@ -3,8 +3,17 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { axisLabels, HORIZON_LABEL, HORIZONS, prices, signals, type Horizon } from "./content/signals";
+import { currentFeeds, feeds, fmtDate } from "./content/live";
+import BreakevenThroughput from "./site/charts/BreakevenThroughput";
+import CapitalStack from "./site/charts/CapitalStack";
 import ChangeBars from "./site/charts/ChangeBars";
+import CreditLadder from "./site/charts/CreditLadder";
 import CrossMarket from "./site/charts/CrossMarket";
+import DataStatus from "./site/charts/DataStatus";
+import ForwardCurve from "./site/charts/ForwardCurve";
+import MarketDepth from "./site/charts/MarketDepth";
+import ResidualValue from "./site/charts/ResidualValue";
+import TenorCurve from "./site/charts/TenorCurve";
 import LinkageMap from "./site/charts/LinkageMap";
 import PriceChart from "./site/charts/PriceChart";
 import PriceStack from "./site/charts/PriceStack";
@@ -39,6 +48,9 @@ const unknowns = [
   { market: "Advanced packaging slots", last: "Capacity estimate · Q2", next: "Supplier updates", tier: "Industry estimate", confidence: "Medium", guide: "silicon" },
   { market: "Powered land · $/MW", last: "3 verified records", next: "Deeds + PUC dockets", tier: "Primary records", confidence: "Medium", guide: "data-centers" },
   { market: "Project loan spreads", last: "Selected deal reports", next: "Rating presales", tier: "Professional reporting", confidence: "Low", guide: "financing" },
+  { market: "Used-accelerator resale prices", last: "3,009 sales in 3 years · CCIR", next: "First residual-backed ABS", tier: "Benchmark administrator", confidence: "Low", guide: "collateral" },
+  { market: "Single-name CDS · build-out borrowers", last: "Reported in press · Oct–Nov 2026", next: "Earnings and bond deals", tier: "Licensed data via press", confidence: "Medium", guide: "commodity" },
+  { market: "Prepayment and tenor terms", last: "20–50% of contract · anecdotal", next: "Operator filings", tier: "Practitioner accounts", confidence: "Low", guide: "collateral" },
   { market: "Cache-hit rate by inference provider", last: "One independent canary study", next: "Router audits or attestations", tier: "Independent research", confidence: "Low", guide: "souq" },
   { market: "Accelerator transaction prices", last: "List prices; allocation private", next: "Customer 10-K commitments", tier: "Company disclosure", confidence: "Low", guide: "silicon" },
 ];
@@ -68,6 +80,7 @@ export default function Dashboard() {
         <a className="brand" href={url("")}><span className="brand-mark">O</span><span>Open Compute Markets</span></a>
         <nav aria-label="Primary navigation">
           <a className="active" href="#markets">Markets</a>
+          <a href="#credit">Credit &amp; term</a>
           <a href="#wiring">Wiring</a>
           <a href="#chain">Supply chain</a>
           <a href={url("guide/")}>Guide</a>
@@ -78,9 +91,9 @@ export default function Dashboard() {
       </header>
 
       <section className="hero" id="overview">
-        <div className="eyebrow"><span className="pulse" /> RESEARCH PREVIEW · ILLUSTRATIVE DATA</div>
+        <div className="eyebrow"><span className="pulse" /> RESEARCH PREVIEW · {currentFeeds} OF {feeds.length} PUBLIC FEEDS CURRENT · EVERYTHING ELSE LABELLED</div>
         <h1>Where AI infrastructure<br />meets the market.</h1>
-        <p className="lede">An open, evidence-first view of every market in the AI compute chain — from lithography and memory to power, GPU-hours, compute futures, and the open-weight token market — with the markets nobody can observe marked as gaps rather than filled with guesses.</p>
+        <p className="lede">An open, evidence-first view of every market in the AI compute chain — from lithography and memory to power, GPU-hours, the credit that finances them, and the open-weight token market — on public data where it exists, with the markets nobody can observe marked as gaps rather than filled with guesses.</p>
         <div className="hero-meta"><span><b>{signals.length}</b> indicators shown</span><i /><span><b>12</b> supply-chain layers</span><i /><span><b>{guide.length}</b> guide chapters</span></div>
         <div className="orbit" aria-hidden="true"><span /><span /><span /><b>OCMO</b></div>
       </section>
@@ -117,7 +130,7 @@ export default function Dashboard() {
             const change = signal.change?.[horizon];
             const direction = change === undefined ? "flat" : change >= 0 ? "up" : "down";
             return (
-              <article className="signal-card" key={signal.id}>
+              <article className={`signal-card ${signal.provenance}`} key={signal.id}>
                 <div className="card-top">
                   <span className="layer-label">{signal.layer}</span>
                   <span className={`evidence ${signal.fit.toLowerCase()}`}>{signal.availability}</span>
@@ -127,7 +140,12 @@ export default function Dashboard() {
                   <strong>{signal.latest !== undefined && signal.format ? signal.format(signal.latest) : "—"}</strong>
                   <span>{signal.unit}</span>
                 </div>
-                {series && change !== undefined && signal.format ? (
+                {signal.provenance === "gap" ? (
+                  <div className="gap-state">
+                    <b>No public series</b>
+                    <span>{signal.gapNote}</span>
+                  </div>
+                ) : series && change !== undefined && signal.format ? (
                   <>
                     <span className={`change ${direction}`}>
                       {direction === "up" ? "↗" : "↘"} {change >= 0 ? "+" : "−"}{Math.abs(change).toFixed(1)}% · {HORIZON_LABEL[horizon]}
@@ -135,16 +153,20 @@ export default function Dashboard() {
                     <Sparkline points={series} direction={direction as "up" | "down"} format={signal.format} labels={axisLabels(horizon)} />
                   </>
                 ) : (
-                  <div className="gap-state">
-                    <b>No public series</b>
-                    <span>The contract market is bilateral. Absence is the observation.</span>
+                  <div className="gap-state collecting">
+                    <b>History is being recorded</b>
+                    <span>This source only publishes the present. The observatory stores one observation a day; a series appears here once two of them fall inside the selected window.</span>
                   </div>
                 )}
                 <p>{signal.relevance}</p>
                 <footer>
                   <a className="card-guide" href={url(`guide/${signal.guide}/`)}>Understand this →</a>
-                  <b title="Interest score">{signal.score}</b>
+                  <span className={`prov-mini ${signal.provenance}`} title={signal.source}>
+                    {signal.provenance === "live" ? "LIVE" : signal.provenance === "seed" ? "SEED" : signal.provenance === "gap" ? "GAP" : "ILLUSTRATIVE"}
+                    {signal.asOf ? ` · ${fmtDate(signal.asOf)}` : ""}
+                  </span>
                 </footer>
+                <small className="card-source">{signal.source}</small>
               </article>
             );
           })}
@@ -168,7 +190,28 @@ export default function Dashboard() {
             </div>
           ))}
         </div>
-        <p className="data-caveat">Preview figures demonstrate the interface and evidence model; connect approved source adapters before treating them as current observations.</p>
+        <p className="data-caveat">Cards marked LIVE or SEED are observations from the public feeds listed under Methods, with their dates. Cards marked ILLUSTRATIVE, and the posted-price chart above, are synthetic previews for markets with no keyless public source yet.</p>
+      </section>
+
+      <section className="credit" id="credit">
+        <div className="section-head">
+          <div><span className="kicker">CREDIT &amp; TERM STRUCTURE</span><h2>What is the hour worth,<br />and who can sign for it?</h2></div>
+          <p>Compute behaves like a commodity and is financed like a credit.<br />These charts separate the asset from the borrower.</p>
+        </div>
+        <div className="wiring-grid">
+          <div className="wiring-pair even">
+            <ForwardCurve />
+            <TenorCurve />
+          </div>
+          <div className="wiring-pair even">
+            <ResidualValue />
+            <CapitalStack />
+          </div>
+          <div className="wiring-pair even">
+            <CreditLadder />
+            <MarketDepth />
+          </div>
+        </div>
       </section>
 
       <section className="wiring" id="wiring">
@@ -179,12 +222,13 @@ export default function Dashboard() {
         <div className="wiring-grid">
           <LinkageMap />
           <TokenLadder />
+          <BreakevenThroughput />
           <div className="wiring-pair">
             <CrossMarket horizon={horizon} />
             <PriceStack />
           </div>
         </div>
-        <p className="data-caveat">The linkage map is drawn from the guide&apos;s transmission table; the souq and price-stack figures are illustrative parameters, not observations.</p>
+        <p className="data-caveat">The linkage map is drawn from the guide&apos;s transmission table. The souq and silicon-spread charts use public quotes; the cross-market ledger is a synthetic preview until an equities key is configured; the price stack is a calculator.</p>
       </section>
 
       <section className="chain" id="chain">
@@ -236,7 +280,7 @@ export default function Dashboard() {
         <div className="unknown-list">
           {unknowns.map((u, i) => (
             <article key={u.market}>
-              <span className="unknown-num">0{i + 1}</span>
+              <span className="unknown-num">{String(i + 1).padStart(2, "0")}</span>
               <div><h3><a href={url(`guide/${u.guide}/`)}>{u.market}</a></h3><p>Last credible observation: {u.last}</p></div>
               <div><small>NEXT DISCLOSURE</small><b>{u.next}</b></div>
               <div><small>SOURCE TIER</small><b>{u.tier}</b></div>
@@ -258,10 +302,13 @@ export default function Dashboard() {
           <div className="method-detail">
             <p><b>Interest score:</b> magnitude 30% · historical rarity 20% · cross-source confirmation 20% · supply-chain centrality 15% · source confidence 10% · recency 5%.</p>
             <p><b>Verification:</b> a community observation needs two independent sources or one primary document. Licensed and private sources default to link-out.</p>
+            <p><b>Data:</b> a scheduled job fetches public, keyless endpoints once a day, commits a snapshot and appends to a history file, then rebuilds the site. Nothing is fetched in your browser. A feed that fails keeps its last values and is marked stale. Sources that only publish the present gain a history here, one row a day.</p>
             <p><b>Charts:</b> categorical hues carry identity only; direction uses a diverging blue/red pair with the sign printed on every mark, so nothing depends on colour alone. Every plotted value is also in a table.</p>
           </div>
         )}
       </section>
+
+      <section className="status-panel" id="data"><DataStatus /></section>
 
       <section className="learn" id="learn">
         <div className="section-head">

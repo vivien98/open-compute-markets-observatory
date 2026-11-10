@@ -1,12 +1,15 @@
-name: Deploy dashboard to GitHub Pages
+name: Refresh data and deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  # Daily refresh of the public data feeds, then a redeploy.
+  schedule:
+    - cron: "17 13 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # the scheduled run commits the refreshed snapshot and history
   pages: write
   id-token: write
 
@@ -25,7 +28,33 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
+
+      # Fails soft: a feed that errors keeps its last data and is marked stale
+      # on the site, so a broken source never blocks a deploy.
+      - name: Refresh data from public sources
+        run: npm run data:fetch
+        env:
+          # Optional. Without it the equities feed is skipped.
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+
+      # History only grows on scheduled and manual runs, so ordinary pushes do
+      # not each add a data commit. The build below uses the fresh data either way.
+      - name: Commit refreshed data
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "observatory-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/content/live data/history
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: refresh $(date -u +%F)"
+            git pull --rebase --autostash origin main
+            git push || echo "::warning::Could not push refreshed data; deploying anyway."
+          fi
+
       - run: npm run lint
+      - run: npm run test:data
       # Renders every page to a string: a runtime error fails here rather than
       # deploying a blank page.
       - run: npm run test:pages

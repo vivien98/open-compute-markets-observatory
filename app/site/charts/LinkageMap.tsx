@@ -7,7 +7,7 @@ import { url } from "../nav";
 
 /**
  * The market linkage graph: nodes are markets and the firms that sit on them,
- * edges are transmission channels from the guide's Chapter 14.
+ * edges are transmission channels from the guide's chapter on market linkages.
  *
  * Country is identity, so it is categorical and fixed-order; "Global" is the
  * hollow "other" slot rather than a seventh hue. Every node carries its label,
@@ -24,10 +24,10 @@ export default function LinkageMap() {
   const [active, setActive] = useState<string | null>(null);
 
   const W = 1040;
-  const H = 440;
+  const H = 470;
   const M = { top: 34, right: 70, bottom: 18, left: 70 };
   const colX = (c: number) => M.left + (c / (COLS.length - 1)) * (W - M.left - M.right);
-  const rowY = (r: number) => M.top + (r / 4.2) * (H - M.top - M.bottom);
+  const rowY = (r: number) => M.top + (r / 4.5) * (H - M.top - M.bottom);
   const pos = new Map(nodes.map((n) => [n.id, { x: colX(n.col), y: rowY(n.row) }]));
 
   const touching = (id: string) => (e: { from: string; to: string }) => e.from === id || e.to === id;

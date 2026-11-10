@@ -16,8 +16,8 @@ export default function ChangeBars({ data, horizon }: { data: Signal[]; horizon:
   const [active, setActive] = useState<number | null>(null);
 
   const rows = data
-    .filter((s): s is Signal & { change: Record<Horizon, number> } => Boolean(s.change))
-    .map((s) => ({ signal: s, value: s.change[horizon] }))
+    .filter((s) => s.change?.[horizon] !== undefined)
+    .map((s) => ({ signal: s, value: s.change![horizon]! }))
     .sort((a, b) => b.value - a.value);
 
   const extent = Math.max(...rows.map((r) => Math.abs(r.value))) * 1.25;
@@ -27,7 +27,7 @@ export default function ChangeBars({ data, horizon }: { data: Signal[]; horizon:
       <div className="chart-head">
         <div>
           <h3>What moved · {HORIZON_LABEL[horizon]}</h3>
-          <p>Percent change over the selected horizon, ranked. Unobserved markets are excluded.</p>
+          <p>Percent change over the selected horizon, ranked. Unobserved markets, and feeds with too little history for this window, are excluded.</p>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ export default function ChangeBars({ data, horizon }: { data: Signal[]; horizon:
               onPointerEnter={() => setActive(i)}
               onPointerLeave={() => setActive(null)}
             >
-              <span className="bar-name">{row.signal.title}</span>
+              <span className="bar-name">{row.signal.title}{row.signal.provenance === "illustrative" && <small> · illustrative</small>}</span>
               <span className="bar-track">
                 <i className="bar-zero" aria-hidden="true" />
                 <i

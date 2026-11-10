@@ -2,7 +2,7 @@
 import { run } from "../dist-smoke/smoke-entry.js";
 
 const EXPECT = {
-  "/": ["Open Compute Markets", "H100 marketplace ask", "Understand the whole chain", "/guide/silicon/", "How the markets are wired", "The souq", "From electrons to tokens", "/guide/souq/"],
+  "/": ["Open Compute Markets", "H100 marketplace ask", "Understand the whole chain", "/guide/silicon/", "How the markets are wired", "The souq", "From electrons to tokens", "/guide/souq/", "forward curve implied", "The tenor curve", "What a residual value is worth", "Who finances day one", "The price of credit", "DATA FEEDS"],
   "/guide/": ["How compute markets", "The silicon supply chain", "CapEx"],
   "/glossary/": ["Say it precisely", "CapEx", "Depreciation", "EBITDA"],
   "/sources/": ["Go to the primary", "asml.com", "iea.org"],
@@ -12,6 +12,8 @@ const EXPECT = {
   "/guide/souq/": ["Tullock", "cached", "harness", "robvc.com"],
   "/guide/token-prices/": ["crack spread", "futures", "GPU-hour"],
   "/guide/linkages/": ["Taiwan", "transmission"],
+  "/guide/collateral/": ["Residual value", "prepayment", "sec.gov", "CCIR"],
+  "/guide/commodity/": ["credit default swap", "tenor curve", "clearinghouse", "silicon spread"],
 };
 
 let failures = 0;

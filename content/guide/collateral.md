@@ -1,0 +1,129 @@
+---
+slug: collateral
+title: Collateral, residual value, and the credit box
+heading: Collateral, residual value, and the credit box
+label: Collateral & residuals
+cluster: Money
+summary: Why the binding constraint on a small compute buyer is credit rather than chips, what a lender actually underwrites, why nobody will put a number on a used GPU, and what a missing price does to the cost of capital.
+---
+
+{ch:financing} listed the instruments: equity, bonds, leases, take-or-pay, project finance. This chapter is about the thing those instruments are secured on. It starts from a simple observation made by people who buy clusters for a living: if you have enough money, the famous physical bottlenecks mostly dissolve. Lead times are quoted at thirty weeks and shrink to fourteen for a buyer who pays or matters enough. What does not shrink is the bank's term sheet. The argument here follows Eugene Ye's essay [Let's talk about how you buy compute these days](https://wafer.substack.com/p/lets-talk-about-how-you-actually) (Peak FLOPS, September 2026), which is the clearest practitioner account of the problem, and then tests it against the filings it cites. One disclosure belongs at the top: the author works at an inference provider, and an inference provider benefits from cheaper GPU financing. That does not make the argument wrong. It is a reason to check the arithmetic, which is done below.
+
+## How a cluster is actually bought
+
+Buying a thousand accelerators is four negotiations, not one.
+
+- **Allocation.** The chip designer decides who gets parts from which shipment. Being attached to a very large order helps; so does a relationship.
+- **The build.** An OEM or ODM quotes a server configuration: accelerators, CPUs, memory, network cards, air or liquid cooling. The quote moves when the chip designer leans on it. Builds are made to order, so parts are bought only after the contract is signed and the buyer cannot test the machines first.
+- **Colocation.** Someone has to have power and floor space. The site that had capacity last month may be full; the alternative may be in another country.
+- **Finance.** The colocation or neocloud operator turns the whole thing into a contract: a price per GPU-hour, a term of three to five years, a percentage paid up front, and a service-level agreement.
+
+The first three are logistics and can be solved with money and patience. The fourth is where a small buyer stops. A representative offer, in the essay's telling, is 50% down on a three-year contract at $4.50 per GPU-hour with 95% uptime. The interesting question is why the down payment is so large, and the answer is the subject of this chapter.
+
+## The worked example, with the denominators restored
+
+Take the essay's example: 128 nodes of eight B300 accelerators each, five years, $3.50 per GPU-hour, 30% down.
+
+| Quantity | Calculation | Result |
+| Accelerators | 128 × 8 | 1,024 |
+| Hourly revenue to the operator | 1,024 × $3.50 | $3,584 per hour |
+| Annual contract value | × 8,760 hours | $31.4 million per year |
+| Total contract value (TCV) | × 5 years | $157.0 million |
+| Down payment | 30% of TCV | $47.1 million |
+| Power, including cooling | Essay's estimate | about 2.5 MW |
+| Capacity cost per MW-year | $31.4M ÷ 2.5 MW | $12.6 million per MW-year |
+
+The last row is worth pausing on, because it ties this example back to {ch:accounting}: $12.6 million per MW-year is the same order as the $15 million per MW-year capacity cost used there. The contract is not exotic. It is the industry's ordinary price, expressed for a small buyer.
+
+The essay then compares the $157 million with what a frontier lab would earn on the same power, about $50 million per MW, and concludes that the buyer pays $32 million more than the cluster can earn. That comparison drops a denominator. Revenue of $50 million per MW is a figure per MW-year. On 2.5 MW it is $125 million per year, or $625 million over the five years the contract runs, against a five-year cost of $157 million. A buyer who really monetized like a frontier lab would be very happy with this contract.
+
+The real problem is narrower and more serious. First, almost nobody monetizes like a frontier lab. Second, and decisively, $47.1 million has to leave the buyer's bank account before the first token is served, roughly eight to sixteen weeks before the cluster is ready for service, for hardware the buyer has never seen. The constraint is not the lifetime economics. It is the timing and the size of the cash that must be put at risk first. That is a credit problem.
+
+## What the lender underwrites
+
+To see where the down payment comes from, look at the deal from the lender's side. Vishwa Naik's essay [A Tale of Two Computes](https://aneralabs.substack.com/p/a-tale-of-two-computes) describes the standard structure for a megawatt-scale cluster, and it is consistent with what the public loan documents show.
+
+- A senior asset-backed lender funds 70% to 80% of the cluster's bill of materials.
+- The operator must bring the remaining 20% to 30%, plus a reserve of about three months of debt service.
+- The lender releases money only against contracted cash flow from a creditworthy customer. No contract, no cluster. The more senior debt in the structure, the longer the contract the lender wants.
+
+Now the down payment makes sense. Most customers in this market are not investment grade, so the operator asks for a prepayment of 20% to 50% of total contract value. The prepayment does two jobs at once. It substitutes for the customer's missing credit rating, because the operator holds a year of revenue before delivering anything. And it funds the operator's own equity in the cluster. On the example above, a 30% prepayment on a three-year version of the contract is about $28 million; if the hardware costs something like $60 million, the operator's 25% equity share is $15 million. The customer's prepayment covers it with room to spare.
+
+Read that again as a claim about who finances what. The lender finances the hardware against the customer's promise. The customer finances the operator's equity with an interest-free advance. The operator ends up owning a cluster that is fully paid for at the end of the contract, plus whatever it is worth then. The party with the least access to capital, the startup that wants the compute, supplies the riskiest money in the structure and gets no claim on the asset in return.
+
+Two refinements are appearing. Bridge lenders will advance the operator's equity against a signed contract and be repaid at delivery, which helps the operator but not the customer. And the largest customers are pushing back, asking for smaller prepayments or for the prepayment to be credited evenly each month instead of against the final year.
+
+The price of the debt is quoted as a spread over [SOFR](https://www.newyorkfed.org/markets/reference-rates/sofr), the overnight rate that anchors dollar lending, which stood at 3.88% on 9 November 2026. Lambda's 2026 term loan, backed by an investment-grade customer, priced at SOFR plus 300 basis points, about 6.9%. The essay's figure for a startup borrowing against GPUs without such a customer is SOFR plus 900, about 12.9%, and it is careful to say that this number is the author's own and not published data. {ch:rates} explains the decomposition of a borrowing rate into benchmark, term premium, and credit spread; here the entire difference is credit.
+
+## Residual value: the missing number
+
+Residual value is what an asset is worth at the end of the period over which it was financed. A car coming off a three-year lease is worth something: the car itself, or at worst its parts. Lease pricing depends on that number, because the lessee only has to pay for the value the car loses, not for the whole car.
+
+For accelerators, lenders assume the number is zero. The loan is sized on contracted cash flow and amortizes to nothing by the end of the contract. Lambda's loan, for example, fully amortizes to a 2030 maturity that the company describes as aligned with the contracted cash flows and the useful life of the infrastructure. This is not because anyone believes a five-year-old accelerator is worthless. It is because there is no liquid public market from which a lender could defend any other number to a credit committee or a rating agency.
+
+The cost of that zero can be computed. Suppose an accelerator costs $60,000 installed, is financed over five years, and must earn back its capital cost through its hourly rate. The table gives the required capital recovery per GPU-hour, before power, space, and operations, under different financing rates and residual assumptions. The numbers are illustrative; the dashboard has a live version with every input adjustable.
+
+| Residual value at year 5 | At SOFR + 300 (6.9%) | At SOFR + 900 (12.9%) |
+| 0% (what lenders assume) | $1.67 per hour | $1.94 per hour |
+| 20% | $1.43 per hour | $1.73 per hour |
+| 40% | $1.19 per hour | $1.52 per hour |
+
+Two things stand out. Moving from the startup's spread to the investment-grade spread saves about $0.28 per hour. Being able to underwrite a 40% residual saves about $0.42 to $0.48 per hour. A credible residual value is worth more to the borrower than six hundred basis points of spread. And the two compound, because a lender that can rely on resale value can also lend a larger share of the purchase price and ask for a smaller prepayment.
+
+There is a second effect that matters more for market structure than for any one deal. Without a residual value, the loan cannot be turned into a security. Asset-backed securities for cars, aircraft, and equipment all depend on an independent estimate of what the collateral will fetch. Securitization is what lets a lender sell the loan on and lend again, and it is what brings the cost of capital for small borrowers closer to that of large ones. Until a GPU has a defensible resale number, compute lending stays on the balance sheets of a few specialist lenders at specialist prices.
+
+## What the public deals say
+
+If any lender were underwriting hardware value, it would show in the largest public transactions. Peak FLOPS read three of them, and the documents are linked so the reading can be checked.
+
+| Deal | Terms as disclosed | What anchors the credit |
+| [NVIDIA Residual Value Guaranty](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda2027q2ex101.htm), August 2026 | Guaranteed minimum value capped at $105 billion on about 4.25 GW of data centers built by SB Energy with OpenAI as tenant ([8-K](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm)) | The guaranteed value is defined as data center, power, and transmission costs. NVIDIA's own equipment sits in a separate repossession clause outside the guaranteed amount. |
+| [Lambda senior secured term loan B](https://lambda.ai/blog/lambda-prices-926-million-senior-secured-term-loan-b-facility), August 2026 | $926 million at SOFR + 3.00%, issued at 99.5, rated Baa2, fully amortizing to the end of 2030 | Secured by GPU servers and their cash flows, but "dedicated to an investment-grade offtaker." |
+| [CoreWeave delayed-draw term loan](https://www.sec.gov/Archives/edgar/data/1769628/000176962826000129/ex991.htm), March 2026 | $8.5 billion, rated A3 by Moody's, described as the first investment-grade rated GPU-backed financing; drawn as GPUs are delivered against a specific customer contract | The customer contract. A full-text search of the newest [credit agreement](https://www.sec.gov/Archives/edgar/data/1769628/000176962826000357/ex101creditagreement.htm) finds 35 uses of "GPU" and none of appraisal, residual value, orderly liquidation, advance rate, loan-to-value, borrowing base, or remarket. |
+
+The first row is the most instructive. The one company that knows most about what an accelerator will be worth, and has the largest balance sheet in the industry, wrote a document called a residual value guaranty and guaranteed the building and the power, not the chips. The third row says the same thing by omission: the largest body of GPU-backed lending on the public record contains none of the vocabulary a lender uses to value hardware against an outside reference.
+
+In all three, the loan is a claim on a customer contract that happens to have accelerators attached. The phrase "GPU-backed" describes the security package, not the underwriting.
+
+## How other markets price a used asset
+
+A used car can be priced against the [Manheim Used Vehicle Value Index](https://site.manheim.com/en/services/consulting/used-vehicle-value-index.html), built from more than five million wholesale auction transactions a year. The index is sturdy enough that a prediction market has listed contracts that settle on it. Aircraft finance works differently but arrives at the same place: independent appraisers publish values for each aircraft type and age, and loan covenants test the loan against those values. In both cases a lender can point to a price for the thing itself that did not come from the borrower.
+
+It helps to think of the evidence for a price as a ladder with three rungs.
+
+| Rung | What it is | Where compute hardware stands |
+| Model | A value computed from assumptions | Silicon Data's [GPU Residual Value](https://www.silicondata.com/products/gpu-residual-value), launched in August 2026, discounts forward rental rates from its own curve, net of operating cost, with utilization decaying as newer chips arrive. |
+| Quote | A price someone says they would trade at | [Compute Exchange](https://compute.exchange/hardware-market) opened a used-GPU marketplace in July 2026 that publishes price ranges from supplier quotes and introduces buyers to sellers. It takes no custody and calls its prices reference only. |
+| Print | A price at which a trade actually happened | [CCIR](https://ccir.io/hardware), a benchmark administrator, has three years of executed used-GPU sales: 3,009 listings, 10,911 units, $26.3 million. |
+
+The model is a real number, and it is not a price. It answers what an accelerator is worth to whoever keeps running it. A lender after a default needs to know what the accelerator will fetch when it must be sold, and those are different questions. Economists call the first value in use and the second value in exchange, and the gap between them is exactly what a market exists to close.
+
+The scale of the top rung is the finding. Three years of the entire documented used-GPU market comes to about 0.3% of one CoreWeave loan facility. Manheim sees more transactions in a morning. The dashboard draws this comparison on a logarithmic axis because it does not fit on a linear one.
+
+There are engineering reasons the gap will be hard to close. A used accelerator is not a standard object. Its value depends on its generation, on whether it is sold as a loose card or as part of a working cluster with its network, on its hours and thermal history, on where it sits, on whether the buyer has power for it, and on the cost of moving and recommissioning it. {ch:units} explained that a newer chip delivers more useful work per watt; at a site that is short of power, that makes an old chip worth less than its rental history suggests, because the scarce input is the megawatt and not the card. Each of these is a basis between the quoted hour and the physical box.
+
+## A rate is not a residual
+
+The compute market did eventually do what commodity markets do: it built a rate. {ch:token-prices} describes the daily rental indices and the futures and prediction-market contracts that reference them. These are useful to a neocloud whose revenue moves with GPU-hour prices. They do much less for a lender standing in a data room after a default, trying to decide what one particular rack will sell for.
+
+The academic work is careful about this. In [(Early) AI Compute Asset Pricing](https://arxiv.org/abs/2607.12156), Federico Bandi and Yinan Su observe that compute, like electricity, cannot be stored. In a storable commodity, arbitrage ties the futures price to the spot price: buy the barrel, store it, deliver it later. With no storage there is no such link, and a forward price is an expectation of the future spot price plus a risk premium, which is the standard result for power from [Bessembinder and Lemmon](https://onlinelibrary.wiley.com/doi/10.1111/1540-6261.00463). They also show that synthetic futures built from term rental contracts are likely to be upper bounds on true futures prices. A rental curve is therefore a weak foundation for a hardware value twice over: it prices the hour and not the box, and the long end of it is biased upward.
+
+The practical conclusion drawn in the essay is that a market without liquidity but with a need for residuals should use forwards, bilateral contracts on specific capacity, before it uses futures. {ch:commodity} takes up the institution that would have to stand behind them.
+
+## The same problem in decentralized finance
+
+A reader who has designed a lending protocol will recognize every element of this. An on-chain lending market needs three things before it will accept an asset as collateral: a price oracle that cannot be cheaply manipulated, a venue with enough depth to sell the collateral into, and a liquidation process that works without negotiation. Give it those and it will lend against the asset at a loan-to-value ratio set by the asset's volatility and the venue's depth. Take any one away and the only safe loan-to-value ratio is zero.
+
+Accelerators today have none of the three. There is no oracle, because there are too few prints. There is no deep venue. And liquidation is a bilateral scramble involving a truck. So lenders do what protocols do with an asset they cannot price: they ignore it and lend against something else, in this case the identity and rating of the customer. In protocol terms, GPU lending is reputation-based and undercollateralized, with the hardware held as a courtesy.
+
+The analogy also carries a warning. A thin price feed is an attack surface. If loans were sized on an index built from three thousand transactions, moving the index would be cheap relative to the loans resting on it. The derivatives regulator made the same point about rental indices in its 2026 [request for comment](https://www.govinfo.gov/content/pkg/FR-2026-08-21/pdf/2026-17163.pdf), noting that compute price formation occurs mainly in opaque bilateral transactions and that dominant participants may have enough pricing power to make benchmarks manipulable. A residual market has to become deep before it becomes load-bearing, and the order matters.
+
+## Prices that carry identity
+
+For the reader following the argument about knowledge and prices from the opening chapters, this is the most pointed case in the guide. A price is useful as a signal because it abstracts from who is trading. The buyer of tin does not need to know the seller. In compute finance, the opposite holds: the financing rate, the size of the prepayment, and the available contract length are all functions of who the customer is. Two buyers of the same cluster in the same building face different prices, and neither price tells anyone what the cluster is worth.
+
+Prices that are saturated with identity are poor carriers of knowledge about the asset. They say a great deal about the distribution of credit ratings and very little about the scarcity of accelerators. The institutions that strip identity out of a price, standardized contracts, appraisals, auctions, clearing, are not decorations on top of a market. They are what makes its prices mean something to people who were not party to the trade.
+
+## What to watch
+
+The observatory registers the following as gaps, each with the best current evidence. The number of executed used-accelerator sales per year, and their dollar volume. Whether any public credit agreement introduces an appraisal, an advance rate, or a loan-to-value test on hardware. The spread over SOFR on GPU-backed loans by borrower type. Prepayment as a share of contract value, and whether it is credited evenly or against the final months. The useful-life assumptions in operators' annual reports, which are the accounting shadow of the residual question. And the first asset-backed security that assigns accelerators a residual value above zero, which would be the signal that the market has found a number it trusts.

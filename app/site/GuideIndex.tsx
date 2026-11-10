@@ -17,7 +17,7 @@ export default function GuideIndex() {
             a market. This guide builds the vocabulary from the ground up — units and accounting
             first, then silicon, sites, financing, the open-weight token market with its harnesses,
             routers, model builders and inference providers, the price stack that ties a token back to a
-            megawatt-hour, and the macro claims that rest on all of it. Read it in order, or open the layer
+            megawatt-hour, the credit and collateral that decide who can buy compute at all, and the macro claims that rest on all of it. Read it in order, or open the layer
             you need.
           </p>
           <div className="hero-meta">

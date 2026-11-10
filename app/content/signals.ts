@@ -1,11 +1,14 @@
 /**
- * Illustrative preview data for the market pulse.
+ * The market pulse: every card is bound to a feed where a public source exists.
  *
- * Every series here is synthetic and deterministic — generated from a fixed seed
- * so the interface is stable across reloads and builds. It exists to demonstrate
- * the evidence model, not to report observations. Approved source adapters
- * should replace `series` and `latest` before any figure is read as current.
+ * When the feed has data (see app/content/live.ts and scripts/fetch-data.mjs)
+ * the card shows the observation with its date. When it does not, the card
+ * falls back to a synthetic, deterministic preview series and says so. The
+ * `provenance` field is what the interface uses to tell the two apart; nothing
+ * synthetic is ever shown without the ILLUSTRATIVE label.
  */
+
+import { feed, fmtDate, gpuSku, ladderCurves, latest as latestOf, power, snapshot, standardTier, tokenModels, twse, usable, windowOf } from "./live";
 
 export type Horizon = "7d" | "30d" | "1y";
 export const HORIZONS: Horizon[] = ["7d", "30d", "1y"];
@@ -63,21 +66,105 @@ export type Signal = {
   /** Absent for unobserved markets — the gap is the data point. */
   latest?: number;
   format?: (v: number) => string;
-  change?: Record<Horizon, number>;
-  series?: Record<Horizon, number[]>;
+  change?: Partial<Record<Horizon, number>>;
+  series?: Partial<Record<Horizon, number[]>>;
+  /** Where the number comes from: a feed, the recorded seed capture, or synthetic preview data. */
+  provenance: "live" | "seed" | "illustrative" | "gap";
+  asOf?: string;
+  /** For a gap: why there is no series. */
+  gapNote?: string;
 };
 
-type Spec = Omit<Signal, "series"> & { change: Record<Horizon, number>; latest: number };
+type Spec = Omit<Signal, "series" | "provenance" | "asOf"> & {
+  change: Record<Horizon, number>; latest: number;
+  /** Binds the card to a feed. When the feed has data the card shows it; otherwise the synthetic preview. */
+  live?: {
+    feed: string;
+    /** Snapshot series to draw; omitted when only a latest value exists. */
+    key?: string;
+    scale?: number;
+    /** Overrides applied when live. */
+    title?: string; unit?: string; source?: string; availability?: string; fit?: Signal["fit"]; relevance?: string;
+    latest?: () => { value: number; date: string | null } | null;
+  };
+};
 
 const money = (dp: number) => (v: number) => `$${v.toFixed(dp)}`;
+const refModel = tokenModels[0];
+const h100 = gpuSku("H100");
+const b200 = gpuSku("B200");
+const tsmc = twse?.companies.find((c) => c.code === "2330");
+const h100Curve = ladderCurves.find((c) => c.label === "H100");
+const h100Front = h100Curve?.events.find((e) => e.median.value && !e.median.censored);
+const ddr5Front = ladderCurves.find((c) => c.label.startsWith("DDR5"))?.events.find((e) => e.median.value && !e.median.censored);
+const ask = (sku: typeof h100, asOf: string | undefined) => () => (sku ? { value: sku.median, date: asOf ?? null } : null);
 
 const SPECS: Spec[] = [
   {
     id: 1, layer: "Compute", title: "H100 marketplace ask", unit: "GPU-hour",
     availability: "PROXY", fit: "Proxy", source: "Illustrative marketplace basket",
     relevance: "Falling asks are consistent with easing marginal rental scarcity.",
-    score: 86, guide: "units", latest: 2.18, format: money(2),
+    score: 86, guide: "token-prices", latest: 2.18, format: money(2),
     change: { "7d": -1.8, "30d": -6.4, "1y": -34.2 },
+    live: {
+      feed: "gpu", key: "GPU_H100", title: "H100 marketplace ask · median", unit: "GPU-hour, on demand", availability: "OPEN_API",
+      source: h100 ? `Vast.ai · ${h100.offers} offers, $${h100.min.toFixed(2)}–$${h100.max.toFixed(2)}` : "Vast.ai",
+      relevance: "A peer-marketplace ask, not a transaction. The spread between the cheapest and dearest offer is a public read on spot dispersion.",
+      latest: ask(h100, snapshot.gpu?.asOf),
+    },
+  },
+  {
+    id: 9, layer: "Compute", title: "B200 rental index", unit: "GPU-hour",
+    availability: "PUBLIC_INDEX", fit: "Direct", source: "Illustrative daily index",
+    relevance: "The new generation's spot rate; the futures curve will settle on an index like this.",
+    score: 74, guide: "token-prices", latest: 4.85, format: money(2),
+    change: { "7d": -0.6, "30d": -3.9, "1y": -22.4 },
+    live: {
+      feed: "gpu", key: "GPU_B200", title: "B200 marketplace ask · median", unit: "GPU-hour, on demand", availability: "OPEN_API", fit: "Proxy",
+      source: b200 ? `Vast.ai · ${b200.offers} offers, $${b200.min.toFixed(2)}–$${b200.max.toFixed(2)}` : "Vast.ai",
+      relevance: "The current generation on demand. Compare with multi-year contract prices to read the tenor premium.",
+      latest: ask(b200, snapshot.gpu?.asOf),
+    },
+  },
+  {
+    id: 17, layer: "Compute", title: "H100 implied price · front month", unit: "GPU-hour",
+    availability: "ILLUSTRATIVE", fit: "Proxy", source: "Illustrative ladder",
+    relevance: "What a prediction market expects the month's average rental price to be.",
+    score: 77, guide: "token-prices", latest: 3.1, format: money(2),
+    change: { "7d": -0.4, "30d": -2.2, "1y": -12.0 },
+    live: {
+      feed: "ladders", key: "LADDER_H100_FRONT", availability: "OPEN_API",
+      title: h100Front ? `H100 implied median · ${fmtDate(h100Front.month)}` : undefined,
+      source: h100Front ? `Kalshi ladder, settles on Ornn · bracket $${h100Front.medianBid?.toFixed(2)}–$${h100Front.medianAsk?.toFixed(2)}` : "Kalshi",
+      relevance: "The only public, credit-free estimate of where rental prices are heading. Thin: read the bid/ask bracket, and note it settles on a different basket from marketplace asks.",
+      latest: () => (h100Front ? { value: h100Front.median.value!, date: h100Front.quotedAt } : null),
+    },
+  },
+  {
+    id: 7, layer: "Tokens", title: "Cheapest ask · reference open-weight model", unit: "$ / M output tokens",
+    availability: "PUBLIC_LISTING", fit: "Proxy", source: "Illustrative router listing",
+    relevance: "The floor set by repricers. A quoted price, not a paid price: the cached leg is unverifiable.",
+    score: 79, guide: "souq", latest: 0.42, format: money(2),
+    change: { "7d": -4.5, "30d": -18.0, "1y": -61.0 },
+    live: {
+      feed: "tokens", key: "TOK_REF_MIN_OUTPUT", availability: "OPEN_API",
+      title: refModel ? `Cheapest output ask · ${refModel.name.replace(/^.*?: /, "")}` : undefined,
+      source: refModel ? `OpenRouter · list price $${refModel.list.output.toFixed(2)}` : "OpenRouter",
+      latest: () => (refModel ? { value: Math.min(...standardTier(refModel).map((e) => e.output)), date: snapshot.tokens!.asOf } : null),
+    },
+  },
+  {
+    id: 8, layer: "Tokens", title: "Providers serving the reference model", unit: "count",
+    availability: "PUBLIC_LISTING", fit: "Direct", source: "Illustrative router listing",
+    relevance: "Contest depth. Under per-request routing, more providers raise the expected session cost.",
+    score: 61, guide: "souq", latest: 32, format: (v) => v.toFixed(0),
+    change: { "7d": 3.2, "30d": 14.3, "1y": 166.7 },
+    live: {
+      feed: "tokens", key: "TOK_REF_PROVIDERS", availability: "OPEN_API", unit: "distinct providers",
+      title: refModel ? `Providers serving ${refModel.name.replace(/^.*?: /, "")}` : undefined,
+      source: refModel ? `OpenRouter · ${refModel.endpoints.length} endpoints` : "OpenRouter",
+      latest: () => (refModel ? { value: refModel.providers, date: snapshot.tokens!.asOf } : null),
+    },
   },
   {
     id: 2, layer: "Power", title: "PJM Western Hub", unit: "MWh · average",
@@ -85,6 +172,11 @@ const SPECS: Spec[] = [
     relevance: "Power repricing can change site economics before server prices move.",
     score: 82, guide: "data-centers", latest: 71, format: money(0),
     change: { "7d": 18.2, "30d": 24.6, "1y": 41.3 },
+    live: {
+      feed: "power", key: "ERCOT_HUB", title: "ERCOT hub average", unit: power?.dayAheadAvg ? "MWh · day-ahead" : "MWh · real-time",
+      source: power ? `ERCOT · real-time range $${power.realTimeMin?.toFixed(0)}–$${power.realTimeMax?.toFixed(0)}` : "ERCOT",
+      latest: () => (power ? { value: (power.dayAheadAvg ?? power.realTimeAvg)!, date: power.asOf } : null),
+    },
   },
   {
     id: 3, layer: "Sites", title: "US data-center build", unit: "monthly spend",
@@ -97,36 +189,13 @@ const SPECS: Spec[] = [
     id: 4, layer: "Silicon", title: "Foundry revenue proxy", unit: "year over year",
     availability: "PUBLIC_MANUAL", fit: "Proxy", source: "Illustrative issuer release",
     relevance: "A high-frequency foundry signal, not a measure of AI wafer volume.",
-    score: 72, guide: "silicon", latest: 31, format: (v) => `+${v.toFixed(0)}%`,
+    score: 72, guide: "silicon", latest: 31, format: (v) => `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(0)}%`,
     change: { "7d": 0.6, "30d": 3.8, "1y": 12.4 },
-  },
-  {
-    id: 5, layer: "Capital", title: "BBB option-adjusted spread", unit: "basis points",
-    availability: "OPEN_API", fit: "Direct", source: "Illustrative FRED series",
-    relevance: "Tighter spreads lower the financing hurdle for investment-grade builders.",
-    score: 64, guide: "rates", latest: 116, format: (v) => v.toFixed(0),
-    change: { "7d": -1.1, "30d": -4.3, "1y": -18.9 },
-  },
-  {
-    id: 7, layer: "Tokens", title: "Cheapest ask · reference open-weight model", unit: "$ / M output tokens",
-    availability: "PUBLIC_LISTING", fit: "Proxy", source: "Illustrative router listing",
-    relevance: "The floor set by repricers. A quoted price, not a paid price: the cached leg is unverifiable.",
-    score: 79, guide: "souq", latest: 0.42, format: money(2),
-    change: { "7d": -4.5, "30d": -18.0, "1y": -61.0 },
-  },
-  {
-    id: 8, layer: "Tokens", title: "Providers serving the reference model", unit: "count",
-    availability: "PUBLIC_LISTING", fit: "Direct", source: "Illustrative router listing",
-    relevance: "Contest depth. Under per-request routing, more providers raise the expected session cost.",
-    score: 61, guide: "souq", latest: 32, format: (v) => v.toFixed(0),
-    change: { "7d": 3.2, "30d": 14.3, "1y": 166.7 },
-  },
-  {
-    id: 9, layer: "Compute", title: "B200 rental index", unit: "GPU-hour",
-    availability: "PUBLIC_INDEX", fit: "Direct", source: "Illustrative daily index",
-    relevance: "The new generation's spot rate; the futures curve will settle on an index like this.",
-    score: 74, guide: "token-prices", latest: 4.85, format: money(2),
-    change: { "7d": -0.6, "30d": -3.9, "1y": -22.4 },
+    live: {
+      feed: "twse", key: "TWSE_2330_YOY", title: "TSMC monthly revenue · year over year", availability: "OPEN_API", fit: "Direct",
+      source: tsmc ? `TWSE filing · NT$${tsmc.revenue?.toFixed(0)}bn in ${fmtDate(twse?.month)}` : "TWSE",
+      latest: () => (tsmc && tsmc.yoy !== null ? { value: tsmc.yoy, date: twse?.month ?? null } : null),
+    },
   },
   {
     id: 10, layer: "Memory", title: "DDR5 16Gb contract price", unit: "per chip",
@@ -134,6 +203,44 @@ const SPECS: Spec[] = [
     relevance: "Commodity DRAM is the visible cousin of the invisible HBM contract; both share wafers.",
     score: 66, guide: "silicon", latest: 5.2, format: money(2),
     change: { "7d": 1.4, "30d": 6.8, "1y": 38.5 },
+    live: {
+      feed: "ladders", availability: "OPEN_API",
+      title: ddr5Front ? `DDR5 16Gb implied spot · ${fmtDate(ddr5Front.month)}` : undefined, unit: "market-implied median",
+      source: "Kalshi ladder, settles on Ornn",
+      latest: () => (ddr5Front ? { value: ddr5Front.median.value!, date: ddr5Front.quotedAt } : null),
+    },
+  },
+  {
+    id: 5, layer: "Capital", title: "BBB option-adjusted spread", unit: "basis points",
+    availability: "OPEN_API", fit: "Direct", source: "Illustrative FRED series",
+    relevance: "Tighter spreads lower the financing hurdle for investment-grade builders.",
+    score: 64, guide: "rates", latest: 116, format: (v) => v.toFixed(0),
+    change: { "7d": -1.1, "30d": -4.3, "1y": -18.9 },
+    live: { feed: "fred", key: "BBB_OAS", scale: 100, source: "FRED · ICE BofA BBB index" },
+  },
+  {
+    id: 13, layer: "Capital", title: "High-yield option-adjusted spread", unit: "basis points",
+    availability: "OPEN_API", fit: "Proxy", source: "Illustrative FRED series",
+    relevance: "The nearest public proxy for neocloud credit. Single-name CDS on the build-out borrowers is not freely published.",
+    score: 81, guide: "rates", latest: 372, format: (v) => v.toFixed(0),
+    change: { "7d": 4.2, "30d": 11.8, "1y": 22.5 },
+    live: { feed: "fred", key: "HY_OAS", scale: 100, source: "FRED · ICE BofA US High Yield index" },
+  },
+  {
+    id: 14, layer: "Capital", title: "CCC and lower spread", unit: "basis points",
+    availability: "OPEN_API", fit: "Proxy", source: "Illustrative FRED series",
+    relevance: "Where the weakest borrowers trade. Widening here with investment grade steady means stress is concentrated, not general.",
+    score: 78, guide: "rates", latest: 1040, format: (v) => v.toFixed(0),
+    change: { "7d": 5.1, "30d": 14.6, "1y": 31.0 },
+    live: { feed: "fred", key: "CCC_OAS", scale: 100, source: "FRED · ICE BofA CCC & lower index" },
+  },
+  {
+    id: 15, layer: "Capital", title: "SOFR", unit: "percent",
+    availability: "OPEN_API", fit: "Direct", source: "Illustrative rate",
+    relevance: "The benchmark under every GPU-backed loan. Add 300 basis points for an investment-grade offtaker, about 900 without one.",
+    score: 55, guide: "collateral", latest: 3.9, format: (v) => `${v.toFixed(2)}%`,
+    change: { "7d": -0.3, "30d": -1.0, "1y": -9.5 },
+    live: { feed: "sofr", key: "SOFR", source: "Federal Reserve Bank of New York" },
   },
   {
     id: 11, layer: "FX", title: "Taiwan dollar per USD", unit: "TWD",
@@ -141,27 +248,61 @@ const SPECS: Spec[] = [
     relevance: "Foundry revenue is in dollars, costs are local: a stronger TWD compresses wafer margins.",
     score: 52, guide: "linkages", latest: 31.6, format: (v) => v.toFixed(1),
     change: { "7d": -0.3, "30d": -1.2, "1y": -3.4 },
+    live: { feed: "fred", key: "USDTWD", source: "FRED · Federal Reserve H.10" },
   },
 ];
 
+function build(spec: Spec, i: number): Signal {
+  const { live, ...base } = spec;
+  const state = live ? feed(live.feed)?.state : undefined;
+  if (live && usable(live.feed)) {
+    const head = live.latest ? live.latest() : live.key ? (() => { const p = latestOf(live.key!); return p ? { value: p.value * (live.scale ?? 1), date: p.date } : null; })() : null;
+    if (head) {
+      const windows = live.key ? HORIZONS.map((h) => [h, windowOf(live.key!, h, live.scale ?? 1)] as const) : [];
+      return {
+        ...base,
+        title: live.title ?? base.title, unit: live.unit ?? base.unit, source: live.source ?? base.source,
+        availability: live.availability ?? base.availability, fit: live.fit ?? base.fit, relevance: live.relevance ?? base.relevance,
+        latest: head.value,
+        change: Object.fromEntries(windows.filter(([, w]) => w).map(([h, w]) => [h, w!.change])),
+        series: Object.fromEntries(windows.filter(([, w]) => w).map(([h, w]) => [h, w!.values])),
+        provenance: state === "live" ? "live" : "seed",
+        asOf: head.date ?? undefined,
+      };
+    }
+  }
+  return {
+    ...base,
+    series: Object.fromEntries(HORIZONS.map((h) => [h, path(spec.latest, spec.change[h], POINTS[h], (i + 1) * 9973)])),
+    provenance: "illustrative",
+  };
+}
+
 export const signals: Signal[] = [
-  ...SPECS.map((spec, i) => ({
-    ...spec,
-    series: Object.fromEntries(
-      HORIZONS.map((h) => [h, path(spec.latest, spec.change[h], POINTS[h], (i + 1) * 9973)]),
-    ) as Record<Horizon, number[]>,
-  })),
+  ...SPECS.map(build),
   {
     id: 6, layer: "Memory", title: "HBM contract price", unit: "not observed",
     availability: "NOT_PUBLIC", fit: "Gap", source: "Research gap registry",
     relevance: "The economically relevant contract market remains bilateral and opaque.",
-    score: 58, guide: "silicon",
+    score: 58, guide: "silicon", provenance: "gap", gapNote: "The contract market is bilateral. Absence is the observation.",
   },
   {
     id: 12, layer: "Tokens", title: "Cache-hit rate by provider", unit: "not observed",
     availability: "NOT_VERIFIABLE", fit: "Gap", source: "Research gap registry",
     relevance: "The one number that would say whether quoted token prices are paid prices. No provider attests it.",
-    score: 71, guide: "souq",
+    score: 71, guide: "souq", provenance: "gap", gapNote: "Reported by the seller and checkable by no one.",
+  },
+  {
+    id: 18, layer: "Capital", title: "Used-accelerator resale price", unit: "barely observed",
+    availability: "THIN_PRINTS", fit: "Gap", source: "CCIR aggregate, 31 Aug 2026",
+    relevance: "Lenders assume zero residual value because there is no market to point to. A trusted number here would reprice every GPU-backed loan.",
+    score: 88, guide: "collateral", provenance: "gap", gapNote: "3,009 recorded sales in three years, $26.3 million in total.",
+  },
+  {
+    id: 19, layer: "Capital", title: "Single-name CDS · build-out borrowers", unit: "reported, not published",
+    availability: "LICENSED", fit: "Gap", source: "Press reports of S&P Global, LSEG data",
+    relevance: "Where the strategic market's risk is actually priced. Quoted daily to subscribers; visible to the public only through news.",
+    score: 84, guide: "commodity", provenance: "gap", gapNote: "CoreWeave above 1,000 bp, Oracle 288 bp (Oct 2026, reported).",
   },
 ];
 
@@ -225,8 +366,10 @@ export const nodes: MarketNode[] = [
   { id: "providers", label: "Inference providers", sub: "Together · Novita · StreamLake · Cerebras", country: "Global", col: 5, row: 2, guide: "souq" },
   { id: "router", label: "Routers", sub: "OpenRouter · Databricks", country: "US", col: 5, row: 0.6, guide: "souq" },
   { id: "harness", label: "Harnesses", sub: "Agents and apps", country: "Global", col: 6, row: 0.6, guide: "souq" },
-  { id: "credit", label: "Credit spreads · Treasuries", sub: "BBB OAS, term premium", country: "US", col: 6, row: 2.2, guide: "rates" },
+  { id: "credit", label: "Credit spreads · CDS", sub: "Index spreads, single-name swaps, SOFR", country: "US", col: 6, row: 2.2, guide: "rates" },
   { id: "fx", label: "TWD · KRW · JPY", sub: "Supplier currencies", country: "Global", col: 6, row: 3.6, guide: "linkages" },
+  { id: "resale", label: "Used hardware", sub: "Thin prints · residual value", country: "Global", col: 2, row: 4.2, guide: "collateral" },
+  { id: "resellers", label: "Capacity resellers", sub: "SF Compute · Andromeda · Compute Desk", country: "Global", col: 4, row: 4.0, guide: "commodity" },
 ];
 
 export type MarketEdge = { from: string; to: string; label: string; guide: string };
@@ -255,6 +398,11 @@ export const edges: MarketEdge[] = [
   { from: "fx", to: "tsmc", label: "Stronger TWD compresses dollar wafer margins", guide: "linkages" },
   { from: "fx", to: "hbm", label: "Weaker KRW expands memory makers' dollar margins", guide: "linkages" },
   { from: "credit", to: "futures", label: "Rates price the carry in the futures curve", guide: "token-prices" },
+  { from: "odm", to: "resale", label: "Retired servers reach a secondary market with very few recorded sales", guide: "collateral" },
+  { from: "resale", to: "credit", label: "No trusted resale price: lenders assume zero residual and lend on the customer instead", guide: "collateral" },
+  { from: "sites", to: "resellers", label: "Three-year leases broken into months and days; the tenor premium is the margin", guide: "commodity" },
+  { from: "resellers", to: "providers", label: "Short-tenor capacity for inference fleets that scale with demand", guide: "commodity" },
+  { from: "credit", to: "resellers", label: "Resellers are equity-funded until a lender underwrites short-tenor demand", guide: "commodity" },
 ];
 
 /** Quoted three-price ladder for one reference open-weight model, by provider archetype. */

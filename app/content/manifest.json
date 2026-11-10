@@ -5,6 +5,7 @@
   "cluster": "Orientation",
   "summary": "Four kinds of statement, the reading discipline the rest of the guide assumes, and why prices are the thread that ties every chapter together.",
   "heading": "How to read this guide",
+  "number": null,
   "topics": 4,
   "links": 1
  },
@@ -14,8 +15,9 @@
   "cluster": "Orientation",
   "summary": "The end-to-end chain from sand to tokens in one map, the markets that price each link, and the four kinds of claim that get mixed together whenever people argue about it.",
   "heading": "The whole chain in one picture",
+  "number": 1,
   "topics": 5,
-  "links": 14
+  "links": 15
  },
  {
   "slug": "units",
@@ -23,6 +25,7 @@
   "cluster": "Foundations",
   "summary": "Why compute is not one substance, and how power, energy, stock and flow differ.",
   "heading": "Units: what compute actually means",
+  "number": 2,
   "topics": 6,
   "links": 4
  },
@@ -32,6 +35,7 @@
   "cluster": "Foundations",
   "summary": "How integrated circuits became specialised accelerators, and why the industry fragmented.",
   "heading": "Why the stack looks like this",
+  "number": 3,
   "topics": 4,
   "links": 5
  },
@@ -41,6 +45,7 @@
   "cluster": "The physical stack",
   "summary": "Design, EDA, masks, wafers, EUV, packaging, and the actor map from sand to rack.",
   "heading": "The silicon supply chain, step by step",
+  "number": 4,
   "topics": 15,
   "links": 5
  },
@@ -50,6 +55,7 @@
   "cluster": "The physical stack",
   "summary": "Critical IT versus the facility, the power chain, cooling, and usable capacity.",
   "heading": "From chip to data center",
+  "number": 5,
   "topics": 6,
   "links": 6
  },
@@ -59,6 +65,7 @@
   "cluster": "Money",
   "summary": "The three statements, what gets capitalised, and why EBITDA flatters this business.",
   "heading": "CapEx, OpEx, depreciation, and margins",
+  "number": 6,
   "topics": 11,
   "links": 4
  },
@@ -68,8 +75,19 @@
   "cluster": "Money",
   "summary": "Cash, equity, bonds, leases, take-or-pay, SPVs, and the maturity wall.",
   "heading": "How AI compute is financed",
-  "topics": 12,
+  "number": 7,
+  "topics": 13,
   "links": 1
+ },
+ {
+  "slug": "collateral",
+  "label": "Collateral & residuals",
+  "cluster": "Money",
+  "summary": "Why the binding constraint on a small compute buyer is credit rather than chips, what a lender actually underwrites, why nobody will put a number on a used GPU, and what a missing price does to the cost of capital.",
+  "heading": "Collateral, residual value, and the credit box",
+  "number": 8,
+  "topics": 10,
+  "links": 15
  },
  {
   "slug": "value-capture",
@@ -77,6 +95,7 @@
   "cluster": "Money",
   "summary": "Marginal value versus average revenue, and which layer actually captures the surplus.",
   "heading": "Who captures the surplus",
+  "number": 9,
   "topics": 7,
   "links": 0
  },
@@ -86,7 +105,8 @@
   "cluster": "The token market",
   "summary": "The open-weight supply chain from agent harness to router to model builder to inference provider, how a router allocates tokens, why the three quoted token prices can be quietly false, and what a Hayekian and a DeFi researcher should make of it.",
   "heading": "The souq: harness, router, model, inference provider",
-  "topics": 13,
+  "number": 10,
+  "topics": 14,
   "links": 23
  },
  {
@@ -95,8 +115,19 @@
   "cluster": "The token market",
   "summary": "How a token price is built from a megawatt-hour and a GPU-hour, what the GPU rental indices and the new compute futures actually price, and why the spread between tokens and compute is the crack spread of intelligence.",
   "heading": "From electrons to tokens",
+  "number": 11,
   "topics": 6,
-  "links": 11
+  "links": 15
+ },
+ {
+  "slug": "commodity",
+  "label": "Two computes",
+  "cluster": "The token market",
+  "summary": "Compute is two markets. One is a strategic good financed on hyperscaler credit, whose risk trades as credit default swaps. The other behaves like power and oil but is rationed by credit. The tenor curve, the silicon spread, the commodity traders, and the missing clearinghouse.",
+  "heading": "Is compute a commodity?",
+  "number": 12,
+  "topics": 12,
+  "links": 7
  },
  {
   "slug": "rates",
@@ -104,7 +135,8 @@
   "cluster": "Macro",
   "summary": "There is no single interest rate: spreads, discount rates, and asset-liability risk.",
   "heading": "Interest rates, credit spreads, and asset prices",
-  "topics": 6,
+  "number": 13,
+  "topics": 7,
   "links": 2
  },
  {
@@ -113,6 +145,7 @@
   "cluster": "Macro",
   "summary": "Debt dynamics, rollover risk, and whether an investment boom could trigger a crisis.",
   "heading": "Government debt and sovereign crises",
+  "number": 14,
   "topics": 9,
   "links": 5
  },
@@ -122,6 +155,7 @@
   "cluster": "Macro",
   "summary": "What controls target, why smuggling is not a supply chain, and what to measure.",
   "heading": "China, export controls, and quality-adjusted compute",
+  "number": 15,
   "topics": 5,
   "links": 2
  },
@@ -131,6 +165,7 @@
   "cluster": "Macro",
   "summary": "A map of which price moves which, across Taiwan, Korea, the Netherlands, Japan, the United States, and China; the firms that sit on each link; and the order in which shocks travel through the chain.",
   "heading": "How the markets are intertwined",
+  "number": 16,
   "topics": 5,
   "links": 11
  },
@@ -140,6 +175,7 @@
   "cluster": "Argument",
   "summary": "Forces pushing both ways, and why ownership, control, and service must be separated.",
   "heading": "Centralization: the final argument",
+  "number": 17,
   "topics": 5,
   "links": 0
  },
@@ -149,6 +185,7 @@
   "cluster": "Argument",
   "summary": "The strongest and most fragile parts of the argument, and a better forecasting discipline.",
   "heading": "What would have to be true?",
+  "number": 18,
   "topics": 3,
   "links": 0
  },
@@ -156,18 +193,20 @@
   "slug": "claims",
   "label": "Claim-by-claim",
   "cluster": "Argument",
-  "summary": "Ten headline claims you will hear about compute markets, each restated precisely, with its hidden assumptions and what would confirm or break it.",
+  "summary": "Thirteen headline claims you will hear about compute markets, each restated precisely, with its hidden assumptions and what would confirm or break it.",
   "heading": "The headline claims, translated",
-  "topics": 10,
+  "number": 19,
+  "topics": 13,
   "links": 0
  },
  {
   "slug": "study-plan",
   "label": "Study plan",
   "cluster": "Practice",
-  "summary": "A six-week path from accounting basics to rebuilding the numbers yourself, ending in the token market and its derivatives.",
+  "summary": "A seven-week path from accounting basics to rebuilding the numbers yourself, ending in the token market, its derivatives, and the credit that rations it.",
   "heading": "A study plan, beginner to expert",
-  "topics": 7,
-  "links": 13
+  "number": 20,
+  "topics": 8,
+  "links": 19
  }
 ]

@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 
+import Provenance from "./Provenance";
+
 /**
- * From a megawatt-hour to a token: the price stack of Chapter 10 as a live
+ * From a megawatt-hour to a token: the price stack from the guide's token-prices chapter as a live
  * calculation. One stacked bar shows the composition of an all-in GPU-hour;
  * the readouts convert it to $/M tokens for prefill and decode.
  *
@@ -45,7 +47,10 @@ export default function PriceStack() {
           <h3>From electrons to tokens</h3>
           <p>The composition of an all-in accelerator-hour, and what it implies per million tokens on an eight-accelerator node. Move the inputs.</p>
         </div>
-        <ul className="legend">
+        <Provenance state="model" source="every input adjustable" />
+      </div>
+      <div className="chart-head tight">
+        <ul className="legend legend-row">
           {parts.map((p) => <li key={p.key}><i className={`swatch ${p.key}`} aria-hidden="true" />{p.label}</li>)}
         </ul>
       </div>

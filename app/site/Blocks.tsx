@@ -4,7 +4,7 @@ import { url } from "./nav";
 
 export type Span = { text: string; href?: string; bold?: boolean };
 export type Block =
-  | { type: "h2"; text: string; spans?: Span[] }
+  | { type: "h2"; text: string; id?: string; spans?: Span[] }
   | { type: "p"; spans: Span[] }
   | { type: "callout"; spans: Span[] }
   | { type: "list"; items: Span[][] }
@@ -44,7 +44,7 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
     <>
       {blocks.map((block, i) => {
         if (block.type === "h2") {
-          const id = slugify(block.text);
+          const id = block.id ?? slugify(block.text);
           return (
             <h2 className="prose-h2" id={id} key={i}>
               <a href={`#${id}`} aria-label={`Link to ${block.text}`}>

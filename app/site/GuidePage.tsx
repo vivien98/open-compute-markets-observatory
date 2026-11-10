@@ -35,7 +35,7 @@ export default function GuidePage({ section }: { section: Section }) {
                 <ol className="rail-list">
                   {topics.map((topic) => (
                     <li key={topic.text}>
-                      <a href={`#${slugify(topic.text)}`}>{topic.text.replace(/^[\d.]+\s*/, "")}</a>
+                      <a href={`#${topic.id ?? slugify(topic.text)}`}>{topic.text.replace(/^[\d.]+\s*/, "")}</a>
                     </li>
                   ))}
                 </ol>
