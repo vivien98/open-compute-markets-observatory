@@ -1,3 +1,4 @@
 date,market,day_ahead_avg,real_time_avg,real_time_min,real_time_max
 2026-11-10,HB_HUBAVG,,32.32,28.37,36.11
 2026-11-11,HB_HUBAVG,47.65,37.95,23.12,71.85
+2026-11-12,HB_HUBAVG,44.26,32.96,13.48,69.55
