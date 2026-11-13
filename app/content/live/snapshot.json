@@ -1,23 +1,23 @@
 {
- "generatedAt": "2026-11-12T20:51:47.087Z",
+ "generatedAt": "2026-11-13T20:30:48.459Z",
  "feeds": [
   {
    "id": "tokens",
    "label": "OpenRouter provider quotes",
    "url": "https://openrouter.ai/api/v1/models",
    "state": "live",
-   "asOf": "2026-11-12",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
-   "note": "8 models, 187 endpoints"
+   "asOf": "2026-11-13",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
+   "note": "8 models, 151 endpoints"
   },
   {
    "id": "gpu",
    "label": "Vast.ai marketplace asks",
    "url": "https://console.vast.ai/api/v0/bundles/",
    "state": "live",
-   "asOf": "2026-11-12",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
-   "note": "H100 $2.67 (24), H200 $4.61 (43), B200 $9.38 (16), B300 $10.00 (4), A100 $0.73 (59), L40S $0.80 (19), RTX 5090 $0.66 (64)"
+   "asOf": "2026-11-13",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
+   "note": "H100 $2.80 (21), H200 $4.93 (37), B200 $10.63 (16), B300 $10.63 (6), A100 $0.74 (59), L40S $0.80 (24), RTX 5090 $0.56 (64)"
   },
   {
    "id": "ladders",
@@ -25,7 +25,7 @@
    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXH100MS",
    "state": "live",
    "asOf": "2026-11-08",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
    "note": "H100: 10 months, H200: 10 months, B200: 10 months, A100: 10 months, RTX 5090: 10 months, DDR5 16Gb: 13 months"
   },
   {
@@ -33,17 +33,17 @@
    "label": "New York Fed SOFR",
    "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/last/260.json",
    "state": "live",
-   "asOf": "2026-11-10",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
-   "note": "3.89%"
+   "asOf": "2026-11-12",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
+   "note": "3.90%"
   },
   {
    "id": "fred",
    "label": "FRED rates, spreads, FX",
    "url": "https://fred.stlouisfed.org/",
    "state": "live",
-   "asOf": "2026-11-11",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
+   "asOf": "2026-11-12",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
    "note": "11 series"
   },
   {
@@ -51,9 +51,9 @@
    "label": "ERCOT hub prices",
    "url": "https://www.ercot.com/api/1/services/read/dashboards/systemWidePrices.json",
    "state": "live",
-   "asOf": "2026-11-12",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
-   "note": "real-time $16.89/MWh, day-ahead avg $44.26"
+   "asOf": "2026-11-13",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
+   "note": "real-time $16.7/MWh, day-ahead avg $33.74"
   },
   {
    "id": "twse",
@@ -61,7 +61,7 @@
    "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
    "state": "live",
    "asOf": "2026-10",
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
    "note": "Hon Hai (Foxconn) +45.730399518079835%, TSMC +59.709757600700904%, Wistron +117.5572069759596%, Quanta +103.9601585472691%"
   },
   {
@@ -70,7 +70,7 @@
    "url": "https://www.alphavantage.co/",
    "state": "needs-key",
    "asOf": null,
-   "fetchedAt": "2026-11-12T20:51:47.087Z",
+   "fetchedAt": "2026-11-13T20:30:48.459Z",
    "note": "set the ALPHAVANTAGE_API_KEY repository secret to enable"
   }
  ],
@@ -81,10 +81,6 @@
    "source": "New York Fed",
    "url": "https://www.newyorkfed.org/markets/reference-rates/sofr",
    "points": [
-    [
-     "2025-10-27",
-     4.27
-    ],
     [
      "2025-10-28",
      4.31
@@ -1120,6 +1116,10 @@
     [
      "2026-11-10",
      3.89
+    ],
+    [
+     "2026-11-12",
+     3.9
     ]
    ]
   },
@@ -1140,6 +1140,10 @@
     [
      "2026-11-12",
      9.376
+    ],
+    [
+     "2026-11-13",
+     10.628
     ]
    ],
    "own": true
@@ -1161,6 +1165,10 @@
     [
      "2026-11-12",
      2.667
+    ],
+    [
+     "2026-11-13",
+     2.801
     ]
    ],
    "own": true
@@ -1182,6 +1190,10 @@
     [
      "2026-11-12",
      4.607
+    ],
+    [
+     "2026-11-13",
+     4.934
     ]
    ],
    "own": true
@@ -1203,6 +1215,10 @@
     [
      "2026-11-12",
      0.27
+    ],
+    [
+     "2026-11-13",
+     0.108
     ]
    ],
    "own": true
@@ -1223,6 +1239,10 @@
     ],
     [
      "2026-11-12",
+     0.6
+    ],
+    [
+     "2026-11-13",
      0.6
     ]
    ],
@@ -1245,6 +1265,10 @@
     [
      "2026-11-12",
      38
+    ],
+    [
+     "2026-11-13",
+     38
     ]
    ],
    "own": true
@@ -1266,6 +1290,10 @@
     [
      "2026-11-12",
      44.26
+    ],
+    [
+     "2026-11-13",
+     33.74
     ]
    ],
    "own": true
@@ -1287,6 +1315,10 @@
     [
      "2026-11-12",
      3.36
+    ],
+    [
+     "2026-11-13",
+     3.386
     ]
    ],
    "own": true
@@ -1297,10 +1329,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/DGS10",
    "points": [
-    [
-     "2025-10-08",
-     4.13
-    ],
     [
      "2025-10-09",
      4.14
@@ -2384,6 +2412,10 @@
     [
      "2026-11-09",
      4.88
+    ],
+    [
+     "2026-11-10",
+     4.98
     ]
    ]
   },
@@ -2393,10 +2425,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/BAMLC0A4CBBB",
    "points": [
-    [
-     "2025-10-08",
-     0.95
-    ],
     [
      "2025-10-09",
      0.98
@@ -3540,6 +3568,10 @@
     [
      "2026-11-11",
      1.12
+    ],
+    [
+     "2026-11-12",
+     1.11
     ]
    ]
   },
@@ -3549,10 +3581,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
    "points": [
-    [
-     "2025-10-08",
-     2.84
-    ],
     [
      "2025-10-09",
      2.95
@@ -4696,6 +4724,10 @@
     [
      "2026-11-11",
      3.3
+    ],
+    [
+     "2026-11-12",
+     3.2
     ]
    ]
   },
@@ -4705,10 +4737,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/BAMLH0A3HYC",
    "points": [
-    [
-     "2025-10-08",
-     8.19
-    ],
     [
      "2025-10-09",
      8.38
@@ -5852,6 +5880,10 @@
     [
      "2026-11-11",
      13.3
+    ],
+    [
+     "2026-11-12",
+     13.14
     ]
    ]
   },
@@ -5861,10 +5893,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/DEXTAUS",
    "points": [
-    [
-     "2025-10-08",
-     30.56
-    ],
     [
      "2025-10-09",
      30.52
@@ -6954,10 +6982,6 @@
    "url": "https://fred.stlouisfed.org/series/DEXKOUS",
    "points": [
     [
-     "2025-10-08",
-     1424.17
-    ],
-    [
      "2025-10-09",
      1423.68
     ],
@@ -8046,10 +8070,6 @@
    "url": "https://fred.stlouisfed.org/series/DEXJPUS",
    "points": [
     [
-     "2025-10-08",
-     152.72
-    ],
-    [
      "2025-10-09",
      153.05
     ],
@@ -9137,10 +9157,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/DHHNGSP",
    "points": [
-    [
-     "2025-10-08",
-     3.35
-    ],
     [
      "2025-10-09",
      3.25
@@ -10352,6 +10368,10 @@
     [
      "2026-11-12",
      0.734
+    ],
+    [
+     "2026-11-13",
+     0.736
     ]
    ],
    "own": true
@@ -10369,6 +10389,10 @@
     [
      "2026-11-12",
      10
+    ],
+    [
+     "2026-11-13",
+     10.625
     ]
    ],
    "own": true
@@ -10386,6 +10410,10 @@
     [
      "2026-11-12",
      0.801
+    ],
+    [
+     "2026-11-13",
+     0.8
     ]
    ],
    "own": true
@@ -10403,6 +10431,10 @@
     [
      "2026-11-12",
      0.661
+    ],
+    [
+     "2026-11-13",
+     0.562
     ]
    ],
    "own": true
@@ -10545,7 +10577,7 @@
   }
  },
  "tokens": {
-  "asOf": "2026-11-12",
+  "asOf": "2026-11-13",
   "models": [
    {
     "id": "deepseek/deepseek-v4.1-flash-1017",
@@ -10563,25 +10595,13 @@
     "timeOfDay": true,
     "endpoints": [
      {
-      "provider": "Morph",
-      "tag": "morph/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.022,
-      "output": 0.4,
-      "cached": 0.004,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
       "provider": "Particle AI",
       "tag": "particle-ai/us/flex",
       "tier": "flex",
       "quant": "unknown",
-      "input": 0.035,
+      "input": 0.03,
       "output": 0.25,
-      "cached": 0.003,
+      "cached": 0.005,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -10615,9 +10635,9 @@
       "tag": "particle-ai/us",
       "tier": null,
       "quant": "unknown",
-      "input": 0.07,
+      "input": 0.06,
       "output": 0.5,
-      "cached": 0.006,
+      "cached": 0.01,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -10630,6 +10650,30 @@
       "input": 0.07,
       "output": 0.8,
       "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Sail Research",
+      "tag": "sail-research/fp4/us",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.07272,
+      "output": 0.108,
+      "cached": 0.007,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Sail Research",
+      "tag": "sail-research/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.07272,
+      "output": 0.108,
+      "cached": 0.007,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -10690,6 +10734,18 @@
       "input": 0.08,
       "output": 0.605,
       "cached": 0.008,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Morph",
+      "tag": "morph/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.096,
+      "output": 0.54,
+      "cached": 0.004,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -10911,30 +10967,6 @@
       "timeOfDay": false
      },
      {
-      "provider": "Sail Research",
-      "tag": "sail-research/fp4/us",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.1818,
-      "output": 0.27,
-      "cached": 0.007,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Sail Research",
-      "tag": "sail-research/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.1818,
-      "output": 0.27,
-      "cached": 0.007,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
       "provider": "AtlasCloud",
       "tag": "atlas-cloud/fp8",
       "tier": null,
@@ -11051,7 +11083,7 @@
       "output": 1.2,
       "cached": 0.0075,
       "uptime": 100,
-      "status": -2,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -11086,8 +11118,8 @@
       "input": 0.3,
       "output": 1.2,
       "cached": 0.006,
-      "uptime": 88,
-      "status": -2,
+      "uptime": 100,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -11141,539 +11173,6 @@
     ]
    },
    {
-    "id": "z-ai/glm-5.3-flash",
-    "name": "Z.ai: GLM 5.3 Flash",
-    "created": 1787752741,
-    "author": "z-ai",
-    "list": {
-     "input": 0.15,
-     "output": 0.5,
-     "cached": 0.03,
-     "from": "builder",
-     "copies": 15
-    },
-    "providers": 38,
-    "timeOfDay": false,
-    "endpoints": [
-     {
-      "provider": "Relace",
-      "tag": "relace/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.0399,
-      "output": 0.0784,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Wafer",
-      "tag": "wafer/us",
-      "tier": null,
-      "quant": "nvfp4",
-      "input": 0.042,
-      "output": 0.184,
-      "cached": 0.041,
-      "uptime": 96.66666666666667,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "PrimeIntellect",
-      "tag": "primeintellect",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.0525,
-      "output": 0.25,
-      "cached": 0.0105,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "OpenInference",
-      "tag": "open-inference/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.06,
-      "output": 0.3,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": -2,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Darkbloom",
-      "tag": "darkbloom/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.065,
-      "output": 0.18,
-      "cached": 0.012,
-      "uptime": 96.66666666666667,
-      "status": -2,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Wafer",
-      "tag": "wafer/nvfp4",
-      "tier": null,
-      "quant": "nvfp4",
-      "input": 0.065,
-      "output": 0.24,
-      "cached": 0.064,
-      "uptime": 86.66666666666667,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Tenstorrent",
-      "tag": "tenstorrent/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.075,
-      "output": 0.25,
-      "cached": 0.015,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "GMICloud",
-      "tag": "gmicloud/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.075,
-      "output": 0.25,
-      "cached": 0.015,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Near AI",
-      "tag": "near-ai/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.08,
-      "output": 0.5,
-      "cached": 0.012,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Novita",
-      "tag": "novita/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.084,
-      "output": 0.28,
-      "cached": 0.0168,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "StreamLake",
-      "tag": "streamlake/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.0885,
-      "output": 0.295,
-      "cached": 0.0177,
-      "uptime": 86.66666666666667,
-      "status": -2,
-      "timeOfDay": false
-     },
-     {
-      "provider": "SiliconFlow",
-      "tag": "siliconflow/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.1,
-      "output": 0.4,
-      "cached": 0.03,
-      "uptime": 90,
-      "status": -2,
-      "timeOfDay": false
-     },
-     {
-      "provider": "DekaLLM",
-      "tag": "dekallm",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.1,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "InferenceNet",
-      "tag": "inference-net/us",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.108,
-      "output": 0.35,
-      "cached": 0.035,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "InferenceNet",
-      "tag": "inference-net/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.108,
-      "output": 0.35,
-      "cached": 0.035,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "DigitalOcean",
-      "tag": "digitalocean",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.1125,
-      "output": 0.375,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Morph",
-      "tag": "morph/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.116,
-      "output": 0.122,
-      "cached": 0.05,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Reka",
-      "tag": "reka",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.12,
-      "output": 0.3,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "CoreWeave",
-      "tag": "coreweave/nvfp4",
-      "tier": null,
-      "quant": "nvfp4",
-      "input": 0.12,
-      "output": 0.38,
-      "cached": 0.02,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "River",
-      "tag": "river",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.12,
-      "output": 0.4,
-      "cached": 0.024,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "NextBit",
-      "tag": "nextbit/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.12,
-      "output": 0.45,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Particle AI",
-      "tag": "particle-ai/nvfp4",
-      "tier": null,
-      "quant": "nvfp4",
-      "input": 0.13,
-      "output": 0.5,
-      "cached": 0.04,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Makora",
-      "tag": "makora/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.14,
-      "output": 0.24,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Mistral",
-      "tag": "mistral",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "KT",
-      "tag": "kt",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Cohere",
-      "tag": "cohere/nvfp4",
-      "tier": null,
-      "quant": "nvfp4",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Nebius",
-      "tag": "nebius/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Modal",
-      "tag": "modal/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Crusoe",
-      "tag": "crusoe/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "AtlasCloud",
-      "tag": "atlas-cloud/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Fireworks",
-      "tag": "fireworks",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Friendli",
-      "tag": "friendli",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Together",
-      "tag": "together",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Parasail",
-      "tag": "parasail/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "BaseTen",
-      "tag": "baseten/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Venice",
-      "tag": "venice",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "DeepInfra",
-      "tag": "deepinfra/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Z.AI",
-      "tag": "z-ai/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.15,
-      "output": 0.5,
-      "cached": 0.03,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Inceptron",
-      "tag": "inceptron/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.175,
-      "output": 0.47,
-      "cached": 0.04,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Sail Research",
-      "tag": "sail-research/us",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.175,
-      "output": 0.625,
-      "cached": 0.0225,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Sail Research",
-      "tag": "sail-research/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.175,
-      "output": 0.625,
-      "cached": 0.0225,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Parasail",
-      "tag": "parasail/fast",
-      "tier": "priority",
-      "quant": "fp4",
-      "input": 0.1875,
-      "output": 0.625,
-      "cached": 0.0375,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Fireworks",
-      "tag": "fireworks/us",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.225,
-      "output": 0.75,
-      "cached": 0.045,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     }
-    ]
-   },
-   {
     "id": "deepseek/deepseek-v4.1-flash",
     "name": "DeepSeek: DeepSeek V4.1 Flash",
     "created": 1789021285,
@@ -11685,29 +11184,17 @@
      "from": "mode",
      "copies": 9
     },
-    "providers": 29,
+    "providers": 28,
     "timeOfDay": true,
     "endpoints": [
      {
-      "provider": "Morph",
-      "tag": "morph/fp8",
+      "provider": "Baidu",
+      "tag": "baidu/fp8",
       "tier": null,
       "quant": "fp8",
-      "input": 0.022,
-      "output": 0.4,
-      "cached": 0.004,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "PrimeIntellect",
-      "tag": "primeintellect",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.039,
-      "output": 1.2,
-      "cached": 0.0012,
+      "input": 0.0507,
+      "output": 0.2028,
+      "cached": 0.001014,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -11732,6 +11219,18 @@
       "input": 0.07,
       "output": 0.8,
       "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Morph",
+      "tag": "morph/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.096,
+      "output": 0.54,
+      "cached": 0.004,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -11816,7 +11315,7 @@
       "input": 0.12,
       "output": 0.64,
       "cached": 0.008,
-      "uptime": 100,
+      "uptime": 96.66666666666667,
       "status": 0,
       "timeOfDay": false
      },
@@ -11936,8 +11435,8 @@
       "input": 0.21,
       "output": 0.84,
       "cached": 0.0042,
-      "uptime": 62.5,
-      "status": -5,
+      "uptime": 96.66666666666667,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -11984,18 +11483,6 @@
       "input": 0.29,
       "output": 1.2,
       "cached": 0.007,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Baidu",
-      "tag": "baidu/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.2997,
-      "output": 1.1988,
-      "cached": 0.005994,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12140,7 +11627,7 @@
       "input": 3,
       "output": 12,
       "cached": 0.06,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      }
@@ -12156,9 +11643,9 @@
      "output": 10,
      "cached": 0.2,
      "from": "builder",
-     "copies": 7
+     "copies": 8
     },
-    "providers": 17,
+    "providers": 18,
     "timeOfDay": false,
     "endpoints": [
      {
@@ -12167,8 +11654,8 @@
       "tier": null,
       "quant": "fp4",
       "input": 0.2375,
-      "output": 8.7856,
-      "cached": 0.19,
+      "output": 8.4114,
+      "cached": 0.2,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12179,7 +11666,7 @@
       "tier": null,
       "quant": "mxfp4",
       "input": 0.253,
-      "output": 10,
+      "output": 8.8,
       "cached": 0.18,
       "uptime": 100,
       "status": 0,
@@ -12190,9 +11677,9 @@
       "tag": "morph/fp8",
       "tier": null,
       "quant": "fp8",
-      "input": 0.941,
-      "output": 8.529,
-      "cached": 0.148,
+      "input": 0.807,
+      "output": 10.288,
+      "cached": 0.257,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12229,7 +11716,7 @@
       "input": 1.75,
       "output": 10,
       "cached": 0.18,
-      "uptime": 96.66666666666667,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12241,18 +11728,6 @@
       "input": 1.76,
       "output": 8.8,
       "cached": 0.176,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "PrimaLabs",
-      "tag": "primalabs/mxfp4",
-      "tier": null,
-      "quant": "mxfp4",
-      "input": 1.8,
-      "output": 9,
-      "cached": 0.18,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12301,7 +11776,19 @@
       "input": 1.9,
       "output": 9.5,
       "cached": 0.19,
-      "uptime": 95.83333333333334,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "River",
+      "tag": "river",
+      "tier": null,
+      "quant": "unknown",
+      "input": 2,
+      "output": 10,
+      "cached": 0.2,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12361,8 +11848,8 @@
       "input": 2,
       "output": 10,
       "cached": 0.2,
-      "uptime": 85.71428571428571,
-      "status": -2,
+      "uptime": 100,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -12397,6 +11884,18 @@
       "input": 2.3,
       "output": 11.5,
       "cached": 0.23,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "PrimaLabs",
+      "tag": "primalabs/mxfp4",
+      "tier": null,
+      "quant": "mxfp4",
+      "input": 2.7,
+      "output": 13.5,
+      "cached": 0.27,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12449,11 +11948,23 @@
      "output": 0.3,
      "cached": 0.0075,
      "from": "builder",
-     "copies": 8
+     "copies": 9
     },
-    "providers": 10,
+    "providers": 11,
     "timeOfDay": true,
     "endpoints": [
+     {
+      "provider": "Inferact vLLM",
+      "tag": "inferact-vllm/nvfp4",
+      "tier": null,
+      "quant": "nvfp4",
+      "input": 0.075,
+      "output": 0.3,
+      "cached": 0.0075,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
      {
       "provider": "Minimax",
       "tag": "minimax",
@@ -12465,18 +11976,6 @@
       "uptime": 100,
       "status": 0,
       "timeOfDay": true
-     },
-     {
-      "provider": "GMICloud",
-      "tag": "gmicloud/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.1125,
-      "output": 0.45,
-      "cached": 0.01125,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
      },
      {
       "provider": "StreamLake",
@@ -12570,7 +12069,7 @@
       "input": 0.15,
       "output": 0.6,
       "cached": 0.015,
-      "uptime": 100,
+      "uptime": null,
       "status": 0,
       "timeOfDay": false
      },
@@ -12579,6 +12078,18 @@
       "tag": "together",
       "tier": null,
       "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "GMICloud",
+      "tag": "gmicloud/fp8",
+      "tier": null,
+      "quant": "fp8",
       "input": 0.15,
       "output": 0.6,
       "cached": 0.015,
@@ -12713,9 +12224,9 @@
      },
      {
       "provider": "Nebius",
-      "tag": "nebius/bf16",
+      "tag": "nebius/fp4",
       "tier": null,
-      "quant": "bf16",
+      "quant": "fp4",
       "input": 0.3,
       "output": 0.9,
       "cached": 0.06,
@@ -12784,8 +12295,8 @@
       "input": 0.14,
       "output": 0.28,
       "cached": 0.0028,
-      "uptime": 0,
-      "status": -5,
+      "uptime": 80,
+      "status": -2,
       "timeOfDay": false
      },
      {
@@ -12808,8 +12319,8 @@
       "input": 0.165,
       "output": 0.33,
       "cached": 0.004,
-      "uptime": 55.55555555555556,
-      "status": -5,
+      "uptime": 100,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -12820,7 +12331,7 @@
       "input": 0.175,
       "output": 0.35,
       "cached": 0.00375,
-      "uptime": 86.66666666666667,
+      "uptime": 83.33333333333334,
       "status": -2,
       "timeOfDay": false
      },
@@ -12832,6 +12343,95 @@
       "input": 0.18,
       "output": 0.36,
       "cached": 0.0045,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     }
+    ]
+   },
+   {
+    "id": "thinkingmachines/inkling-2-small",
+    "name": "Thinking Machines: Inkling 2 Small",
+    "created": 1794261847,
+    "author": "thinkingmachines",
+    "list": {
+     "input": 0.3,
+     "output": 1,
+     "cached": 0.03,
+     "from": "mode",
+     "copies": 5
+    },
+    "providers": 6,
+    "timeOfDay": false,
+    "endpoints": [
+     {
+      "provider": "PrimeIntellect",
+      "tag": "primeintellect/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.15,
+      "output": 0.5,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.3,
+      "output": 1,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Modal",
+      "tag": "modal/nvfp4",
+      "tier": null,
+      "quant": "nvfp4",
+      "input": 0.3,
+      "output": 1,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Nebius",
+      "tag": "nebius/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.3,
+      "output": 1,
+      "cached": 0.06,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Together",
+      "tag": "together",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1,
+      "cached": 0.03,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Cloudflare",
+      "tag": "cloudflare",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.3,
+      "output": 1,
+      "cached": 0.03,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12885,7 +12485,7 @@
       "input": 0.834,
       "output": 2.501,
       "cached": 0.042,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12897,7 +12497,7 @@
       "input": 0.834,
       "output": 2.501,
       "cached": 0.042,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12909,7 +12509,7 @@
       "input": 0.834,
       "output": 2.501,
       "cached": 0.042,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12930,89 +12530,89 @@
   ]
  },
  "gpu": {
-  "asOf": "2026-11-12",
+  "asOf": "2026-11-13",
   "skus": [
    {
     "sku": "H100",
-    "offers": 24,
-    "gpus": 57,
-    "verifiedShare": 0.292,
-    "min": 2.2,
-    "p25": 2.201,
-    "median": 2.667,
-    "p75": 3.112,
-    "max": 3.979
+    "offers": 21,
+    "gpus": 43,
+    "verifiedShare": 0.524,
+    "min": 1.774,
+    "p25": 2.202,
+    "median": 2.801,
+    "p75": 3.514,
+    "max": 4.121
    },
    {
     "sku": "H200",
-    "offers": 43,
-    "gpus": 113,
-    "verifiedShare": 0.674,
-    "min": 3.423,
-    "p25": 4.068,
-    "median": 4.607,
-    "p75": 5.247,
-    "max": 9.015
+    "offers": 37,
+    "gpus": 102,
+    "verifiedShare": 0.784,
+    "min": 1.976,
+    "p25": 4.136,
+    "median": 4.934,
+    "p75": 5.344,
+    "max": 8.007
    },
    {
     "sku": "B200",
     "offers": 16,
-    "gpus": 55,
-    "verifiedShare": 0.75,
-    "min": 6.252,
-    "p25": 8.438,
-    "median": 9.376,
-    "p75": 10.627,
+    "gpus": 39,
+    "verifiedShare": 0.813,
+    "min": 6.676,
+    "p25": 10.001,
+    "median": 10.628,
+    "p75": 11.417,
     "max": 12.51
    },
    {
     "sku": "B300",
-    "offers": 4,
-    "gpus": 9,
+    "offers": 6,
+    "gpus": 14,
     "verifiedShare": 1,
-    "min": 9.939,
-    "p25": 9.985,
-    "median": 10,
-    "p75": 10,
-    "max": 10
+    "min": 10.001,
+    "p25": 10.297,
+    "median": 10.625,
+    "p75": 10.626,
+    "max": 10.627
    },
    {
     "sku": "A100",
     "offers": 59,
-    "gpus": 116,
-    "verifiedShare": 0.322,
-    "min": 0.268,
-    "p25": 0.522,
-    "median": 0.734,
-    "p75": 0.869,
-    "max": 1.423
+    "gpus": 137,
+    "verifiedShare": 0.39,
+    "min": 0.376,
+    "p25": 0.543,
+    "median": 0.736,
+    "p75": 0.868,
+    "max": 1.601
    },
    {
     "sku": "L40S",
-    "offers": 19,
-    "gpus": 45,
-    "verifiedShare": 0.526,
+    "offers": 24,
+    "gpus": 61,
+    "verifiedShare": 0.417,
     "min": 0.441,
-    "p25": 0.669,
-    "median": 0.801,
-    "p75": 0.877,
+    "p25": 0.517,
+    "median": 0.8,
+    "p75": 0.802,
     "max": 1.015
    },
    {
     "sku": "RTX 5090",
     "offers": 64,
-    "gpus": 223,
-    "verifiedShare": 0.375,
-    "min": 0.403,
-    "p25": 0.561,
-    "median": 0.661,
-    "p75": 0.82,
-    "max": 1.334
+    "gpus": 92,
+    "verifiedShare": 0.453,
+    "min": 0.389,
+    "p25": 0.497,
+    "median": 0.562,
+    "p75": 0.654,
+    "max": 0.937
    }
   ]
  },
  "ladders": {
-  "asOf": "2026-11-12",
+  "asOf": "2026-11-13",
   "curves": [
    {
     "ticker": "KXH100MS",
@@ -13023,12 +12623,12 @@
       "event": "KXH100MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 3.36,
+       "value": 3.386,
        "censored": null
       },
-      "medianBid": 3.301,
-      "medianAsk": 3.511,
-      "mean": 3.375,
+      "medianBid": 3.326,
+      "medianAsk": 3.516,
+      "mean": 3.395,
       "volume": 10924,
       "openInterest": 4621,
       "quotedAt": "2026-09-09",
@@ -13059,21 +12659,21 @@
        },
        {
         "k": 3,
-        "bid": 0.94,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.97
        },
        {
         "k": 3.25,
-        "bid": 0.6,
-        "ask": 0.69,
-        "p": 0.645
+        "bid": 0.67,
+        "ask": 0.76,
+        "p": 0.715
        },
        {
         "k": 3.5,
         "bid": 0.11,
-        "ask": 0.52,
-        "p": 0.315
+        "ask": 0.53,
+        "p": 0.32
        },
        {
         "k": 3.75,
@@ -13093,12 +12693,12 @@
       "event": "KXH100MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 3.726,
+       "value": 3.75,
        "censored": null
       },
       "medianBid": 3.214,
       "medianAsk": 4,
-      "mean": 3.776,
+      "mean": 3.786,
       "volume": 11053,
       "openInterest": 3323,
       "quotedAt": "2026-09-09",
@@ -13141,21 +12741,21 @@
        },
        {
         "k": 3.5,
-        "bid": 0.33,
+        "bid": 0.34,
         "ask": 0.95,
-        "p": 0.64
+        "p": 0.645
        },
        {
         "k": 3.75,
         "bid": 0.21,
-        "ask": 0.76,
-        "p": 0.485
+        "ask": 0.79,
+        "p": 0.5
        },
        {
         "k": 4,
         "bid": 0.13,
-        "ask": 0.62,
-        "p": 0.375
+        "ask": 0.64,
+        "p": 0.385
        }
       ]
      },
@@ -13163,12 +12763,12 @@
       "event": "KXH100MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 3.911,
+       "value": 3.947,
        "censored": null
       },
-      "medianBid": 3.304,
+      "medianBid": 3.313,
       "medianAsk": 4,
-      "mean": 3.854,
+      "mean": 3.876,
       "volume": 8460,
       "openInterest": 2397,
       "quotedAt": "2026-09-09",
@@ -13181,9 +12781,9 @@
        },
        {
         "k": 2.25,
-        "bid": 0.67,
+        "bid": 0.66,
         "ask": 0.99,
-        "p": 0.83
+        "p": 0.825
        },
        {
         "k": 2.5,
@@ -13211,21 +12811,21 @@
        },
        {
         "k": 3.5,
-        "bid": 0.39,
+        "bid": 0.41,
         "ask": 0.99,
-        "p": 0.69
+        "p": 0.7
        },
        {
         "k": 3.75,
         "bid": 0.28,
-        "ask": 0.92,
-        "p": 0.6
+        "ask": 0.98,
+        "p": 0.63
        },
        {
         "k": 4,
         "bid": 0.2,
-        "ask": 0.69,
-        "p": 0.445
+        "ask": 0.73,
+        "p": 0.465
        }
       ]
      },
@@ -13758,8 +13358,8 @@
        "censored": null
       },
       "medianBid": 4.237,
-      "medianAsk": 7.577,
-      "mean": 5.944,
+      "medianAsk": 6.824,
+      "mean": 5.661,
       "volume": 23956,
       "openInterest": 7248,
       "quotedAt": "2026-11-02",
@@ -13808,45 +13408,45 @@
        },
        {
         "k": 5,
-        "bid": 0.95,
+        "bid": 0.82,
         "ask": 0.99,
         "p": 0.495
        },
        {
         "k": 5.5,
-        "bid": 0.84,
+        "bid": 0.83,
         "ask": 0.99,
         "p": 0.495
        },
        {
         "k": 6,
-        "bid": 0.68,
+        "bid": 0.71,
         "ask": 0.99,
         "p": 0.495
        },
        {
         "k": 6.5,
-        "bid": 0.63,
-        "ask": 0.89,
+        "bid": 0.56,
+        "ask": 0.85,
         "p": 0.495
        },
        {
         "k": 7,
-        "bid": 0.49,
-        "ask": 0.92,
-        "p": 0.495
+        "bid": 0.2,
+        "ask": 0.31,
+        "p": 0.255
        },
        {
         "k": 7.5,
-        "bid": 0.14,
-        "ask": 0.58,
-        "p": 0.36
+        "bid": 0.01,
+        "ask": 0.08,
+        "p": 0.045
        },
        {
         "k": 8,
-        "bid": 0.01,
-        "ask": 0.06,
-        "p": 0.035
+        "bid": 0,
+        "ask": 0.05,
+        "p": 0.025
        },
        {
         "k": 8.5,
@@ -13896,33 +13496,33 @@
       "event": "KXH200MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 8.296,
+       "value": 7.521,
        "censored": null
       },
-      "medianBid": 6.65,
-      "medianAsk": 9.786,
-      "mean": 9.88,
+      "medianBid": 6.5,
+      "medianAsk": 8.714,
+      "mean": 8.335,
       "volume": 24215,
       "openInterest": 6976,
       "quotedAt": "2026-11-08",
       "strikes": [
        {
         "k": 1.5,
-        "bid": 0.76,
+        "bid": 0.79,
         "ask": 0.99,
-        "p": 0.875
+        "p": 0.89
        },
        {
         "k": 2,
-        "bid": 0.74,
+        "bid": 0.76,
         "ask": 1,
-        "p": 0.87
+        "p": 0.88
        },
        {
         "k": 2.5,
         "bid": 0.9,
         "ask": 0.99,
-        "p": 0.87
+        "p": 0.88
        },
        {
         "k": 3,
@@ -13932,105 +13532,105 @@
        },
        {
         "k": 3.5,
-        "bid": 0.74,
+        "bid": 0.76,
         "ask": 0.99,
-        "p": 0.865
+        "p": 0.87
        },
        {
         "k": 4,
         "bid": 0.75,
         "ask": 0.99,
-        "p": 0.865
+        "p": 0.87
        },
        {
         "k": 4.5,
-        "bid": 0.68,
+        "bid": 0.69,
         "ask": 0.87,
-        "p": 0.775
+        "p": 0.78
        },
        {
         "k": 5,
         "bid": 0.65,
-        "ask": 0.99,
-        "p": 0.775
+        "ask": 0.98,
+        "p": 0.78
        },
        {
         "k": 5.5,
         "bid": 0.61,
         "ask": 0.99,
-        "p": 0.775
+        "p": 0.78
        },
        {
         "k": 6,
         "bid": 0.57,
         "ask": 0.99,
-        "p": 0.775
+        "p": 0.78
        },
        {
         "k": 6.5,
-        "bid": 0.53,
-        "ask": 0.99,
-        "p": 0.76
+        "bid": 0.5,
+        "ask": 0.97,
+        "p": 0.735
        },
        {
         "k": 7,
-        "bid": 0.43,
-        "ask": 0.99,
-        "p": 0.71
-       },
-       {
-        "k": 7.5,
-        "bid": 0.34,
-        "ask": 0.96,
+        "bid": 0.35,
+        "ask": 0.95,
         "p": 0.65
        },
        {
+        "k": 7.5,
+        "bid": 0.23,
+        "ask": 0.78,
+        "p": 0.505
+       },
+       {
         "k": 8,
-        "bid": 0.21,
-        "ask": 0.95,
-        "p": 0.58
+        "bid": 0.14,
+        "ask": 0.63,
+        "p": 0.385
        },
        {
         "k": 8.5,
-        "bid": 0.13,
-        "ask": 0.76,
-        "p": 0.445
+        "bid": 0.08,
+        "ask": 0.53,
+        "p": 0.305
        },
        {
         "k": 9,
-        "bid": 0.08,
-        "ask": 0.63,
-        "p": 0.355
+        "bid": 0.04,
+        "ask": 0.46,
+        "p": 0.25
        },
        {
         "k": 9.5,
-        "bid": 0.04,
-        "ask": 0.54,
-        "p": 0.29
+        "bid": 0.01,
+        "ask": 0.43,
+        "p": 0.22
        },
        {
         "k": 10,
-        "bid": 0.02,
-        "ask": 0.47,
-        "p": 0.245
+        "bid": 0.01,
+        "ask": 0.41,
+        "p": 0.21
        },
        {
         "k": 10.5,
         "bid": 0.01,
-        "ask": 0.44,
-        "p": 0.225
+        "ask": 0.38,
+        "p": 0.195
        },
        {
         "k": 11,
         "bid": 0.01,
-        "ask": 0.42,
-        "p": 0.215
+        "ask": 0.36,
+        "p": 0.185
        },
        {
         "k": 11.5,
-        "bid": 0.01,
-        "ask": 0.4,
-        "p": 0.205
+        "bid": 0,
+        "ask": 0.34,
+        "p": 0.17
        }
       ]
      },
@@ -14042,8 +13642,8 @@
        "censored": null
       },
       "medianBid": 1.713,
-      "medianAsk": 9.889,
-      "mean": 7.71,
+      "medianAsk": 8.85,
+      "mean": 7.033,
       "volume": 42871,
       "openInterest": 12814,
       "quotedAt": "2026-11-05",
@@ -14068,7 +13668,7 @@
        },
        {
         "k": 3,
-        "bid": 0.64,
+        "bid": 0.66,
         "ask": 0.99,
         "p": 0.495
        },
@@ -14080,13 +13680,13 @@
        },
        {
         "k": 4,
-        "bid": 0.68,
+        "bid": 0.69,
         "ask": 0.99,
         "p": 0.495
        },
        {
         "k": 4.5,
-        "bid": 0.66,
+        "bid": 0.67,
         "ask": 0.99,
         "p": 0.495
        },
@@ -14098,7 +13698,7 @@
        },
        {
         "k": 5.5,
-        "bid": 0.61,
+        "bid": 0.62,
         "ask": 0.99,
         "p": 0.495
        },
@@ -14111,62 +13711,62 @@
        {
         "k": 6.5,
         "bid": 0.47,
-        "ask": 0.98,
+        "ask": 0.97,
         "p": 0.495
        },
        {
         "k": 7,
-        "bid": 0.49,
-        "ask": 0.99,
-        "p": 0.495
-       },
-       {
-        "k": 7.5,
         "bid": 0.42,
         "ask": 0.99,
         "p": 0.495
        },
        {
-        "k": 8,
+        "k": 7.5,
         "bid": 0.29,
-        "ask": 0.99,
+        "ask": 0.96,
         "p": 0.495
+       },
+       {
+        "k": 8,
+        "bid": 0.21,
+        "ask": 0.71,
+        "p": 0.46
        },
        {
         "k": 8.5,
-        "bid": 0.2,
-        "ask": 0.91,
-        "p": 0.495
+        "bid": 0.14,
+        "ask": 0.57,
+        "p": 0.355
        },
        {
         "k": 9,
-        "bid": 0.14,
-        "ask": 0.7,
-        "p": 0.42
+        "bid": 0.09,
+        "ask": 0.47,
+        "p": 0.28
        },
        {
         "k": 9.5,
-        "bid": 0.1,
-        "ask": 0.57,
-        "p": 0.335
+        "bid": 0.06,
+        "ask": 0.45,
+        "p": 0.255
        },
        {
         "k": 10,
-        "bid": 0.06,
-        "ask": 0.48,
-        "p": 0.27
+        "bid": 0.03,
+        "ask": 0.43,
+        "p": 0.23
        },
        {
         "k": 10.5,
-        "bid": 0.04,
-        "ask": 0.45,
-        "p": 0.245
+        "bid": 0.02,
+        "ask": 0.41,
+        "p": 0.215
        },
        {
         "k": 11,
-        "bid": 0.02,
-        "ask": 0.44,
-        "p": 0.23
+        "bid": 0.01,
+        "ask": 0.39,
+        "p": 0.2
        }
       ]
      },
@@ -14815,14 +14415,14 @@
       "event": "KXB200MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 9.779,
+       "value": 9.711,
        "censored": null
       },
-      "medianBid": 9.738,
-      "medianAsk": 9.82,
-      "mean": 9.659,
-      "volume": 37096,
-      "openInterest": 11936,
+      "medianBid": 9.667,
+      "medianAsk": 9.754,
+      "mean": 9.569,
+      "volume": 37296,
+      "openInterest": 11736,
       "quotedAt": "2026-09-11",
       "strikes": [
        {
@@ -14857,7 +14457,7 @@
        },
        {
         "k": 5.5,
-        "bid": 0.95,
+        "bid": 0.96,
         "ask": 0.99,
         "p": 0.97
        },
@@ -14899,27 +14499,27 @@
        },
        {
         "k": 9,
-        "bid": 0.93,
+        "bid": 0.92,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.955
        },
        {
         "k": 9.5,
-        "bid": 0.79,
-        "ask": 0.89,
-        "p": 0.84
+        "bid": 0.69,
+        "ask": 0.79,
+        "p": 0.74
        },
        {
         "k": 10,
-        "bid": 0.18,
-        "ask": 0.28,
-        "p": 0.23
+        "bid": 0.12,
+        "ask": 0.22,
+        "p": 0.17
        },
        {
         "k": 10.5,
-        "bid": 0.01,
-        "ask": 0.08,
-        "p": 0.045
+        "bid": 0,
+        "ask": 0.06,
+        "p": 0.03
        },
        {
         "k": 11,
@@ -14945,12 +14545,12 @@
       "event": "KXB200MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 10.481,
+       "value": 10.431,
        "censored": null
       },
-      "medianBid": 9.587,
+      "medianBid": 9.6,
       "medianAsk": 12,
-      "mean": 10.823,
+      "mean": 10.901,
       "volume": 26597,
       "openInterest": 6845,
       "quotedAt": "2026-09-16",
@@ -15029,75 +14629,75 @@
        },
        {
         "k": 6.5,
-        "bid": 0.81,
+        "bid": 0.83,
         "ask": 0.99,
-        "p": 0.9
+        "p": 0.91
        },
        {
         "k": 7,
-        "bid": 0.77,
+        "bid": 0.8,
         "ask": 1,
-        "p": 0.885
+        "p": 0.9
        },
        {
         "k": 7.5,
-        "bid": 0.73,
+        "bid": 0.76,
         "ask": 1,
-        "p": 0.865
+        "p": 0.88
        },
        {
         "k": 8,
-        "bid": 0.75,
+        "bid": 0.78,
         "ask": 0.99,
-        "p": 0.865
+        "p": 0.88
        },
        {
         "k": 8.5,
-        "bid": 0.69,
+        "bid": 0.71,
         "ask": 0.99,
-        "p": 0.84
+        "p": 0.85
        },
        {
         "k": 9,
-        "bid": 0.62,
+        "bid": 0.63,
         "ask": 0.99,
-        "p": 0.805
+        "p": 0.81
        },
        {
         "k": 9.5,
-        "bid": 0.54,
+        "bid": 0.55,
         "ask": 0.99,
-        "p": 0.765
+        "p": 0.77
        },
        {
         "k": 10,
-        "bid": 0.31,
+        "bid": 0.3,
         "ask": 0.95,
-        "p": 0.63
+        "p": 0.625
        },
        {
         "k": 10.5,
-        "bid": 0.15,
-        "ask": 0.84,
-        "p": 0.495
+        "bid": 0.14,
+        "ask": 0.82,
+        "p": 0.48
        },
        {
         "k": 11,
-        "bid": 0.07,
-        "ask": 0.74,
-        "p": 0.405
+        "bid": 0.06,
+        "ask": 0.62,
+        "p": 0.34
        },
        {
         "k": 11.5,
-        "bid": 0.04,
-        "ask": 0.63,
-        "p": 0.335
+        "bid": 0.03,
+        "ask": 0.6,
+        "p": 0.315
        },
        {
         "k": 12,
         "bid": 0.02,
-        "ask": 0.54,
-        "p": 0.28
+        "ask": 0.52,
+        "p": 0.27
        }
       ]
      },
@@ -15105,12 +14705,12 @@
       "event": "KXB200MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 9.667,
+       "value": 9.583,
        "censored": null
       },
-      "medianBid": 9.438,
-      "medianAsk": 9.938,
-      "mean": 9.817,
+      "medianBid": 9.5,
+      "medianAsk": 9.722,
+      "mean": 9.605,
       "volume": 22928,
       "openInterest": 5119,
       "quotedAt": "2026-09-20",
@@ -15165,69 +14765,69 @@
        },
        {
         "k": 7,
-        "bid": 0.88,
-        "ask": 0.98,
-        "p": 0.93
+        "bid": 0.87,
+        "ask": 0.97,
+        "p": 0.92
        },
        {
         "k": 7.5,
-        "bid": 0.82,
-        "ask": 0.92,
-        "p": 0.87
+        "bid": 0.81,
+        "ask": 0.91,
+        "p": 0.86
        },
        {
         "k": 8,
-        "bid": 0.74,
-        "ask": 0.84,
-        "p": 0.79
+        "bid": 0.73,
+        "ask": 0.83,
+        "p": 0.78
        },
        {
         "k": 8.5,
-        "bid": 0.66,
-        "ask": 0.76,
-        "p": 0.71
+        "bid": 0.64,
+        "ask": 0.74,
+        "p": 0.69
        },
        {
         "k": 9,
-        "bid": 0.57,
-        "ask": 0.67,
-        "p": 0.62
+        "bid": 0.55,
+        "ask": 0.65,
+        "p": 0.6
        },
        {
         "k": 9.5,
-        "bid": 0.49,
-        "ask": 0.57,
-        "p": 0.53
+        "bid": 0.5,
+        "ask": 0.54,
+        "p": 0.52
        },
        {
         "k": 10,
-        "bid": 0.39,
-        "ask": 0.49,
-        "p": 0.44
+        "bid": 0.35,
+        "ask": 0.45,
+        "p": 0.4
        },
        {
         "k": 10.5,
-        "bid": 0.29,
-        "ask": 0.39,
-        "p": 0.34
+        "bid": 0.26,
+        "ask": 0.36,
+        "p": 0.31
        },
        {
         "k": 11,
-        "bid": 0.23,
-        "ask": 0.33,
-        "p": 0.28
+        "bid": 0.19,
+        "ask": 0.29,
+        "p": 0.24
        },
        {
         "k": 11.5,
-        "bid": 0.16,
-        "ask": 0.26,
-        "p": 0.21
+        "bid": 0.13,
+        "ask": 0.23,
+        "p": 0.18
        },
        {
         "k": 12,
-        "bid": 0.11,
-        "ask": 0.21,
-        "p": 0.16
+        "bid": 0.08,
+        "ask": 0.18,
+        "p": 0.13
        }
       ]
      },
@@ -16008,14 +15608,14 @@
       "event": "KXA100MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 1.12,
+       "value": 1.119,
        "censored": null
       },
-      "medianBid": 1.11,
-      "medianAsk": 1.13,
-      "mean": 1.13,
-      "volume": 4373,
-      "openInterest": 2149,
+      "medianBid": 1.108,
+      "medianAsk": 1.129,
+      "mean": 1.129,
+      "volume": 4374,
+      "openInterest": 2150,
       "quotedAt": "2026-09-09",
       "strikes": [
        {
@@ -16027,14 +15627,14 @@
        {
         "k": 0.75,
         "bid": 0.95,
-        "ask": 0.99,
-        "p": 0.97
+        "ask": 1,
+        "p": 0.975
        },
        {
         "k": 1,
-        "bid": 0.89,
-        "ask": 0.99,
-        "p": 0.94
+        "bid": 0.88,
+        "ask": 0.98,
+        "p": 0.93
        },
        {
         "k": 1.25,
@@ -16066,12 +15666,12 @@
       "event": "KXA100MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 1.087,
+       "value": 1.072,
        "censored": null
       },
-      "medianBid": 1.068,
-      "medianAsk": 1.106,
-      "mean": 1.087,
+      "medianBid": 1.052,
+      "medianAsk": 1.091,
+      "mean": 1.071,
       "volume": 4275,
       "openInterest": 1958,
       "quotedAt": "2026-09-09",
@@ -16090,15 +15690,15 @@
        },
        {
         "k": 1,
-        "bid": 0.68,
-        "ask": 0.78,
-        "p": 0.73
+        "bid": 0.63,
+        "ask": 0.73,
+        "p": 0.68
        },
        {
         "k": 1.25,
-        "bid": 0.02,
-        "ask": 0.12,
-        "p": 0.07
+        "bid": 0.01,
+        "ask": 0.1,
+        "p": 0.055
        },
        {
         "k": 1.5,
@@ -16124,12 +15724,12 @@
       "event": "KXA100MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 1.085,
+       "value": 1.067,
        "censored": null
       },
-      "medianBid": 1.061,
-      "medianAsk": 1.108,
-      "mean": 1.096,
+      "medianBid": 1.043,
+      "medianAsk": 1.091,
+      "mean": 1.076,
       "volume": 3353,
       "openInterest": 861,
       "quotedAt": "2026-09-09",
@@ -16142,27 +15742,27 @@
        },
        {
         "k": 0.75,
-        "bid": 0.94,
+        "bid": 0.93,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.96
        },
        {
         "k": 1,
-        "bid": 0.63,
-        "ask": 0.73,
-        "p": 0.68
+        "bid": 0.59,
+        "ask": 0.69,
+        "p": 0.64
        },
        {
         "k": 1.25,
-        "bid": 0.1,
-        "ask": 0.2,
-        "p": 0.15
+        "bid": 0.07,
+        "ask": 0.17,
+        "p": 0.12
        },
        {
         "k": 1.5,
         "bid": 0.01,
-        "ask": 0.07,
-        "p": 0.04
+        "ask": 0.06,
+        "p": 0.035
        },
        {
         "k": 1.75,
@@ -16677,12 +16277,12 @@
       "event": "KXRTX5090MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 0.662,
+       "value": 0.663,
        "censored": null
       },
-      "medianBid": 0.652,
+      "medianBid": 0.654,
       "medianAsk": 0.673,
-      "mean": 0.754,
+      "mean": 0.756,
       "volume": 54512,
       "openInterest": 17285,
       "quotedAt": "2026-09-09",
@@ -16701,9 +16301,9 @@
        },
        {
         "k": 0.75,
-        "bid": 0.21,
+        "bid": 0.22,
         "ask": 0.28,
-        "p": 0.245
+        "p": 0.25
        },
        {
         "k": 1,
@@ -16741,12 +16341,12 @@
       "event": "KXRTX5090MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 0.687,
+       "value": 0.688,
        "censored": null
       },
-      "medianBid": 0.67,
-      "medianAsk": 0.703,
-      "mean": 0.733,
+      "medianBid": 0.671,
+      "medianAsk": 0.704,
+      "mean": 0.736,
       "volume": 20522,
       "openInterest": 2848,
       "quotedAt": "2026-09-09",
@@ -16759,9 +16359,9 @@
        },
        {
         "k": 0.5,
-        "bid": 0.88,
-        "ask": 0.98,
-        "p": 0.93
+        "bid": 0.89,
+        "ask": 0.99,
+        "p": 0.94
        },
        {
         "k": 0.75,
@@ -16869,8 +16469,8 @@
       "medianBid": 0.5,
       "medianAsk": 1.416,
       "mean": 1.389,
-      "volume": 41889,
-      "openInterest": 5728,
+      "volume": 41901,
+      "openInterest": 5740,
       "quotedAt": "2026-11-07",
       "strikes": [
        {
@@ -17356,8 +16956,8 @@
       "medianBid": 58.367,
       "medianAsk": 60.75,
       "mean": 59.358,
-      "volume": 4571,
-      "openInterest": 3528,
+      "volume": 4607,
+      "openInterest": 3554,
       "quotedAt": "2026-09-29",
       "strikes": [
        {
@@ -17482,7 +17082,7 @@
        },
        {
         "k": 53.5,
-        "bid": 0.94,
+        "bid": 0.97,
         "ask": 0.99,
         "p": 0.965
        },
@@ -17584,7 +17184,7 @@
        },
        {
         "k": 57.75,
-        "bid": 0.94,
+        "bid": 0.98,
         "ask": 0.99,
         "p": 0.965
        },
@@ -17671,7 +17271,7 @@
       },
       "medianBid": 61.563,
       "medianAsk": 62.125,
-      "mean": 61.894,
+      "mean": 61.911,
       "volume": 4366,
       "openInterest": 2880,
       "quotedAt": "2026-10-23",
@@ -17906,15 +17506,15 @@
        },
        {
         "k": 58,
-        "bid": 0.92,
+        "bid": 0.93,
         "ask": 0.99,
-        "p": 0.955
+        "p": 0.96
        },
        {
         "k": 58.25,
-        "bid": 0.9,
+        "bid": 0.91,
         "ask": 0.98,
-        "p": 0.94
+        "p": 0.945
        },
        {
         "k": 58.5,
@@ -17930,21 +17530,21 @@
        },
        {
         "k": 59,
-        "bid": 0.85,
-        "ask": 0.94,
-        "p": 0.895
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 59.25,
-        "bid": 0.83,
+        "bid": 0.84,
         "ask": 0.92,
-        "p": 0.875
+        "p": 0.88
        },
        {
         "k": 59.5,
-        "bid": 0.8,
-        "ask": 0.89,
-        "p": 0.845
+        "bid": 0.81,
+        "ask": 0.9,
+        "p": 0.855
        },
        {
         "k": 59.75,
@@ -17954,15 +17554,15 @@
        },
        {
         "k": 60,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 60.25,
-        "bid": 0.7,
-        "ask": 0.79,
-        "p": 0.745
+        "bid": 0.71,
+        "ask": 0.8,
+        "p": 0.755
        },
        {
         "k": 60.5,
@@ -17978,15 +17578,15 @@
        },
        {
         "k": 61,
-        "bid": 0.59,
-        "ask": 0.68,
-        "p": 0.635
+        "bid": 0.6,
+        "ask": 0.69,
+        "p": 0.645
        },
        {
         "k": 61.25,
-        "bid": 0.55,
-        "ask": 0.64,
-        "p": 0.595
+        "bid": 0.56,
+        "ask": 0.65,
+        "p": 0.605
        },
        {
         "k": 61.5,
@@ -18020,9 +17620,9 @@
        },
        {
         "k": 62.75,
-        "bid": 0.32,
-        "ask": 0.41,
-        "p": 0.365
+        "bid": 0.31,
+        "ask": 0.4,
+        "p": 0.355
        },
        {
         "k": 63,
@@ -18047,7 +17647,7 @@
       },
       "medianBid": 58.25,
       "medianAsk": 58.25,
-      "mean": 76.16,
+      "mean": 67.036,
       "volume": 2151,
       "openInterest": 1297,
       "quotedAt": "2026-09-30",
@@ -18204,27 +17804,27 @@
        },
        {
         "k": 54.75,
-        "bid": 0.93,
+        "bid": 0.92,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.955
        },
        {
         "k": 55,
         "bid": 0.93,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.955
        },
        {
         "k": 55.25,
         "bid": 0.92,
-        "ask": 0.98,
-        "p": 0.95
+        "ask": 0.99,
+        "p": 0.955
        },
        {
         "k": 55.5,
-        "bid": 0.91,
+        "bid": 0.92,
         "ask": 0.98,
-        "p": 0.945
+        "p": 0.95
        },
        {
         "k": 55.75,
@@ -18240,33 +17840,33 @@
        },
        {
         "k": 56.25,
+        "bid": 0.9,
+        "ask": 0.98,
+        "p": 0.94
+       },
+       {
+        "k": 56.5,
         "bid": 0.89,
         "ask": 0.98,
         "p": 0.935
        },
        {
-        "k": 56.5,
+        "k": 56.75,
         "bid": 0.88,
         "ask": 0.97,
         "p": 0.925
        },
        {
-        "k": 56.75,
+        "k": 57,
         "bid": 0.87,
         "ask": 0.96,
         "p": 0.915
        },
        {
-        "k": 57,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
-       },
-       {
         "k": 57.25,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
+        "bid": 0.87,
+        "ask": 0.96,
+        "p": 0.915
        },
        {
         "k": 57.5,
@@ -18282,9 +17882,9 @@
        },
        {
         "k": 58,
-        "bid": 0.82,
-        "ask": 0.91,
-        "p": 0.865
+        "bid": 0.83,
+        "ask": 0.92,
+        "p": 0.875
        },
        {
         "k": 58.25,
@@ -18303,7 +17903,7 @@
       },
       "medianBid": 60.75,
       "medianAsk": 60.75,
-      "mean": 70.747,
+      "mean": 70.768,
       "volume": 5549,
       "openInterest": 4690,
       "quotedAt": "2026-10-12",
@@ -18316,9 +17916,9 @@
        },
        {
         "k": 48.75,
-        "bid": 0.94,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.97
        },
        {
         "k": 49,
@@ -18346,27 +17946,27 @@
        },
        {
         "k": 50,
-        "bid": 0.93,
+        "bid": 0.94,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.965
        },
        {
         "k": 50.25,
         "bid": 0.94,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.965
        },
        {
         "k": 50.5,
         "bid": 0.94,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.965
        },
        {
         "k": 50.75,
         "bid": 0.94,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.965
        },
        {
         "k": 51,
@@ -18400,15 +18000,15 @@
        },
        {
         "k": 52.25,
-        "bid": 0.91,
+        "bid": 0.92,
         "ask": 0.98,
-        "p": 0.945
+        "p": 0.95
        },
        {
         "k": 52.5,
-        "bid": 0.9,
+        "bid": 0.91,
         "ask": 0.98,
-        "p": 0.94
+        "p": 0.945
        },
        {
         "k": 52.75,
@@ -18418,9 +18018,9 @@
        },
        {
         "k": 53,
-        "bid": 0.89,
+        "bid": 0.9,
         "ask": 0.98,
-        "p": 0.935
+        "p": 0.94
        },
        {
         "k": 53.25,
@@ -18430,7 +18030,7 @@
        },
        {
         "k": 53.5,
-        "bid": 0.89,
+        "bid": 0.9,
         "ask": 0.98,
         "p": 0.935
        },
@@ -18448,9 +18048,9 @@
        },
        {
         "k": 54.25,
-        "bid": 0.87,
-        "ask": 0.96,
-        "p": 0.915
+        "bid": 0.88,
+        "ask": 0.97,
+        "p": 0.925
        },
        {
         "k": 54.5,
@@ -18466,15 +18066,15 @@
        },
        {
         "k": 55,
-        "bid": 0.85,
-        "ask": 0.94,
-        "p": 0.895
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 55.25,
-        "bid": 0.85,
-        "ask": 0.94,
-        "p": 0.895
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 55.5,
@@ -18563,14 +18163,14 @@
        {
         "k": 59,
         "bid": 0.75,
-        "ask": 0.8,
+        "ask": 0.81,
         "p": 0.775
        },
        {
         "k": 59.25,
         "bid": 0.75,
-        "ask": 0.79,
-        "p": 0.77
+        "ask": 0.8,
+        "p": 0.775
        },
        {
         "k": 59.5,
@@ -18592,9 +18192,9 @@
        },
        {
         "k": 60.25,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.66,
+        "ask": 0.75,
+        "p": 0.705
        },
        {
         "k": 60.5,
@@ -18619,7 +18219,7 @@
       },
       "medianBid": 55.75,
       "medianAsk": 55.75,
-      "mean": 69.386,
+      "mean": 54.87,
       "volume": 200,
       "openInterest": 200,
       "quotedAt": "2026-09-08",
@@ -18638,9 +18238,9 @@
        },
        {
         "k": 49,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
+        "bid": 0.87,
+        "ask": 0.96,
+        "p": 0.915
        },
        {
         "k": 49.25,
@@ -18656,9 +18256,9 @@
        },
        {
         "k": 49.75,
-        "bid": 0.85,
-        "ask": 0.94,
-        "p": 0.895
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 50,
@@ -18668,9 +18268,9 @@
        },
        {
         "k": 50.25,
-        "bid": 0.84,
-        "ask": 0.93,
-        "p": 0.885
+        "bid": 0.85,
+        "ask": 0.94,
+        "p": 0.895
        },
        {
         "k": 50.5,
@@ -18728,9 +18328,9 @@
        },
        {
         "k": 52.75,
-        "bid": 0.79,
-        "ask": 0.88,
-        "p": 0.835
+        "bid": 0.8,
+        "ask": 0.89,
+        "p": 0.845
        },
        {
         "k": 53,
@@ -18740,9 +18340,9 @@
        },
        {
         "k": 53.25,
-        "bid": 0.78,
-        "ask": 0.87,
-        "p": 0.825
+        "bid": 0.79,
+        "ask": 0.88,
+        "p": 0.835
        },
        {
         "k": 53.5,
@@ -18758,9 +18358,9 @@
        },
        {
         "k": 54,
-        "bid": 0.76,
-        "ask": 0.85,
-        "p": 0.805
+        "bid": 0.77,
+        "ask": 0.86,
+        "p": 0.815
        },
        {
         "k": 54.25,
@@ -18770,21 +18370,21 @@
        },
        {
         "k": 54.5,
-        "bid": 0.76,
-        "ask": 0.85,
-        "p": 0.805
-       },
-       {
-        "k": 54.75,
         "bid": 0.75,
         "ask": 0.84,
         "p": 0.795
        },
        {
+        "k": 54.75,
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.795
+       },
+       {
         "k": 55,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 55.25,
@@ -18800,9 +18400,9 @@
        },
        {
         "k": 55.75,
-        "bid": 0.72,
-        "ask": 0.81,
-        "p": 0.765
+        "bid": 0.73,
+        "ask": 0.82,
+        "p": 0.775
        }
       ]
      },
@@ -18815,7 +18415,7 @@
       },
       "medianBid": 48.584,
       "medianAsk": 55.75,
-      "mean": 59.137,
+      "mean": 59.149,
       "volume": 972,
       "openInterest": 468,
       "quotedAt": "2026-09-08",
@@ -18823,8 +18423,8 @@
        {
         "k": 48.5,
         "bid": 0.75,
-        "ask": 0.93,
-        "p": 0.84
+        "ask": 0.94,
+        "p": 0.845
        },
        {
         "k": 48.75,
@@ -18835,8 +18435,8 @@
        {
         "k": 49,
         "bid": 0.01,
-        "ask": 0.92,
-        "p": 0.465
+        "ask": 0.93,
+        "p": 0.47
        },
        {
         "k": 49.25,
@@ -18865,8 +18465,8 @@
        {
         "k": 50.25,
         "bid": 0.01,
-        "ask": 0.9,
-        "p": 0.455
+        "ask": 0.91,
+        "p": 0.46
        },
        {
         "k": 50.5,
@@ -18877,8 +18477,8 @@
        {
         "k": 50.75,
         "bid": 0.01,
-        "ask": 0.89,
-        "p": 0.45
+        "ask": 0.9,
+        "p": 0.455
        },
        {
         "k": 51,
@@ -18889,20 +18489,20 @@
        {
         "k": 51.25,
         "bid": 0.01,
-        "ask": 0.88,
-        "p": 0.445
+        "ask": 0.89,
+        "p": 0.45
        },
        {
         "k": 51.5,
         "bid": 0.01,
-        "ask": 0.87,
-        "p": 0.44
+        "ask": 0.88,
+        "p": 0.445
        },
        {
         "k": 51.75,
         "bid": 0.73,
         "ask": 0.86,
-        "p": 0.44
+        "p": 0.445
        },
        {
         "k": 52,
@@ -18919,8 +18519,8 @@
        {
         "k": 52.5,
         "bid": 0.01,
-        "ask": 0.84,
-        "p": 0.425
+        "ask": 0.85,
+        "p": 0.43
        },
        {
         "k": 52.75,
@@ -18931,8 +18531,8 @@
        {
         "k": 53,
         "bid": 0.01,
-        "ask": 0.83,
-        "p": 0.42
+        "ask": 0.84,
+        "p": 0.425
        },
        {
         "k": 53.25,
@@ -18949,8 +18549,8 @@
        {
         "k": 53.75,
         "bid": 0.01,
-        "ask": 0.81,
-        "p": 0.41
+        "ask": 0.82,
+        "p": 0.415
        },
        {
         "k": 54,
@@ -19795,7 +19395,7 @@
       },
       "medianBid": 58.75,
       "medianAsk": 58.75,
-      "mean": 56.499,
+      "mean": 65.601,
       "volume": 0,
       "openInterest": 0,
       "quotedAt": "2026-09-08",
@@ -19808,9 +19408,9 @@
        },
        {
         "k": 51.75,
-        "bid": 0.68,
-        "ask": 0.77,
-        "p": 0.725
+        "bid": 0.69,
+        "ask": 0.78,
+        "p": 0.735
        },
        {
         "k": 52,
@@ -19838,9 +19438,9 @@
        },
        {
         "k": 53,
-        "bid": 0.66,
-        "ask": 0.75,
-        "p": 0.705
+        "bid": 0.67,
+        "ask": 0.76,
+        "p": 0.715
        },
        {
         "k": 53.25,
@@ -19850,9 +19450,9 @@
        },
        {
         "k": 53.5,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.66,
+        "ask": 0.75,
+        "p": 0.705
        },
        {
         "k": 53.75,
@@ -19862,9 +19462,9 @@
        },
        {
         "k": 54,
-        "bid": 0.64,
-        "ask": 0.73,
-        "p": 0.685
+        "bid": 0.65,
+        "ask": 0.74,
+        "p": 0.695
        },
        {
         "k": 54.25,
@@ -19874,9 +19474,9 @@
        },
        {
         "k": 54.5,
-        "bid": 0.63,
-        "ask": 0.72,
-        "p": 0.675
+        "bid": 0.64,
+        "ask": 0.73,
+        "p": 0.685
        },
        {
         "k": 54.75,
@@ -19892,9 +19492,9 @@
        },
        {
         "k": 55.25,
-        "bid": 0.62,
-        "ask": 0.71,
-        "p": 0.665
+        "bid": 0.63,
+        "ask": 0.72,
+        "p": 0.675
        },
        {
         "k": 55.5,
@@ -19904,9 +19504,9 @@
        },
        {
         "k": 55.75,
-        "bid": 0.61,
-        "ask": 0.7,
-        "p": 0.655
+        "bid": 0.62,
+        "ask": 0.71,
+        "p": 0.665
        },
        {
         "k": 56,
@@ -19916,9 +19516,9 @@
        },
        {
         "k": 56.25,
-        "bid": 0.6,
-        "ask": 0.69,
-        "p": 0.645
+        "bid": 0.61,
+        "ask": 0.7,
+        "p": 0.655
        },
        {
         "k": 56.5,
@@ -19928,9 +19528,9 @@
        },
        {
         "k": 56.75,
-        "bid": 0.59,
-        "ask": 0.68,
-        "p": 0.635
+        "bid": 0.6,
+        "ask": 0.69,
+        "p": 0.645
        },
        {
         "k": 57,
@@ -19958,9 +19558,9 @@
        },
        {
         "k": 58,
-        "bid": 0.57,
-        "ask": 0.66,
-        "p": 0.615
+        "bid": 0.58,
+        "ask": 0.67,
+        "p": 0.625
        },
        {
         "k": 58.25,
@@ -19970,9 +19570,9 @@
        },
        {
         "k": 58.5,
-        "bid": 0.56,
-        "ask": 0.65,
-        "p": 0.605
+        "bid": 0.57,
+        "ask": 0.66,
+        "p": 0.615
        },
        {
         "k": 58.75,
@@ -20182,21 +19782,21 @@
       "event": "KXDDR5MS-27NOV",
       "month": "2027-11",
       "median": {
-       "value": 66.125,
+       "value": 66.375,
        "censored": null
       },
-      "medianBid": 63.5,
+      "medianBid": 63.75,
       "medianAsk": 68.75,
-      "mean": 64.405,
+      "mean": 64.427,
       "volume": 3966,
       "openInterest": 2982,
       "quotedAt": "2026-11-03",
       "strikes": [
        {
         "k": 59,
-        "bid": 0.58,
-        "ask": 0.67,
-        "p": 0.625
+        "bid": 0.59,
+        "ask": 0.68,
+        "p": 0.635
        },
        {
         "k": 59.25,
@@ -20206,9 +19806,9 @@
        },
        {
         "k": 59.5,
-        "bid": 0.57,
-        "ask": 0.66,
-        "p": 0.615
+        "bid": 0.58,
+        "ask": 0.67,
+        "p": 0.625
        },
        {
         "k": 59.75,
@@ -20224,9 +19824,9 @@
        },
        {
         "k": 60.25,
-        "bid": 0.56,
-        "ask": 0.65,
-        "p": 0.605
+        "bid": 0.57,
+        "ask": 0.66,
+        "p": 0.615
        },
        {
         "k": 60.5,
@@ -20236,9 +19836,9 @@
        },
        {
         "k": 60.75,
-        "bid": 0.55,
-        "ask": 0.64,
-        "p": 0.595
+        "bid": 0.56,
+        "ask": 0.65,
+        "p": 0.605
        },
        {
         "k": 61,
@@ -20254,9 +19854,9 @@
        },
        {
         "k": 61.5,
-        "bid": 0.54,
+        "bid": 0.55,
         "ask": 0.63,
-        "p": 0.585
+        "p": 0.59
        },
        {
         "k": 61.75,
@@ -20284,9 +19884,9 @@
        },
        {
         "k": 62.75,
-        "bid": 0.51,
-        "ask": 0.6,
-        "p": 0.555
+        "bid": 0.52,
+        "ask": 0.61,
+        "p": 0.565
        },
        {
         "k": 63,
@@ -20302,9 +19902,9 @@
        },
        {
         "k": 63.5,
-        "bid": 0.5,
-        "ask": 0.59,
-        "p": 0.545
+        "bid": 0.51,
+        "ask": 0.6,
+        "p": 0.555
        },
        {
         "k": 63.75,
@@ -20332,9 +19932,9 @@
        },
        {
         "k": 64.75,
-        "bid": 0.48,
-        "ask": 0.57,
-        "p": 0.525
+        "bid": 0.49,
+        "ask": 0.58,
+        "p": 0.535
        },
        {
         "k": 65,
@@ -20350,9 +19950,9 @@
        },
        {
         "k": 65.5,
-        "bid": 0.46,
-        "ask": 0.55,
-        "p": 0.505
+        "bid": 0.47,
+        "ask": 0.56,
+        "p": 0.515
        },
        {
         "k": 65.75,
@@ -20368,9 +19968,9 @@
        },
        {
         "k": 66.25,
-        "bid": 0.45,
-        "ask": 0.54,
-        "p": 0.495
+        "bid": 0.46,
+        "ask": 0.55,
+        "p": 0.505
        },
        {
         "k": 66.5,
@@ -20439,12 +20039,12 @@
   ]
  },
  "power": {
-  "asOf": "2026-11-12",
-  "realTimeLatest": 16.89,
-  "realTimeAvg": 32.96,
-  "realTimeMin": 13.48,
-  "realTimeMax": 69.55,
-  "dayAheadAvg": 44.26
+  "asOf": "2026-11-13",
+  "realTimeLatest": 16.7,
+  "realTimeAvg": 29.18,
+  "realTimeMin": 12.18,
+  "realTimeMax": 59.32,
+  "dayAheadAvg": 33.74
  },
  "twse": {
   "month": "2026-10",
