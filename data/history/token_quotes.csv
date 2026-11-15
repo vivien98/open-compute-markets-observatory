@@ -36,3 +36,11 @@ date,model,providers,list_input,list_output,list_cached,min_input,min_output
 2026-11-14,tencent/hy4-preview,6,0.7506,2.2509,0.0378,0.7506,2.2509
 2026-11-14,thinkingmachines/inkling-2-small,6,0.3,1,0.03,0.15,0.5
 2026-11-14,xiaomi/mimo-v2.6-flash,8,0.14,0.28,0.0028,0.1,0.224
+2026-11-15,deepseek/deepseek-v4.1-flash,27,0.3,1.2,0.03,0.0507,0.2028
+2026-11-15,deepseek/deepseek-v4.1-flash-1017,38,0.15,0.6,0.003,0.02,0.108
+2026-11-15,minimax/minimax-m3.1-flash,12,0.075,0.3,0.0075,0.075,0.3
+2026-11-15,moonshotai/kimi-k3.1-pro,18,2,10,0.2,0.2403,6.1
+2026-11-15,nvidia/nemotron-3.5-super-vl,10,0.15,0.5,0.02,0.06,0.3
+2026-11-15,tencent/hy4-preview,7,0.7506,2.2509,0.0378,0.7506,2.2509
+2026-11-15,thinkingmachines/inkling-2-small,6,0.3,1,0.03,0.15,0.5
+2026-11-15,xiaomi/mimo-v2.6-flash,8,0.14,0.28,0.0028,0.1,0.224
