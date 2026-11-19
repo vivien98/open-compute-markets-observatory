@@ -1,23 +1,23 @@
 {
- "generatedAt": "2026-11-18T21:28:40.940Z",
+ "generatedAt": "2026-11-19T21:38:32.090Z",
  "feeds": [
   {
    "id": "tokens",
    "label": "OpenRouter provider quotes",
    "url": "https://openrouter.ai/api/v1/models",
    "state": "live",
-   "asOf": "2026-11-18",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
-   "note": "8 models, 161 endpoints"
+   "asOf": "2026-11-19",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
+   "note": "8 models, 160 endpoints"
   },
   {
    "id": "gpu",
    "label": "Vast.ai marketplace asks",
    "url": "https://console.vast.ai/api/v0/bundles/",
    "state": "live",
-   "asOf": "2026-11-18",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
-   "note": "H100 $2.04 (16), H200 $4.27 (48), B200 $9.04 (12), B300 $10.16 (6), A100 $0.84 (89), L40S $0.79 (33), RTX 5090 $0.60 (64)"
+   "asOf": "2026-11-19",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
+   "note": "H100 $2.40 (31), H200 $4.28 (58), B200 $8.75 (22), B300 $11.88 (10), A100 $0.84 (70), L40S $0.80 (33), RTX 5090 $0.62 (64)"
   },
   {
    "id": "ladders",
@@ -25,7 +25,7 @@
    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXH100MS",
    "state": "live",
    "asOf": "2026-11-08",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
    "note": "H100: 10 months, H200: 10 months, B200: 10 months, A100: 10 months, RTX 5090: 10 months, DDR5 16Gb: 13 months"
   },
   {
@@ -33,17 +33,17 @@
    "label": "New York Fed SOFR",
    "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/last/260.json",
    "state": "live",
-   "asOf": "2026-11-17",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
-   "note": "3.92%"
+   "asOf": "2026-11-18",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
+   "note": "3.90%"
   },
   {
    "id": "fred",
    "label": "FRED rates, spreads, FX",
    "url": "https://fred.stlouisfed.org/",
    "state": "live",
-   "asOf": "2026-11-17",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
+   "asOf": "2026-11-18",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
    "note": "11 series"
   },
   {
@@ -51,9 +51,9 @@
    "label": "ERCOT hub prices",
    "url": "https://www.ercot.com/api/1/services/read/dashboards/systemWidePrices.json",
    "state": "live",
-   "asOf": "2026-11-18",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
-   "note": "real-time $10.53/MWh, day-ahead avg $29.55"
+   "asOf": "2026-11-19",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
+   "note": "real-time $6.17/MWh, day-ahead avg $28.67"
   },
   {
    "id": "twse",
@@ -61,7 +61,7 @@
    "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
    "state": "live",
    "asOf": "2026-10",
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
    "note": "Hon Hai (Foxconn) +45.730399518079835%, TSMC +59.709757600700904%, Wistron +117.5572069759596%, Quanta +103.9601585472691%"
   },
   {
@@ -70,7 +70,7 @@
    "url": "https://www.alphavantage.co/",
    "state": "needs-key",
    "asOf": null,
-   "fetchedAt": "2026-11-18T21:28:40.940Z",
+   "fetchedAt": "2026-11-19T21:38:32.090Z",
    "note": "set the ALPHAVANTAGE_API_KEY repository secret to enable"
   }
  ],
@@ -81,10 +81,6 @@
    "source": "New York Fed",
    "url": "https://www.newyorkfed.org/markets/reference-rates/sofr",
    "points": [
-    [
-     "2025-10-31",
-     4.22
-    ],
     [
      "2025-11-03",
      4.13
@@ -1120,6 +1116,10 @@
     [
      "2026-11-17",
      3.92
+    ],
+    [
+     "2026-11-18",
+     3.9
     ]
    ]
   },
@@ -1164,6 +1164,10 @@
     [
      "2026-11-18",
      9.044
+    ],
+    [
+     "2026-11-19",
+     8.749
     ]
    ],
    "own": true
@@ -1209,6 +1213,10 @@
     [
      "2026-11-18",
      2.035
+    ],
+    [
+     "2026-11-19",
+     2.402
     ]
    ],
    "own": true
@@ -1254,6 +1262,10 @@
     [
      "2026-11-18",
      4.267
+    ],
+    [
+     "2026-11-19",
+     4.278
     ]
    ],
    "own": true
@@ -1299,6 +1311,10 @@
     [
      "2026-11-18",
      0.1
+    ],
+    [
+     "2026-11-19",
+     0.25
     ]
    ],
    "own": true
@@ -1343,6 +1359,10 @@
     ],
     [
      "2026-11-18",
+     0.6
+    ],
+    [
+     "2026-11-19",
      0.6
     ]
    ],
@@ -1389,6 +1409,10 @@
     [
      "2026-11-18",
      42
+    ],
+    [
+     "2026-11-19",
+     41
     ]
    ],
    "own": true
@@ -1434,6 +1458,10 @@
     [
      "2026-11-18",
      29.55
+    ],
+    [
+     "2026-11-19",
+     28.67
     ]
    ],
    "own": true
@@ -1479,6 +1507,10 @@
     [
      "2026-11-18",
      3.138
+    ],
+    [
+     "2026-11-19",
+     3.126
     ]
    ],
    "own": true
@@ -1489,10 +1521,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/DGS10",
    "points": [
-    [
-     "2025-10-14",
-     4.03
-    ],
     [
      "2025-10-15",
      4.05
@@ -2584,6 +2612,10 @@
     [
      "2026-11-17",
      5.1
+    ],
+    [
+     "2026-11-18",
+     5.07
     ]
    ]
   },
@@ -2593,10 +2625,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/BAMLC0A4CBBB",
    "points": [
-    [
-     "2025-10-14",
-     1.02
-    ],
     [
      "2025-10-15",
      0.99
@@ -3744,6 +3772,10 @@
     [
      "2026-11-17",
      1.15
+    ],
+    [
+     "2026-11-18",
+     1.16
     ]
    ]
   },
@@ -3753,10 +3785,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
    "points": [
-    [
-     "2025-10-14",
-     3.11
-    ],
     [
      "2025-10-15",
      2.95
@@ -4904,6 +4932,10 @@
     [
      "2026-11-17",
      3.43
+    ],
+    [
+     "2026-11-18",
+     3.47
     ]
    ]
   },
@@ -4913,10 +4945,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/BAMLH0A3HYC",
    "points": [
-    [
-     "2025-10-14",
-     8.63
-    ],
     [
      "2025-10-15",
      8.47
@@ -6064,6 +6092,10 @@
     [
      "2026-11-17",
      13.29
+    ],
+    [
+     "2026-11-18",
+     13.53
     ]
    ]
   },
@@ -6073,10 +6105,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/DEXTAUS",
    "points": [
-    [
-     "2025-10-14",
-     30.76
-    ],
     [
      "2025-10-15",
      30.55
@@ -7170,10 +7198,6 @@
    "url": "https://fred.stlouisfed.org/series/DEXKOUS",
    "points": [
     [
-     "2025-10-14",
-     1429.91
-    ],
-    [
      "2025-10-15",
      1423.12
     ],
@@ -8266,10 +8290,6 @@
    "url": "https://fred.stlouisfed.org/series/DEXJPUS",
    "points": [
     [
-     "2025-10-14",
-     151.77
-    ],
-    [
      "2025-10-15",
      151.21
     ],
@@ -9361,10 +9381,6 @@
    "source": "FRED",
    "url": "https://fred.stlouisfed.org/series/DHHNGSP",
    "points": [
-    [
-     "2025-10-14",
-     2.83
-    ],
     [
      "2025-10-15",
      2.79
@@ -10600,6 +10616,10 @@
     [
      "2026-11-18",
      0.841
+    ],
+    [
+     "2026-11-19",
+     0.842
     ]
    ],
    "own": true
@@ -10641,6 +10661,10 @@
     [
      "2026-11-18",
      10.157
+    ],
+    [
+     "2026-11-19",
+     11.876
     ]
    ],
    "own": true
@@ -10682,6 +10706,10 @@
     [
      "2026-11-18",
      0.789
+    ],
+    [
+     "2026-11-19",
+     0.8
     ]
    ],
    "own": true
@@ -10723,6 +10751,10 @@
     [
      "2026-11-18",
      0.601
+    ],
+    [
+     "2026-11-19",
+     0.619
     ]
    ],
    "own": true
@@ -10865,7 +10897,7 @@
   }
  },
  "tokens": {
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-19",
   "models": [
    {
     "id": "deepseek/deepseek-v4.1-flash-1017",
@@ -10879,7 +10911,7 @@
      "from": "builder",
      "copies": 8
     },
-    "providers": 42,
+    "providers": 41,
     "timeOfDay": true,
     "endpoints": [
      {
@@ -10889,21 +10921,9 @@
       "quant": "unknown",
       "input": 0.03,
       "output": 0.25,
-      "cached": 0.01,
+      "cached": 0.003,
       "uptime": 100,
       "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Ambient",
-      "tag": "ambient/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.035,
-      "output": 0.15,
-      "cached": 0.0015,
-      "uptime": 66.66666666666666,
-      "status": -5,
       "timeOfDay": false
      },
      {
@@ -10919,30 +10939,6 @@
       "timeOfDay": false
      },
      {
-      "provider": "Sail Research",
-      "tag": "sail-research/fp4/us",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.04,
-      "output": 0.1,
-      "cached": 0.007,
-      "uptime": 86.66666666666667,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Sail Research",
-      "tag": "sail-research/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.04,
-      "output": 0.1,
-      "cached": 0.007,
-      "uptime": 89.65517241379311,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
       "provider": "PrimeIntellect",
       "tag": "primeintellect",
       "tier": null,
@@ -10950,6 +10946,18 @@
       "input": 0.04368,
       "output": 0.7,
       "cached": 0.0024,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Ambient",
+      "tag": "ambient/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.045,
+      "output": 0.25,
+      "cached": 0.0025,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -10985,7 +10993,19 @@
       "quant": "unknown",
       "input": 0.06,
       "output": 0.5,
-      "cached": 0.02,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "OpenInference",
+      "tag": "open-inference/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.06,
+      "output": 0.9,
+      "cached": 0.002,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -11010,7 +11030,7 @@
       "input": 0.0784,
       "output": 0.2352,
       "cached": 0.002352,
-      "uptime": 93.33333333333333,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -11020,7 +11040,7 @@
       "tier": null,
       "quant": "fp8",
       "input": 0.08,
-      "output": 0.635,
+      "output": 0.666,
       "cached": 0.008,
       "uptime": 100,
       "status": 0,
@@ -11032,7 +11052,7 @@
       "tier": null,
       "quant": "fp8",
       "input": 0.08,
-      "output": 0.635,
+      "output": 0.666,
       "cached": 0.008,
       "uptime": 100,
       "status": 0,
@@ -11051,30 +11071,6 @@
       "timeOfDay": true
      },
      {
-      "provider": "OpenInference",
-      "tag": "open-inference/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.09,
-      "output": 1.2,
-      "cached": 0.005,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Baidu",
-      "tag": "baidu/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.09772,
-      "output": 0.39437,
-      "cached": 0.002094,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
       "provider": "DeepInfra",
       "tag": "deepinfra/fp8",
       "tier": null,
@@ -11082,6 +11078,30 @@
       "input": 0.098,
       "output": 0.294,
       "cached": 0.00294,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Inceptron",
+      "tag": "inceptron/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.1,
+      "output": 0.6,
+      "cached": 0.006,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "DekaLLM",
+      "tag": "dekallm",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.1,
+      "output": 0.6,
+      "cached": 0.003,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -11123,18 +11143,6 @@
       "timeOfDay": false
      },
      {
-      "provider": "Makora",
-      "tag": "makora/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.12,
-      "output": 0.4,
-      "cached": 0.006,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
       "provider": "Ant Digital",
       "tag": "antdigital/fp8",
       "tier": null,
@@ -11151,18 +11159,6 @@
       "tag": "river",
       "tier": null,
       "quant": "unknown",
-      "input": 0.12,
-      "output": 0.48,
-      "cached": 0.0024,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Novita",
-      "tag": "novita/fp8",
-      "tier": null,
-      "quant": "fp8",
       "input": 0.12,
       "output": 0.48,
       "cached": 0.0024,
@@ -11195,12 +11191,36 @@
       "timeOfDay": false
      },
      {
+      "provider": "Baidu",
+      "tag": "baidu/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.1498,
+      "output": 0.60455,
+      "cached": 0.00321,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
       "provider": "Cohere",
       "tag": "cohere/fp8",
       "tier": null,
       "quant": "fp8",
       "input": 0.15,
       "output": 0.5,
+      "cached": 0.003,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "Fireworks",
+      "tag": "fireworks/spot",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
       "cached": 0.003,
       "uptime": 100,
       "status": 0,
@@ -11231,24 +11251,36 @@
       "timeOfDay": true
      },
      {
-      "provider": "ModelRun",
-      "tag": "modelrun/fp4",
+      "provider": "Makora",
+      "tag": "makora/fp8",
       "tier": null,
-      "quant": "fp4",
-      "input": 0.17,
-      "output": 0.67,
+      "quant": "fp8",
+      "input": 0.15,
+      "output": 0.8,
       "cached": 0.006,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
      {
-      "provider": "DekaLLM",
-      "tag": "dekallm",
+      "provider": "Novita",
+      "tag": "novita/fp8",
       "tier": null,
-      "quant": "unknown",
-      "input": 0.18,
-      "output": 0.68,
+      "quant": "fp8",
+      "input": 0.165,
+      "output": 0.66,
+      "cached": 0.0033,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "ModelRun",
+      "tag": "modelrun/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.17,
+      "output": 0.67,
       "cached": 0.006,
       "uptime": 100,
       "status": 0,
@@ -11315,30 +11347,6 @@
       "timeOfDay": false
      },
      {
-      "provider": "Fireworks",
-      "tag": "fireworks/spot",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.21,
-      "output": 0.84,
-      "cached": 0.0042,
-      "uptime": 0,
-      "status": -5,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Mistral",
-      "tag": "mistral/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 0.24,
-      "output": 0.96,
-      "cached": 0.0056,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
       "provider": "PrimaLabs",
       "tag": "primalabs",
       "tier": null,
@@ -11375,13 +11383,13 @@
       "timeOfDay": false
      },
      {
-      "provider": "Inceptron",
-      "tag": "inceptron/fp4",
+      "provider": "Mistral",
+      "tag": "mistral/fp8",
       "tier": null,
-      "quant": "fp4",
+      "quant": "fp8",
       "input": 0.3,
       "output": 1.2,
-      "cached": 0.006,
+      "cached": 0.007,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -11548,6 +11556,18 @@
       "timeOfDay": false
      },
      {
+      "provider": "OpenInference",
+      "tag": "open-inference/fp4",
+      "tier": null,
+      "quant": "fp4",
+      "input": 0.06,
+      "output": 0.9,
+      "cached": 0.002,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
       "provider": "Alibaba",
       "tag": "alibaba",
       "tier": null,
@@ -11558,18 +11578,6 @@
       "uptime": 100,
       "status": 0,
       "timeOfDay": true
-     },
-     {
-      "provider": "OpenInference",
-      "tag": "open-inference/fp4",
-      "tier": null,
-      "quant": "fp4",
-      "input": 0.09,
-      "output": 1.2,
-      "cached": 0.005,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
      },
      {
       "provider": "Cloudflare",
@@ -11716,6 +11724,18 @@
       "timeOfDay": false
      },
      {
+      "provider": "Fireworks",
+      "tag": "fireworks/spot",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.003,
+      "uptime": 96.66666666666667,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
       "provider": "GMICloud",
       "tag": "gmicloud/fp8",
       "tier": null,
@@ -11771,18 +11791,6 @@
       "input": 0.21,
       "output": 0.63,
       "cached": 0.0063,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Fireworks",
-      "tag": "fireworks/spot",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.21,
-      "output": 0.84,
-      "cached": 0.0042,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -11987,7 +11995,7 @@
       "input": 3,
       "output": 12,
       "cached": 0.06,
-      "uptime": 100,
+      "uptime": null,
       "status": 0,
       "timeOfDay": false
      }
@@ -12033,6 +12041,18 @@
       "timeOfDay": false
      },
      {
+      "provider": "Morph",
+      "tag": "morph/fp8",
+      "tier": null,
+      "quant": "fp8",
+      "input": 0.975,
+      "output": 14.623,
+      "cached": 0.309,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
       "provider": "Sail Research",
       "tag": "sail-research/fp4/us",
       "tier": null,
@@ -12040,18 +12060,6 @@
       "input": 1.0425,
       "output": 9.35,
       "cached": 0.187,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
-     {
-      "provider": "Morph",
-      "tag": "morph/fp8",
-      "tier": null,
-      "quant": "fp8",
-      "input": 1.046,
-      "output": 15.685,
-      "cached": 0.333,
       "uptime": 100,
       "status": 0,
       "timeOfDay": false
@@ -12136,7 +12144,7 @@
       "input": 1.9,
       "output": 9.5,
       "cached": 0.19,
-      "uptime": 100,
+      "uptime": null,
       "status": 0,
       "timeOfDay": false
      },
@@ -12232,7 +12240,7 @@
       "input": 2,
       "output": 10,
       "cached": 0.2,
-      "uptime": 100,
+      "uptime": null,
       "status": 0,
       "timeOfDay": false
      },
@@ -12304,7 +12312,7 @@
       "input": 4,
       "output": 20,
       "cached": 0.2,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12344,23 +12352,11 @@
      "output": 0.3,
      "cached": 0.0075,
      "from": "builder",
-     "copies": 10
+     "copies": 11
     },
     "providers": 14,
     "timeOfDay": true,
     "endpoints": [
-     {
-      "provider": "SambaNova",
-      "tag": "sambanova",
-      "tier": null,
-      "quant": "unknown",
-      "input": 0.06,
-      "output": 0.24,
-      "cached": 0.006,
-      "uptime": 100,
-      "status": 0,
-      "timeOfDay": false
-     },
      {
       "provider": "Minimax",
       "tag": "minimax",
@@ -12417,8 +12413,8 @@
       "input": 0.15,
       "output": 0.6,
       "cached": 0.015,
-      "uptime": 100,
-      "status": 0,
+      "uptime": 96.66666666666667,
+      "status": -2,
       "timeOfDay": false
      },
      {
@@ -12429,7 +12425,7 @@
       "input": 0.15,
       "output": 0.6,
       "cached": 0.015,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12454,6 +12450,18 @@
       "output": 0.6,
       "cached": 0.015,
       "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
+      "provider": "SambaNova",
+      "tag": "sambanova",
+      "tier": null,
+      "quant": "unknown",
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.015,
+      "uptime": null,
       "status": 0,
       "timeOfDay": false
      },
@@ -12525,7 +12533,7 @@
       "input": 0.15,
       "output": 0.6,
       "cached": 0.015,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      }
@@ -12543,7 +12551,7 @@
      "from": "mode",
      "copies": 3
     },
-    "providers": 10,
+    "providers": 11,
     "timeOfDay": false,
     "endpoints": [
      {
@@ -12554,7 +12562,7 @@
       "input": 0.06,
       "output": 0.35,
       "cached": 0.01,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12566,8 +12574,8 @@
       "input": 0.1,
       "output": 0.4,
       "cached": 0.08,
-      "uptime": 100,
-      "status": 0,
+      "uptime": 90,
+      "status": -2,
       "timeOfDay": false
      },
      {
@@ -12643,6 +12651,18 @@
       "timeOfDay": false
      },
      {
+      "provider": "PrimaLabs",
+      "tag": "primalabs/nvfp4",
+      "tier": null,
+      "quant": "nvfp4",
+      "input": 0.25,
+      "output": 1.5,
+      "cached": 0.05,
+      "uptime": 100,
+      "status": 0,
+      "timeOfDay": false
+     },
+     {
       "provider": "Nebius",
       "tag": "nebius/fp4",
       "tier": null,
@@ -12659,11 +12679,11 @@
       "tag": "io-net/nvfp4",
       "tier": null,
       "quant": "nvfp4",
-      "input": 0.59,
-      "output": 1.83,
-      "cached": 0.132,
-      "uptime": 100,
-      "status": 0,
+      "input": 0.75,
+      "output": 2.3,
+      "cached": 0.165,
+      "uptime": 48,
+      "status": -5,
       "timeOfDay": false
      }
     ]
@@ -12703,8 +12723,8 @@
       "input": 0.112,
       "output": 0.224,
       "cached": 0.0024,
-      "uptime": 100,
-      "status": 0,
+      "uptime": 16.666666666666664,
+      "status": -5,
       "timeOfDay": false
      },
      {
@@ -12727,8 +12747,8 @@
       "input": 0.14,
       "output": 0.28,
       "cached": 0.0028,
-      "uptime": 96.66666666666667,
-      "status": -2,
+      "uptime": 100,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -12751,7 +12771,7 @@
       "input": 0.175,
       "output": 0.35,
       "cached": 0.00375,
-      "uptime": 96.55172413793103,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12828,7 +12848,7 @@
       "input": 0.3,
       "output": 1,
       "cached": 0.06,
-      "uptime": null,
+      "uptime": 100,
       "status": 0,
       "timeOfDay": false
      },
@@ -12881,7 +12901,7 @@
       "input": 0.25,
       "output": 1,
       "cached": 0.05,
-      "uptime": 100,
+      "uptime": 96.66666666666667,
       "status": 0,
       "timeOfDay": false
      },
@@ -12893,8 +12913,8 @@
       "input": 0.3,
       "output": 1,
       "cached": 0.04,
-      "uptime": 64,
-      "status": -5,
+      "uptime": 100,
+      "status": 0,
       "timeOfDay": false
      },
      {
@@ -12929,8 +12949,8 @@
       "input": 0.4,
       "output": 1.2,
       "cached": 0.04,
-      "uptime": 92,
-      "status": -2,
+      "uptime": 100,
+      "status": 0,
       "timeOfDay": false
      }
     ]
@@ -12938,89 +12958,89 @@
   ]
  },
  "gpu": {
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-19",
   "skus": [
    {
     "sku": "H100",
-    "offers": 16,
-    "gpus": 31,
-    "verifiedShare": 0.5,
-    "min": 1.733,
+    "offers": 31,
+    "gpus": 57,
+    "verifiedShare": 0.677,
+    "min": 1.707,
     "p25": 1.734,
-    "median": 2.035,
-    "p75": 2.668,
-    "max": 4.807
+    "median": 2.402,
+    "p75": 3.375,
+    "max": 4.766
    },
    {
     "sku": "H200",
-    "offers": 48,
-    "gpus": 126,
-    "verifiedShare": 0.708,
-    "min": 3.336,
-    "p25": 4.002,
-    "median": 4.267,
-    "p75": 4.934,
-    "max": 8.843
+    "offers": 58,
+    "gpus": 147,
+    "verifiedShare": 0.776,
+    "min": 3,
+    "p25": 3.738,
+    "median": 4.278,
+    "p75": 5.251,
+    "max": 8.357
    },
    {
     "sku": "B200",
-    "offers": 12,
-    "gpus": 48,
-    "verifiedShare": 0.917,
-    "min": 6.876,
-    "p25": 8.748,
-    "median": 9.044,
+    "offers": 22,
+    "gpus": 79,
+    "verifiedShare": 0.773,
+    "min": 6.657,
+    "p25": 8.739,
+    "median": 8.749,
     "p75": 10.001,
     "max": 11.885
    },
    {
     "sku": "B300",
-    "offers": 6,
-    "gpus": 25,
+    "offers": 10,
+    "gpus": 36,
     "verifiedShare": 0.5,
-    "min": 9.94,
+    "min": 9.939,
     "p25": 10,
-    "median": 10.157,
-    "p75": 10.547,
-    "max": 10.626
+    "median": 11.876,
+    "p75": 12.345,
+    "max": 12.503
    },
    {
     "sku": "A100",
-    "offers": 89,
-    "gpus": 188,
-    "verifiedShare": 0.562,
+    "offers": 70,
+    "gpus": 158,
+    "verifiedShare": 0.7,
     "min": 0.404,
     "p25": 0.624,
-    "median": 0.841,
-    "p75": 1.011,
-    "max": 1.623
+    "median": 0.842,
+    "p75": 1.008,
+    "max": 1.824
    },
    {
     "sku": "L40S",
     "offers": 33,
-    "gpus": 94,
-    "verifiedShare": 0.515,
+    "gpus": 101,
+    "verifiedShare": 0.364,
     "min": 0.467,
-    "p25": 0.668,
-    "median": 0.789,
+    "p25": 0.534,
+    "median": 0.8,
     "p75": 0.869,
     "max": 2.441
    },
    {
     "sku": "RTX 5090",
     "offers": 64,
-    "gpus": 100,
-    "verifiedShare": 0.578,
-    "min": 0.269,
-    "p25": 0.497,
-    "median": 0.601,
-    "p75": 0.673,
-    "max": 0.934
+    "gpus": 97,
+    "verifiedShare": 0.688,
+    "min": 0.389,
+    "p25": 0.54,
+    "median": 0.619,
+    "p75": 0.736,
+    "max": 0.938
    }
   ]
  },
  "ladders": {
-  "asOf": "2026-11-18",
+  "asOf": "2026-11-19",
   "curves": [
    {
     "ticker": "KXH100MS",
@@ -13031,12 +13051,12 @@
       "event": "KXH100MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 3.138,
+       "value": 3.126,
        "censored": null
       },
-      "medianBid": 3.128,
-      "medianAsk": 3.148,
-      "mean": 3.143,
+      "medianBid": 3.115,
+      "medianAsk": 3.136,
+      "mean": 3.124,
       "volume": 10926,
       "openInterest": 4621,
       "quotedAt": "2026-09-09",
@@ -13067,15 +13087,15 @@
        },
        {
         "k": 3,
-        "bid": 0.93,
-        "ask": 0.95,
-        "p": 0.94
+        "bid": 0.92,
+        "ask": 0.99,
+        "p": 0.955
        },
        {
         "k": 3.25,
-        "bid": 0.09,
-        "ask": 0.19,
-        "p": 0.14
+        "bid": 0.01,
+        "ask": 0.09,
+        "p": 0.05
        },
        {
         "k": 3.5,
@@ -13101,12 +13121,12 @@
       "event": "KXH100MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 3.292,
+       "value": 3.116,
        "censored": null
       },
-      "medianBid": 2.857,
-      "medianAsk": 4,
-      "mean": 3.54,
+      "medianBid": 2.824,
+      "medianAsk": 3.396,
+      "mean": 3.349,
       "volume": 11053,
       "openInterest": 3323,
       "quotedAt": "2026-09-09",
@@ -13125,45 +13145,45 @@
        },
        {
         "k": 2.5,
-        "bid": 0.62,
+        "bid": 0.61,
         "ask": 0.97,
         "p": 0.79
        },
        {
         "k": 2.75,
-        "bid": 0.56,
+        "bid": 0.55,
         "ask": 0.93,
-        "p": 0.745
+        "p": 0.74
        },
        {
         "k": 3,
-        "bid": 0.42,
-        "ask": 0.94,
-        "p": 0.68
+        "bid": 0.38,
+        "ask": 0.81,
+        "p": 0.595
        },
        {
         "k": 3.25,
-        "bid": 0.25,
-        "ask": 0.79,
-        "p": 0.52
+        "bid": 0.21,
+        "ask": 0.57,
+        "p": 0.39
        },
        {
         "k": 3.5,
-        "bid": 0.13,
-        "ask": 0.67,
-        "p": 0.4
+        "bid": 0.1,
+        "ask": 0.45,
+        "p": 0.275
        },
        {
         "k": 3.75,
-        "bid": 0.06,
-        "ask": 0.57,
-        "p": 0.315
+        "bid": 0.04,
+        "ask": 0.4,
+        "p": 0.22
        },
        {
         "k": 4,
-        "bid": 0.02,
-        "ask": 0.5,
-        "p": 0.26
+        "bid": 0.01,
+        "ask": 0.36,
+        "p": 0.185
        }
       ]
      },
@@ -13171,21 +13191,21 @@
       "event": "KXH100MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 3.394,
+       "value": 3.305,
        "censored": null
       },
-      "medianBid": 2.938,
-      "medianAsk": 4,
-      "mean": 3.627,
+      "medianBid": 2.893,
+      "medianAsk": 3.596,
+      "mean": 3.56,
       "volume": 8460,
       "openInterest": 2397,
       "quotedAt": "2026-09-09",
       "strikes": [
        {
         "k": 2,
-        "bid": 0.69,
+        "bid": 0.68,
         "ask": 0.99,
-        "p": 0.84
+        "p": 0.835
        },
        {
         "k": 2.25,
@@ -13201,39 +13221,39 @@
        },
        {
         "k": 2.75,
-        "bid": 0.59,
+        "bid": 0.58,
         "ask": 0.97,
-        "p": 0.78
+        "p": 0.775
        },
        {
         "k": 3,
-        "bid": 0.47,
-        "ask": 0.99,
-        "p": 0.73
+        "bid": 0.44,
+        "ask": 0.95,
+        "p": 0.695
        },
        {
         "k": 3.25,
-        "bid": 0.33,
-        "ask": 0.82,
-        "p": 0.575
+        "bid": 0.3,
+        "ask": 0.77,
+        "p": 0.535
        },
        {
         "k": 3.5,
-        "bid": 0.22,
-        "ask": 0.67,
-        "p": 0.445
+        "bid": 0.2,
+        "ask": 0.55,
+        "p": 0.375
        },
        {
         "k": 3.75,
-        "bid": 0.14,
-        "ask": 0.57,
-        "p": 0.355
+        "bid": 0.12,
+        "ask": 0.42,
+        "p": 0.27
        },
        {
         "k": 4,
-        "bid": 0.08,
-        "ask": 0.5,
-        "p": 0.29
+        "bid": 0.07,
+        "ask": 0.39,
+        "p": 0.23
        }
       ]
      },
@@ -13666,7 +13686,7 @@
       },
       "medianBid": 1,
       "medianAsk": 4,
-      "mean": 2.611,
+      "mean": 14.812,
       "volume": 1269,
       "openInterest": 1036,
       "quotedAt": "2026-09-09",
@@ -13686,62 +13706,62 @@
        {
         "k": 1.5,
         "bid": 0,
-        "ask": 0.99,
-        "p": 0.495
+        "ask": 1,
+        "p": 0.5
        },
        {
         "k": 1.75,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 2,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 2.25,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 2.5,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 2.75,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 3,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 3.25,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 3.5,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 3.75,
         "bid": 0,
         "ask": 1,
-        "p": 0.495
+        "p": 0.5
        },
        {
         "k": 4,
@@ -13762,12 +13782,12 @@
       "event": "KXH200MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 6.813,
+       "value": 6.695,
        "censored": null
       },
-      "medianBid": 6.611,
-      "medianAsk": 6.952,
-      "mean": 6.69,
+      "medianBid": 6.618,
+      "medianAsk": 6.747,
+      "mean": 6.535,
       "volume": 23956,
       "openInterest": 7248,
       "quotedAt": "2026-11-02",
@@ -13810,93 +13830,93 @@
        },
        {
         "k": 4.5,
-        "bid": 0.83,
+        "bid": 0.84,
         "ask": 1,
-        "p": 0.915
+        "p": 0.92
        },
        {
         "k": 5,
         "bid": 0.95,
         "ask": 1,
-        "p": 0.915
+        "p": 0.92
        },
        {
         "k": 5.5,
         "bid": 0.92,
         "ask": 1,
-        "p": 0.915
+        "p": 0.92
        },
        {
         "k": 6,
-        "bid": 0.88,
+        "bid": 0.85,
         "ask": 1,
-        "p": 0.915
+        "p": 0.92
        },
        {
         "k": 6.5,
-        "bid": 0.58,
-        "ask": 0.97,
-        "p": 0.775
+        "bid": 0.63,
+        "ask": 0.9,
+        "p": 0.765
        },
        {
         "k": 7,
-        "bid": 0.22,
-        "ask": 0.45,
-        "p": 0.335
+        "bid": 0.08,
+        "ask": 0.09,
+        "p": 0.085
        },
        {
         "k": 7.5,
         "bid": 0,
-        "ask": 0.07,
-        "p": 0.035
+        "ask": 0.05,
+        "p": 0.025
        },
        {
         "k": 8,
         "bid": 0,
-        "ask": 0.05,
-        "p": 0.025
+        "ask": 0.04,
+        "p": 0.02
        },
        {
         "k": 8.5,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.02
        },
        {
         "k": 9,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.02
        },
        {
         "k": 9.5,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.02
        },
        {
         "k": 10,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.02
        },
        {
         "k": 10.5,
         "bid": 0,
-        "ask": 0.05,
-        "p": 0.025
+        "ask": 0.03,
+        "p": 0.015
        },
        {
         "k": 11,
         "bid": 0,
-        "ask": 0.05,
-        "p": 0.025
+        "ask": 0.03,
+        "p": 0.015
        },
        {
         "k": 11.5,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.015
        }
       ]
      },
@@ -13904,33 +13924,33 @@
       "event": "KXH200MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 7.818,
+       "value": 7.235,
        "censored": null
       },
-      "medianBid": 6.667,
-      "medianAsk": 9.667,
-      "mean": 7.559,
+      "medianBid": 6.583,
+      "medianAsk": 7.917,
+      "mean": 7.788,
       "volume": 24215,
       "openInterest": 6976,
       "quotedAt": "2026-11-08",
       "strikes": [
        {
         "k": 1.5,
-        "bid": 0.8,
+        "bid": 0.81,
         "ask": 1,
-        "p": 0.9
+        "p": 0.905
        },
        {
         "k": 2,
-        "bid": 0.78,
+        "bid": 0.79,
         "ask": 1,
-        "p": 0.89
+        "p": 0.895
        },
        {
         "k": 2.5,
         "bid": 0.9,
         "ask": 1,
-        "p": 0.89
+        "p": 0.895
        },
        {
         "k": 3,
@@ -13940,105 +13960,105 @@
        },
        {
         "k": 3.5,
-        "bid": 0.7,
+        "bid": 0.78,
         "ask": 1,
-        "p": 0.85
+        "p": 0.875
        },
        {
         "k": 4,
         "bid": 0.75,
         "ask": 0.99,
-        "p": 0.85
+        "p": 0.87
        },
        {
         "k": 4.5,
-        "bid": 0.63,
+        "bid": 0.71,
         "ask": 0.87,
-        "p": 0.75
+        "p": 0.79
        },
        {
         "k": 5,
-        "bid": 0.59,
+        "bid": 0.67,
         "ask": 0.98,
-        "p": 0.75
+        "p": 0.79
        },
        {
         "k": 5.5,
-        "bid": 0.63,
-        "ask": 0.97,
-        "p": 0.75
+        "bid": 0.62,
+        "ask": 0.96,
+        "p": 0.79
        },
        {
         "k": 6,
         "bid": 0.58,
-        "ask": 0.94,
+        "ask": 0.92,
         "p": 0.75
        },
        {
         "k": 6.5,
-        "bid": 0.54,
-        "ask": 0.9,
-        "p": 0.72
+        "bid": 0.53,
+        "ask": 0.87,
+        "p": 0.7
        },
        {
         "k": 7,
-        "bid": 0.42,
-        "ask": 0.92,
-        "p": 0.67
+        "bid": 0.35,
+        "ask": 0.81,
+        "p": 0.58
        },
        {
         "k": 7.5,
-        "bid": 0.26,
-        "ask": 0.88,
-        "p": 0.57
+        "bid": 0.22,
+        "ask": 0.6,
+        "p": 0.41
        },
        {
         "k": 8,
-        "bid": 0.16,
-        "ask": 0.76,
-        "p": 0.46
+        "bid": 0.12,
+        "ask": 0.48,
+        "p": 0.3
        },
        {
         "k": 8.5,
-        "bid": 0.08,
-        "ask": 0.66,
-        "p": 0.37
+        "bid": 0.06,
+        "ask": 0.4,
+        "p": 0.23
        },
        {
         "k": 9,
-        "bid": 0.04,
-        "ask": 0.59,
-        "p": 0.315
+        "bid": 0.03,
+        "ask": 0.37,
+        "p": 0.2
        },
        {
         "k": 9.5,
-        "bid": 0.02,
-        "ask": 0.52,
-        "p": 0.27
+        "bid": 0.01,
+        "ask": 0.34,
+        "p": 0.175
        },
        {
         "k": 10,
         "bid": 0.01,
-        "ask": 0.46,
-        "p": 0.235
+        "ask": 0.31,
+        "p": 0.16
        },
        {
         "k": 10.5,
         "bid": 0.01,
-        "ask": 0.42,
-        "p": 0.215
+        "ask": 0.29,
+        "p": 0.15
        },
        {
         "k": 11,
-        "bid": 0.01,
-        "ask": 0.38,
-        "p": 0.195
+        "bid": 0,
+        "ask": 0.26,
+        "p": 0.13
        },
        {
         "k": 11.5,
         "bid": 0,
-        "ask": 0.42,
-        "p": 0.195
+        "ask": 0.24,
+        "p": 0.12
        }
       ]
      },
@@ -14050,8 +14070,8 @@
        "censored": null
       },
       "medianBid": 1.713,
-      "medianAsk": 9.667,
-      "mean": 6.606,
+      "medianAsk": 8.429,
+      "mean": 6.868,
       "volume": 42871,
       "openInterest": 12814,
       "quotedAt": "2026-11-05",
@@ -14107,7 +14127,7 @@
        {
         "k": 5.5,
         "bid": 0.62,
-        "ask": 0.99,
+        "ask": 0.98,
         "p": 0.5
        },
        {
@@ -14118,63 +14138,63 @@
        },
        {
         "k": 6.5,
-        "bid": 0.49,
+        "bid": 0.48,
         "ask": 0.99,
         "p": 0.5
        },
        {
         "k": 7,
-        "bid": 0.49,
-        "ask": 0.99,
-        "p": 0.5
-       },
-       {
-        "k": 7.5,
-        "bid": 0.34,
+        "bid": 0.42,
         "ask": 0.94,
         "p": 0.5
        },
        {
-        "k": 8,
-        "bid": 0.24,
-        "ask": 0.76,
+        "k": 7.5,
+        "bid": 0.3,
+        "ask": 0.84,
         "p": 0.5
        },
        {
+        "k": 8,
+        "bid": 0.22,
+        "ask": 0.62,
+        "p": 0.42
+       },
+       {
         "k": 8.5,
-        "bid": 0.17,
-        "ask": 0.66,
-        "p": 0.415
+        "bid": 0.15,
+        "ask": 0.48,
+        "p": 0.315
        },
        {
         "k": 9,
-        "bid": 0.11,
-        "ask": 0.59,
-        "p": 0.35
+        "bid": 0.1,
+        "ask": 0.39,
+        "p": 0.245
        },
        {
         "k": 9.5,
-        "bid": 0.07,
-        "ask": 0.52,
-        "p": 0.295
+        "bid": 0.06,
+        "ask": 0.37,
+        "p": 0.215
        },
        {
         "k": 10,
-        "bid": 0.04,
-        "ask": 0.46,
-        "p": 0.25
+        "bid": 0.02,
+        "ask": 0.35,
+        "p": 0.185
        },
        {
         "k": 10.5,
-        "bid": 0.02,
-        "ask": 0.42,
-        "p": 0.22
+        "bid": 0.01,
+        "ask": 0.33,
+        "p": 0.17
        },
        {
         "k": 11,
         "bid": 0.01,
-        "ask": 0.38,
-        "p": 0.195
+        "ask": 0.31,
+        "p": 0.16
        }
       ]
      },
@@ -14823,14 +14843,14 @@
       "event": "KXB200MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 9.413,
+       "value": 9.399,
        "censored": null
       },
-      "medianBid": 9.381,
-      "medianAsk": 9.446,
-      "mean": 9.362,
-      "volume": 37403,
-      "openInterest": 11827,
+      "medianBid": 9.363,
+      "medianAsk": 9.439,
+      "mean": 9.33,
+      "volume": 37473,
+      "openInterest": 11757,
       "quotedAt": "2026-09-11",
       "strikes": [
        {
@@ -14913,9 +14933,9 @@
        },
        {
         "k": 9.5,
-        "bid": 0.36,
-        "ask": 0.44,
-        "p": 0.4
+        "bid": 0.33,
+        "ask": 0.43,
+        "p": 0.38
        },
        {
         "k": 10,
@@ -14926,26 +14946,26 @@
        {
         "k": 10.5,
         "bid": 0,
-        "ask": 0.05,
-        "p": 0.025
+        "ask": 0.03,
+        "p": 0.015
        },
        {
         "k": 11,
         "bid": 0,
-        "ask": 0.05,
-        "p": 0.025
+        "ask": 0.03,
+        "p": 0.015
        },
        {
         "k": 11.5,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.015
        },
        {
         "k": 12,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.025
+        "p": 0.015
        }
       ]
      },
@@ -14953,12 +14973,12 @@
       "event": "KXB200MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 10.053,
+       "value": 9.772,
        "censored": null
       },
-      "medianBid": 9.19,
-      "medianAsk": 12,
-      "mean": 11.693,
+      "medianBid": 9.125,
+      "medianAsk": 10.7,
+      "mean": 10.034,
       "volume": 26597,
       "openInterest": 6845,
       "quotedAt": "2026-09-16",
@@ -15055,57 +15075,57 @@
        },
        {
         "k": 8,
-        "bid": 0.75,
+        "bid": 0.74,
         "ask": 0.99,
         "p": 0.865
        },
        {
         "k": 8.5,
-        "bid": 0.67,
+        "bid": 0.66,
         "ask": 0.99,
-        "p": 0.83
+        "p": 0.825
        },
        {
         "k": 9,
-        "bid": 0.58,
-        "ask": 0.96,
-        "p": 0.77
+        "bid": 0.56,
+        "ask": 0.95,
+        "p": 0.755
        },
        {
         "k": 9.5,
-        "bid": 0.37,
-        "ask": 0.95,
-        "p": 0.66
+        "bid": 0.32,
+        "ask": 0.93,
+        "p": 0.625
        },
        {
         "k": 10,
-        "bid": 0.16,
-        "ask": 0.86,
-        "p": 0.51
+        "bid": 0.13,
+        "ask": 0.66,
+        "p": 0.395
        },
        {
         "k": 10.5,
-        "bid": 0.06,
-        "ask": 0.77,
-        "p": 0.415
+        "bid": 0.05,
+        "ask": 0.54,
+        "p": 0.295
        },
        {
         "k": 11,
-        "bid": 0.03,
-        "ask": 0.7,
-        "p": 0.365
+        "bid": 0.02,
+        "ask": 0.44,
+        "p": 0.23
        },
        {
         "k": 11.5,
         "bid": 0.01,
-        "ask": 0.63,
-        "p": 0.32
+        "ask": 0.37,
+        "p": 0.19
        },
        {
         "k": 12,
         "bid": 0.01,
-        "ask": 0.58,
-        "p": 0.295
+        "ask": 0.31,
+        "p": 0.16
        }
       ]
      },
@@ -15113,10 +15133,10 @@
       "event": "KXB200MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 9.14,
+       "value": 9.107,
        "censored": null
       },
-      "medianBid": 9.071,
+      "medianBid": 9.029,
       "medianAsk": 9.227,
       "mean": 9.218,
       "volume": 22928,
@@ -15161,7 +15181,7 @@
        },
        {
         "k": 6,
-        "bid": 0.93,
+        "bid": 0.94,
         "ask": 1,
         "p": 0.965
        },
@@ -15179,33 +15199,33 @@
        },
        {
         "k": 7.5,
-        "bid": 0.78,
-        "ask": 0.88,
-        "p": 0.83
+        "bid": 0.79,
+        "ask": 0.89,
+        "p": 0.84
        },
        {
         "k": 8,
-        "bid": 0.67,
-        "ask": 0.77,
-        "p": 0.72
+        "bid": 0.68,
+        "ask": 0.78,
+        "p": 0.73
        },
        {
         "k": 8.5,
-        "bid": 0.57,
-        "ask": 0.67,
-        "p": 0.62
+        "bid": 0.58,
+        "ask": 0.68,
+        "p": 0.63
        },
        {
         "k": 9,
-        "bid": 0.52,
+        "bid": 0.51,
         "ask": 0.55,
-        "p": 0.535
+        "p": 0.53
        },
        {
         "k": 9.5,
-        "bid": 0.38,
+        "bid": 0.34,
         "ask": 0.44,
-        "p": 0.41
+        "p": 0.39
        },
        {
         "k": 10,
@@ -15215,9 +15235,9 @@
        },
        {
         "k": 10.5,
-        "bid": 0.17,
+        "bid": 0.16,
         "ask": 0.26,
-        "p": 0.215
+        "p": 0.21
        },
        {
         "k": 11,
@@ -15376,18 +15396,18 @@
        "value": 3.478,
        "censored": null
       },
-      "medianBid": 3.227,
+      "medianBid": 3.224,
       "medianAsk": 12,
-      "mean": 7.635,
+      "mean": 7.634,
       "volume": 19859,
       "openInterest": 4326,
       "quotedAt": "2026-10-07",
       "strikes": [
        {
         "k": 3,
-        "bid": 0.9,
+        "bid": 0.89,
         "ask": 0.99,
-        "p": 0.945
+        "p": 0.94
        },
        {
         "k": 3.5,
@@ -16016,12 +16036,12 @@
       "event": "KXA100MS-26NOV",
       "month": "2026-11",
       "median": {
-       "value": 1.114,
+       "value": 1.12,
        "censored": null
       },
-      "medianBid": 1.105,
-      "medianAsk": 1.124,
-      "mean": 1.118,
+      "medianBid": 1.111,
+      "medianAsk": 1.128,
+      "mean": 1.122,
       "volume": 4379,
       "openInterest": 2155,
       "quotedAt": "2026-09-09",
@@ -16040,33 +16060,33 @@
        },
        {
         "k": 1,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
+        "bid": 0.9,
+        "ask": 0.99,
+        "p": 0.945
        },
        {
         "k": 1.25,
         "bid": 0,
-        "ask": 0.04,
-        "p": 0.02
+        "ask": 0.03,
+        "p": 0.015
        },
        {
         "k": 1.5,
         "bid": 0,
-        "ask": 0.05,
-        "p": 0.02
+        "ask": 0.03,
+        "p": 0.015
        },
        {
         "k": 1.75,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.02
+        "p": 0.015
        },
        {
         "k": 2,
         "bid": 0,
         "ask": 0.05,
-        "p": 0.02
+        "p": 0.015
        }
       ]
      },
@@ -16074,13 +16094,13 @@
       "event": "KXA100MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 0.988,
+       "value": 1.01,
        "censored": null
       },
-      "medianBid": 0.966,
-      "medianAsk": 1.011,
-      "mean": 1.015,
-      "volume": 4900,
+      "medianBid": 0.984,
+      "medianAsk": 1.034,
+      "mean": 1.025,
+      "volume": 4903,
       "openInterest": 2583,
       "quotedAt": "2026-09-09",
       "strikes": [
@@ -16098,15 +16118,15 @@
        },
        {
         "k": 1,
-        "bid": 0.43,
-        "ask": 0.52,
-        "p": 0.475
+        "bid": 0.47,
+        "ask": 0.57,
+        "p": 0.52
        },
        {
         "k": 1.25,
-        "bid": 0.01,
+        "bid": 0,
         "ask": 0.06,
-        "p": 0.035
+        "p": 0.03
        },
        {
         "k": 1.5,
@@ -16132,12 +16152,12 @@
       "event": "KXA100MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 1.008,
+       "value": 1.021,
        "censored": null
       },
-      "medianBid": 0.984,
-      "medianAsk": 1.033,
-      "mean": 1.03,
+      "medianBid": 0.994,
+      "medianAsk": 1.048,
+      "mean": 1.038,
       "volume": 3353,
       "openInterest": 861,
       "quotedAt": "2026-09-09",
@@ -16156,21 +16176,21 @@
        },
        {
         "k": 1,
-        "bid": 0.47,
-        "ask": 0.56,
-        "p": 0.515
+        "bid": 0.49,
+        "ask": 0.59,
+        "p": 0.54
        },
        {
         "k": 1.25,
-        "bid": 0.01,
-        "ask": 0.11,
-        "p": 0.06
+        "bid": 0.02,
+        "ask": 0.12,
+        "p": 0.07
        },
        {
         "k": 1.5,
-        "bid": 0.01,
+        "bid": 0,
         "ask": 0.05,
-        "p": 0.03
+        "p": 0.025
        },
        {
         "k": 1.75,
@@ -16685,14 +16705,14 @@
       "event": "KXRTX5090MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 0.789,
+       "value": 0.726,
        "censored": null
       },
-      "medianBid": 0.644,
-      "medianAsk": 1.026,
-      "mean": 0.966,
-      "volume": 55244,
-      "openInterest": 18006,
+      "medianBid": 0.665,
+      "medianAsk": 0.838,
+      "mean": 0.861,
+      "volume": 55272,
+      "openInterest": 18034,
       "quotedAt": "2026-09-09",
       "strikes": [
        {
@@ -16703,45 +16723,45 @@
        },
        {
         "k": 0.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 1,
         "p": 0.975
        },
        {
         "k": 0.75,
-        "bid": 0.17,
-        "ask": 0.91,
-        "p": 0.54
+        "bid": 0.27,
+        "ask": 0.63,
+        "p": 0.45
        },
        {
         "k": 1,
         "bid": 0.04,
-        "ask": 0.53,
-        "p": 0.285
+        "ask": 0.26,
+        "p": 0.15
        },
        {
         "k": 1.25,
         "bid": 0.04,
-        "ask": 0.24,
-        "p": 0.14
+        "ask": 0.14,
+        "p": 0.09
        },
        {
         "k": 1.5,
         "bid": 0.05,
-        "ask": 0.2,
-        "p": 0.125
+        "ask": 0.13,
+        "p": 0.09
        },
        {
         "k": 1.75,
         "bid": 0.04,
-        "ask": 0.22,
-        "p": 0.125
+        "ask": 0.12,
+        "p": 0.08
        },
        {
         "k": 2,
         "bid": 0.04,
-        "ask": 0.24,
-        "p": 0.125
+        "ask": 0.69,
+        "p": 0.08
        }
       ]
      },
@@ -16749,12 +16769,12 @@
       "event": "KXRTX5090MS-27JAN",
       "month": "2027-01",
       "median": {
-       "value": 0.68,
+       "value": 0.674,
        "censored": null
       },
-      "medianBid": 0.663,
-      "medianAsk": 0.698,
-      "mean": 0.73,
+      "medianBid": 0.656,
+      "medianAsk": 0.691,
+      "mean": 0.724,
       "volume": 20522,
       "openInterest": 2848,
       "quotedAt": "2026-09-09",
@@ -16767,15 +16787,15 @@
        },
        {
         "k": 0.5,
-        "bid": 0.91,
+        "bid": 0.9,
         "ask": 0.99,
-        "p": 0.95
+        "p": 0.945
        },
        {
         "k": 0.75,
-        "bid": 0.28,
-        "ask": 0.37,
-        "p": 0.325
+        "bid": 0.26,
+        "ask": 0.35,
+        "p": 0.305
        },
        {
         "k": 1,
@@ -17361,11 +17381,11 @@
        "value": 58.5,
        "censored": null
       },
-      "medianBid": 58.368,
+      "medianBid": 58.367,
       "medianAsk": 60.75,
-      "mean": 59.439,
-      "volume": 5113,
-      "openInterest": 3857,
+      "mean": 59.391,
+      "volume": 5314,
+      "openInterest": 4009,
       "quotedAt": "2026-09-29",
       "strikes": [
        {
@@ -17376,237 +17396,237 @@
        },
        {
         "k": 48.75,
-        "bid": 0.98,
+        "bid": 0.94,
         "ask": 1,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 49,
         "bid": 0.97,
         "ask": 1,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 49.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 49.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 49.75,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 50,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 50.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 50.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 50.75,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 51,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 51.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 51.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 51.75,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 52,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 52.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 52.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 52.75,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 53,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 53.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 53.5,
         "bid": 0.97,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 53.75,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 54,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 54.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 54.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 54.75,
         "bid": 0.97,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 55,
-        "bid": 0.96,
+        "bid": 0.97,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 55.25,
         "bid": 0.98,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 55.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 55.75,
         "bid": 0.98,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 56,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 56.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 56.5,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 56.75,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 57,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 57.25,
-        "bid": 0.96,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 57.5,
         "bid": 0.98,
         "ask": 1,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 57.75,
         "bid": 0.98,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 58,
         "bid": 0.98,
         "ask": 0.99,
-        "p": 0.975
+        "p": 0.97
        },
        {
         "k": 58.25,
-        "bid": 0.95,
+        "bid": 0.94,
         "ask": 0.99,
-        "p": 0.97
+        "p": 0.965
        },
        {
         "k": 58.5,
@@ -17674,12 +17694,12 @@
       "event": "KXDDR5MS-26DEC",
       "month": "2026-12",
       "median": {
-       "value": 61.531,
+       "value": 61.719,
        "censored": null
       },
-      "medianBid": 61.3,
-      "medianAsk": 61.813,
-      "mean": 61.504,
+      "medianBid": 61.458,
+      "medianAsk": 62,
+      "mean": 61.709,
       "volume": 4566,
       "openInterest": 3080,
       "quotedAt": "2026-10-23",
@@ -17908,9 +17928,9 @@
        },
        {
         "k": 57.75,
-        "bid": 0.93,
+        "bid": 0.94,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.965
        },
        {
         "k": 58,
@@ -17920,129 +17940,129 @@
        },
        {
         "k": 58.25,
-        "bid": 0.92,
-        "ask": 0.98,
-        "p": 0.95
+        "bid": 0.93,
+        "ask": 0.99,
+        "p": 0.96
        },
        {
         "k": 58.5,
+        "bid": 0.91,
+        "ask": 0.98,
+        "p": 0.945
+       },
+       {
+        "k": 58.75,
         "bid": 0.89,
         "ask": 0.98,
         "p": 0.935
        },
        {
-        "k": 58.75,
+        "k": 59,
         "bid": 0.88,
         "ask": 0.97,
         "p": 0.925
        },
        {
-        "k": 59,
-        "bid": 0.87,
-        "ask": 0.96,
-        "p": 0.915
-       },
-       {
         "k": 59.25,
-        "bid": 0.87,
-        "ask": 0.95,
-        "p": 0.91
+        "bid": 0.86,
+        "ask": 0.94,
+        "p": 0.9
        },
        {
         "k": 59.5,
+        "bid": 0.83,
+        "ask": 0.92,
+        "p": 0.875
+       },
+       {
+        "k": 59.75,
         "bid": 0.8,
         "ask": 0.89,
         "p": 0.845
        },
        {
-        "k": 59.75,
-        "bid": 0.77,
-        "ask": 0.86,
-        "p": 0.815
+        "k": 60,
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.805
        },
        {
-        "k": 60,
+        "k": 60.25,
         "bid": 0.72,
         "ask": 0.81,
         "p": 0.765
        },
        {
-        "k": 60.25,
-        "bid": 0.69,
-        "ask": 0.78,
-        "p": 0.735
-       },
-       {
         "k": 60.5,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.68,
+        "ask": 0.77,
+        "p": 0.725
        },
        {
         "k": 60.75,
-        "bid": 0.6,
-        "ask": 0.69,
-        "p": 0.645
+        "bid": 0.64,
+        "ask": 0.73,
+        "p": 0.685
        },
        {
         "k": 61,
-        "bid": 0.56,
-        "ask": 0.65,
-        "p": 0.605
+        "bid": 0.59,
+        "ask": 0.68,
+        "p": 0.635
        },
        {
         "k": 61.25,
-        "bid": 0.51,
-        "ask": 0.6,
-        "p": 0.555
+        "bid": 0.55,
+        "ask": 0.64,
+        "p": 0.595
        },
        {
         "k": 61.5,
-        "bid": 0.46,
-        "ask": 0.55,
-        "p": 0.505
+        "bid": 0.49,
+        "ask": 0.58,
+        "p": 0.535
        },
        {
         "k": 61.75,
-        "bid": 0.42,
-        "ask": 0.51,
-        "p": 0.465
+        "bid": 0.45,
+        "ask": 0.54,
+        "p": 0.495
        },
        {
         "k": 62,
-        "bid": 0.38,
-        "ask": 0.47,
-        "p": 0.425
+        "bid": 0.41,
+        "ask": 0.5,
+        "p": 0.455
        },
        {
         "k": 62.25,
-        "bid": 0.34,
-        "ask": 0.43,
-        "p": 0.385
+        "bid": 0.36,
+        "ask": 0.45,
+        "p": 0.405
        },
        {
         "k": 62.5,
-        "bid": 0.29,
-        "ask": 0.38,
-        "p": 0.335
+        "bid": 0.32,
+        "ask": 0.41,
+        "p": 0.365
        },
        {
         "k": 62.75,
-        "bid": 0.25,
-        "ask": 0.34,
-        "p": 0.295
+        "bid": 0.27,
+        "ask": 0.36,
+        "p": 0.315
        },
        {
         "k": 63,
-        "bid": 0.21,
-        "ask": 0.3,
-        "p": 0.255
+        "bid": 0.23,
+        "ask": 0.32,
+        "p": 0.275
        },
        {
         "k": 63.25,
-        "bid": 0.18,
-        "ask": 0.27,
-        "p": 0.225
+        "bid": 0.2,
+        "ask": 0.29,
+        "p": 0.245
        }
       ]
      },
@@ -18055,7 +18075,7 @@
       },
       "medianBid": 58.25,
       "medianAsk": 58.25,
-      "mean": 66.803,
+      "mean": 76.624,
       "volume": 2151,
       "openInterest": 1297,
       "quotedAt": "2026-09-30",
@@ -18128,9 +18148,9 @@
        },
        {
         "k": 51.25,
-        "bid": 0.95,
+        "bid": 0.96,
         "ask": 0.99,
-        "p": 0.97
+        "p": 0.975
        },
        {
         "k": 51.5,
@@ -18170,9 +18190,9 @@
        },
        {
         "k": 53,
-        "bid": 0.94,
+        "bid": 0.95,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.97
        },
        {
         "k": 53.25,
@@ -18200,9 +18220,9 @@
        },
        {
         "k": 54.25,
-        "bid": 0.93,
+        "bid": 0.94,
         "ask": 0.99,
-        "p": 0.96
+        "p": 0.965
        },
        {
         "k": 54.5,
@@ -18212,93 +18232,93 @@
        },
        {
         "k": 54.75,
-        "bid": 0.92,
+        "bid": 0.93,
         "ask": 0.99,
-        "p": 0.955
+        "p": 0.96
        },
        {
         "k": 55,
         "bid": 0.93,
         "ask": 0.99,
-        "p": 0.955
+        "p": 0.96
        },
        {
         "k": 55.25,
+        "bid": 0.93,
+        "ask": 0.99,
+        "p": 0.96
+       },
+       {
+        "k": 55.5,
         "bid": 0.92,
         "ask": 0.99,
         "p": 0.955
        },
        {
-        "k": 55.5,
+        "k": 55.75,
         "bid": 0.91,
         "ask": 0.98,
         "p": 0.945
        },
        {
-        "k": 55.75,
+        "k": 56,
         "bid": 0.9,
         "ask": 0.98,
         "p": 0.94
        },
        {
-        "k": 56,
-        "bid": 0.89,
-        "ask": 0.98,
-        "p": 0.935
-       },
-       {
         "k": 56.25,
-        "bid": 0.89,
+        "bid": 0.9,
         "ask": 0.98,
-        "p": 0.935
+        "p": 0.94
        },
        {
         "k": 56.5,
+        "bid": 0.89,
+        "ask": 0.98,
+        "p": 0.935
+       },
+       {
+        "k": 56.75,
         "bid": 0.88,
         "ask": 0.97,
         "p": 0.925
        },
        {
-        "k": 56.75,
+        "k": 57,
         "bid": 0.87,
         "ask": 0.96,
         "p": 0.915
        },
        {
-        "k": 57,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
-       },
-       {
         "k": 57.25,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
+        "bid": 0.87,
+        "ask": 0.96,
+        "p": 0.915
        },
        {
         "k": 57.5,
-        "bid": 0.84,
-        "ask": 0.93,
-        "p": 0.885
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 57.75,
+        "bid": 0.85,
+        "ask": 0.93,
+        "p": 0.89
+       },
+       {
+        "k": 58,
         "bid": 0.83,
         "ask": 0.92,
         "p": 0.875
        },
        {
-        "k": 58,
+        "k": 58.25,
         "bid": 0.82,
         "ask": 0.91,
         "p": 0.865
-       },
-       {
-        "k": 58.25,
-        "bid": 0.8,
-        "ask": 0.89,
-        "p": 0.845
        }
       ]
      },
@@ -18311,7 +18331,7 @@
       },
       "medianBid": 60.75,
       "medianAsk": 60.75,
-      "mean": 64.474,
+      "mean": 70.397,
       "volume": 5549,
       "openInterest": 4690,
       "quotedAt": "2026-10-12",
@@ -18360,25 +18380,25 @@
        },
        {
         "k": 50.25,
-        "bid": 0.94,
+        "bid": 0.93,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.96
        },
        {
         "k": 50.5,
         "bid": 0.94,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.96
        },
        {
         "k": 50.75,
         "bid": 0.94,
         "ask": 0.99,
-        "p": 0.965
+        "p": 0.96
        },
        {
         "k": 51,
-        "bid": 0.93,
+        "bid": 0.94,
         "ask": 0.99,
         "p": 0.96
        },
@@ -18403,20 +18423,20 @@
        {
         "k": 52,
         "bid": 0.92,
+        "ask": 0.99,
+        "p": 0.955
+       },
+       {
+        "k": 52.25,
+        "bid": 0.92,
         "ask": 0.98,
         "p": 0.95
        },
        {
-        "k": 52.25,
+        "k": 52.5,
         "bid": 0.91,
         "ask": 0.98,
         "p": 0.945
-       },
-       {
-        "k": 52.5,
-        "bid": 0.9,
-        "ask": 0.98,
-        "p": 0.94
        },
        {
         "k": 52.75,
@@ -18426,9 +18446,9 @@
        },
        {
         "k": 53,
-        "bid": 0.89,
+        "bid": 0.9,
         "ask": 0.98,
-        "p": 0.935
+        "p": 0.94
        },
        {
         "k": 53.25,
@@ -18438,15 +18458,15 @@
        },
        {
         "k": 53.5,
-        "bid": 0.89,
+        "bid": 0.9,
         "ask": 0.98,
         "p": 0.935
        },
        {
         "k": 53.75,
-        "bid": 0.88,
-        "ask": 0.97,
-        "p": 0.925
+        "bid": 0.89,
+        "ask": 0.98,
+        "p": 0.935
        },
        {
         "k": 54,
@@ -18456,15 +18476,15 @@
        },
        {
         "k": 54.25,
-        "bid": 0.87,
-        "ask": 0.96,
-        "p": 0.915
+        "bid": 0.88,
+        "ask": 0.97,
+        "p": 0.925
        },
        {
         "k": 54.5,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
+        "bid": 0.87,
+        "ask": 0.96,
+        "p": 0.915
        },
        {
         "k": 54.75,
@@ -18480,141 +18500,141 @@
        },
        {
         "k": 55.25,
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.895
+       },
+       {
+        "k": 55.5,
         "bid": 0.85,
         "ask": 0.94,
         "p": 0.895
        },
        {
-        "k": 55.5,
+        "k": 55.75,
         "bid": 0.84,
         "ask": 0.93,
         "p": 0.885
        },
        {
-        "k": 55.75,
+        "k": 56,
         "bid": 0.83,
         "ask": 0.92,
         "p": 0.875
        },
        {
-        "k": 56,
+        "k": 56.25,
         "bid": 0.82,
         "ask": 0.91,
         "p": 0.865
        },
        {
-        "k": 56.25,
+        "k": 56.5,
         "bid": 0.81,
         "ask": 0.9,
         "p": 0.855
        },
        {
-        "k": 56.5,
+        "k": 56.75,
         "bid": 0.8,
         "ask": 0.89,
         "p": 0.845
        },
        {
-        "k": 56.75,
-        "bid": 0.79,
-        "ask": 0.88,
-        "p": 0.835
-       },
-       {
         "k": 57,
-        "bid": 0.79,
-        "ask": 0.88,
-        "p": 0.835
+        "bid": 0.8,
+        "ask": 0.89,
+        "p": 0.845
        },
        {
         "k": 57.25,
+        "bid": 0.79,
+        "ask": 0.88,
+        "p": 0.835
+       },
+       {
+        "k": 57.5,
         "bid": 0.78,
         "ask": 0.87,
         "p": 0.825
        },
        {
-        "k": 57.5,
+        "k": 57.75,
         "bid": 0.77,
         "ask": 0.86,
         "p": 0.815
        },
        {
-        "k": 57.75,
+        "k": 58,
         "bid": 0.76,
         "ask": 0.85,
         "p": 0.805
        },
        {
-        "k": 58,
-        "bid": 0.75,
-        "ask": 0.84,
-        "p": 0.795
-       },
-       {
         "k": 58.25,
         "bid": 0.75,
-        "ask": 0.82,
-        "p": 0.785
+        "ask": 0.83,
+        "p": 0.79
        },
        {
         "k": 58.5,
+        "bid": 0.73,
+        "ask": 0.82,
+        "p": 0.775
+       },
+       {
+        "k": 58.75,
         "bid": 0.72,
         "ask": 0.81,
         "p": 0.765
        },
        {
-        "k": 58.75,
-        "bid": 0.71,
-        "ask": 0.8,
-        "p": 0.755
-       },
-       {
         "k": 59,
         "bid": 0.75,
-        "ask": 0.79,
-        "p": 0.755
+        "ask": 0.8,
+        "p": 0.765
        },
        {
         "k": 59.25,
         "bid": 0.75,
-        "ask": 0.77,
-        "p": 0.755
+        "ask": 0.78,
+        "p": 0.765
        },
        {
         "k": 59.5,
+        "bid": 0.68,
+        "ask": 0.77,
+        "p": 0.725
+       },
+       {
+        "k": 59.75,
         "bid": 0.67,
         "ask": 0.76,
         "p": 0.715
        },
        {
-        "k": 59.75,
+        "k": 60,
         "bid": 0.66,
         "ask": 0.75,
         "p": 0.705
        },
        {
-        "k": 60,
+        "k": 60.25,
         "bid": 0.64,
         "ask": 0.73,
         "p": 0.685
        },
        {
-        "k": 60.25,
+        "k": 60.5,
         "bid": 0.63,
         "ask": 0.72,
         "p": 0.675
        },
        {
-        "k": 60.5,
+        "k": 60.75,
         "bid": 0.62,
         "ask": 0.71,
         "p": 0.665
-       },
-       {
-        "k": 60.75,
-        "bid": 0.6,
-        "ask": 0.69,
-        "p": 0.645
        }
       ]
      },
@@ -18627,7 +18647,7 @@
       },
       "medianBid": 55.75,
       "medianAsk": 55.75,
-      "mean": 68.979,
+      "mean": 69.396,
       "volume": 200,
       "openInterest": 200,
       "quotedAt": "2026-09-08",
@@ -18646,9 +18666,9 @@
        },
        {
         "k": 49,
-        "bid": 0.86,
-        "ask": 0.95,
-        "p": 0.905
+        "bid": 0.87,
+        "ask": 0.96,
+        "p": 0.915
        },
        {
         "k": 49.25,
@@ -18664,9 +18684,9 @@
        },
        {
         "k": 49.75,
-        "bid": 0.85,
-        "ask": 0.94,
-        "p": 0.895
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 50,
@@ -18676,9 +18696,9 @@
        },
        {
         "k": 50.25,
-        "bid": 0.84,
-        "ask": 0.93,
-        "p": 0.885
+        "bid": 0.85,
+        "ask": 0.94,
+        "p": 0.895
        },
        {
         "k": 50.5,
@@ -18688,9 +18708,9 @@
        },
        {
         "k": 50.75,
-        "bid": 0.83,
-        "ask": 0.92,
-        "p": 0.875
+        "bid": 0.84,
+        "ask": 0.93,
+        "p": 0.885
        },
        {
         "k": 51,
@@ -18712,9 +18732,9 @@
        },
        {
         "k": 51.75,
-        "bid": 0.81,
-        "ask": 0.9,
-        "p": 0.855
+        "bid": 0.82,
+        "ask": 0.91,
+        "p": 0.865
        },
        {
         "k": 52,
@@ -18724,9 +18744,9 @@
        },
        {
         "k": 52.25,
-        "bid": 0.8,
-        "ask": 0.89,
-        "p": 0.845
+        "bid": 0.81,
+        "ask": 0.9,
+        "p": 0.855
        },
        {
         "k": 52.5,
@@ -18736,15 +18756,15 @@
        },
        {
         "k": 52.75,
-        "bid": 0.79,
-        "ask": 0.88,
-        "p": 0.835
+        "bid": 0.8,
+        "ask": 0.89,
+        "p": 0.845
        },
        {
         "k": 53,
-        "bid": 0.78,
-        "ask": 0.87,
-        "p": 0.825
+        "bid": 0.79,
+        "ask": 0.88,
+        "p": 0.835
        },
        {
         "k": 53.25,
@@ -18754,15 +18774,15 @@
        },
        {
         "k": 53.5,
-        "bid": 0.77,
-        "ask": 0.86,
-        "p": 0.815
+        "bid": 0.78,
+        "ask": 0.87,
+        "p": 0.825
        },
        {
         "k": 53.75,
-        "bid": 0.76,
-        "ask": 0.85,
-        "p": 0.805
+        "bid": 0.77,
+        "ask": 0.86,
+        "p": 0.815
        },
        {
         "k": 54,
@@ -18778,15 +18798,15 @@
        },
        {
         "k": 54.5,
-        "bid": 0.75,
-        "ask": 0.84,
-        "p": 0.795
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.805
        },
        {
         "k": 54.75,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 55,
@@ -18796,21 +18816,21 @@
        },
        {
         "k": 55.25,
+        "bid": 0.74,
+        "ask": 0.83,
+        "p": 0.785
+       },
+       {
+        "k": 55.5,
         "bid": 0.73,
         "ask": 0.82,
         "p": 0.775
        },
        {
-        "k": 55.5,
+        "k": 55.75,
         "bid": 0.72,
         "ask": 0.81,
         "p": 0.765
-       },
-       {
-        "k": 55.75,
-        "bid": 0.71,
-        "ask": 0.8,
-        "p": 0.755
        }
       ]
      },
@@ -18818,12 +18838,12 @@
       "event": "KXDDR5MS-27APR",
       "month": "2027-04",
       "median": {
-       "value": 48.733,
+       "value": 48.73,
        "censored": null
       },
-      "medianBid": 48.586,
+      "medianBid": 48.584,
       "medianAsk": 55.75,
-      "mean": 58.946,
+      "mean": 51.771,
       "volume": 972,
       "openInterest": 468,
       "quotedAt": "2026-09-08",
@@ -18836,81 +18856,81 @@
        },
        {
         "k": 48.75,
-        "bid": 0.02,
+        "bid": 0.01,
         "ask": 0.93,
-        "p": 0.475
+        "p": 0.47
        },
        {
         "k": 49,
-        "bid": 0.02,
-        "ask": 0.92,
+        "bid": 0.01,
+        "ask": 0.93,
         "p": 0.47
        },
        {
         "k": 49.25,
-        "bid": 0.02,
+        "bid": 0.01,
         "ask": 0.92,
-        "p": 0.47
+        "p": 0.465
        },
        {
         "k": 49.5,
-        "bid": 0.03,
-        "ask": 0.91,
-        "p": 0.47
+        "bid": 0.02,
+        "ask": 0.92,
+        "p": 0.465
        },
        {
         "k": 49.75,
-        "bid": 0.02,
+        "bid": 0.01,
         "ask": 0.91,
-        "p": 0.465
-       },
-       {
-        "k": 50,
-        "bid": 0.17,
-        "ask": 0.9,
-        "p": 0.465
-       },
-       {
-        "k": 50.25,
-        "bid": 0.02,
-        "ask": 0.9,
         "p": 0.46
        },
        {
+        "k": 50,
+        "bid": 0.2,
+        "ask": 0.91,
+        "p": 0.46
+       },
+       {
+        "k": 50.25,
+        "bid": 0.01,
+        "ask": 0.9,
+        "p": 0.455
+       },
+       {
         "k": 50.5,
-        "bid": 0.02,
-        "ask": 0.89,
+        "bid": 0.01,
+        "ask": 0.9,
         "p": 0.455
        },
        {
         "k": 50.75,
-        "bid": 0.02,
+        "bid": 0.01,
         "ask": 0.89,
-        "p": 0.455
+        "p": 0.45
        },
        {
         "k": 51,
-        "bid": 0.04,
-        "ask": 0.88,
-        "p": 0.455
+        "bid": 0.01,
+        "ask": 0.89,
+        "p": 0.45
        },
        {
         "k": 51.25,
-        "bid": 0.02,
+        "bid": 0.01,
         "ask": 0.88,
-        "p": 0.45
+        "p": 0.445
        },
        {
         "k": 51.5,
-        "bid": 0.03,
-        "ask": 0.87,
-        "p": 0.45
+        "bid": 0.01,
+        "ask": 0.88,
+        "p": 0.445
        },
        {
         "k": 51.75,
         "bid": 0.73,
         "ask": 0.86,
-        "p": 0.45
+        "p": 0.445
        },
        {
         "k": 52,
@@ -18921,8 +18941,8 @@
        {
         "k": 52.25,
         "bid": 0.01,
-        "ask": 0.84,
-        "p": 0.425
+        "ask": 0.85,
+        "p": 0.43
        },
        {
         "k": 52.5,
@@ -18933,8 +18953,8 @@
        {
         "k": 52.75,
         "bid": 0.01,
-        "ask": 0.83,
-        "p": 0.42
+        "ask": 0.84,
+        "p": 0.425
        },
        {
         "k": 53,
@@ -18951,8 +18971,8 @@
        {
         "k": 53.5,
         "bid": 0.01,
-        "ask": 0.81,
-        "p": 0.41
+        "ask": 0.82,
+        "p": 0.415
        },
        {
         "k": 53.75,
@@ -18963,14 +18983,14 @@
        {
         "k": 54,
         "bid": 0.01,
-        "ask": 0.8,
-        "p": 0.405
+        "ask": 0.81,
+        "p": 0.41
        },
        {
         "k": 54.25,
         "bid": 0.01,
-        "ask": 0.79,
-        "p": 0.4
+        "ask": 0.8,
+        "p": 0.405
        },
        {
         "k": 54.5,
@@ -18987,14 +19007,14 @@
        {
         "k": 55,
         "bid": 0.01,
-        "ask": 0.77,
-        "p": 0.39
+        "ask": 0.78,
+        "p": 0.395
        },
        {
         "k": 55.25,
         "bid": 0.01,
-        "ask": 0.76,
-        "p": 0.385
+        "ask": 0.77,
+        "p": 0.39
        },
        {
         "k": 55.5,
@@ -19005,8 +19025,8 @@
        {
         "k": 55.75,
         "bid": 0.01,
-        "ask": 0.75,
-        "p": 0.38
+        "ask": 0.76,
+        "p": 0.385
        }
       ]
      },
@@ -19019,16 +19039,16 @@
       },
       "medianBid": 55.75,
       "medianAsk": 55.75,
-      "mean": 68.851,
+      "mean": 61.772,
       "volume": 200,
       "openInterest": 200,
       "quotedAt": "2026-09-08",
       "strikes": [
        {
         "k": 48.5,
-        "bid": 0.85,
-        "ask": 0.94,
-        "p": 0.895
+        "bid": 0.86,
+        "ask": 0.95,
+        "p": 0.905
        },
        {
         "k": 48.75,
@@ -19038,9 +19058,9 @@
        },
        {
         "k": 49,
-        "bid": 0.84,
-        "ask": 0.93,
-        "p": 0.885
+        "bid": 0.85,
+        "ask": 0.94,
+        "p": 0.895
        },
        {
         "k": 49.25,
@@ -19050,9 +19070,9 @@
        },
        {
         "k": 49.5,
-        "bid": 0.83,
-        "ask": 0.92,
-        "p": 0.875
+        "bid": 0.84,
+        "ask": 0.93,
+        "p": 0.885
        },
        {
         "k": 49.75,
@@ -19062,9 +19082,9 @@
        },
        {
         "k": 50,
-        "bid": 0.82,
-        "ask": 0.91,
-        "p": 0.865
+        "bid": 0.83,
+        "ask": 0.92,
+        "p": 0.875
        },
        {
         "k": 50.25,
@@ -19074,9 +19094,9 @@
        },
        {
         "k": 50.5,
-        "bid": 0.81,
-        "ask": 0.9,
-        "p": 0.855
+        "bid": 0.82,
+        "ask": 0.91,
+        "p": 0.865
        },
        {
         "k": 50.75,
@@ -19086,21 +19106,21 @@
        },
        {
         "k": 51,
-        "bid": 0.8,
-        "ask": 0.89,
-        "p": 0.845
+        "bid": 0.81,
+        "ask": 0.9,
+        "p": 0.855
        },
        {
         "k": 51.25,
         "bid": 0.81,
         "ask": 0.9,
-        "p": 0.845
+        "p": 0.855
        },
        {
         "k": 51.5,
-        "bid": 0.8,
-        "ask": 0.89,
-        "p": 0.845
+        "bid": 0.81,
+        "ask": 0.9,
+        "p": 0.855
        },
        {
         "k": 51.75,
@@ -19110,9 +19130,9 @@
        },
        {
         "k": 52,
-        "bid": 0.79,
-        "ask": 0.88,
-        "p": 0.835
+        "bid": 0.8,
+        "ask": 0.89,
+        "p": 0.845
        },
        {
         "k": 52.25,
@@ -19122,15 +19142,15 @@
        },
        {
         "k": 52.5,
-        "bid": 0.78,
-        "ask": 0.87,
-        "p": 0.825
+        "bid": 0.79,
+        "ask": 0.88,
+        "p": 0.835
        },
        {
         "k": 52.75,
-        "bid": 0.77,
-        "ask": 0.86,
-        "p": 0.815
+        "bid": 0.78,
+        "ask": 0.87,
+        "p": 0.825
        },
        {
         "k": 53,
@@ -19140,9 +19160,9 @@
        },
        {
         "k": 53.25,
-        "bid": 0.76,
-        "ask": 0.85,
-        "p": 0.805
+        "bid": 0.77,
+        "ask": 0.86,
+        "p": 0.815
        },
        {
         "k": 53.5,
@@ -19152,33 +19172,33 @@
        },
        {
         "k": 53.75,
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.805
+       },
+       {
+        "k": 54,
         "bid": 0.75,
         "ask": 0.84,
         "p": 0.795
        },
        {
-        "k": 54,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
-       },
-       {
         "k": 54.25,
         "bid": 0.75,
         "ask": 0.84,
-        "p": 0.785
+        "p": 0.795
        },
        {
         "k": 54.5,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 54.75,
-        "bid": 0.73,
-        "ask": 0.82,
-        "p": 0.775
+        "bid": 0.74,
+        "ask": 0.83,
+        "p": 0.785
        },
        {
         "k": 55,
@@ -19188,15 +19208,15 @@
        },
        {
         "k": 55.25,
-        "bid": 0.72,
-        "ask": 0.81,
-        "p": 0.765
+        "bid": 0.73,
+        "ask": 0.82,
+        "p": 0.775
        },
        {
         "k": 55.5,
         "bid": 0.75,
         "ask": 0.81,
-        "p": 0.765
+        "p": 0.775
        },
        {
         "k": 55.75,
@@ -19215,7 +19235,7 @@
       },
       "medianBid": 55.75,
       "medianAsk": 55.75,
-      "mean": 54.269,
+      "mean": 66.295,
       "volume": 90,
       "openInterest": 45,
       "quotedAt": "2026-09-08",
@@ -19234,9 +19254,9 @@
        },
        {
         "k": 49,
-        "bid": 0.79,
-        "ask": 0.88,
-        "p": 0.835
+        "bid": 0.8,
+        "ask": 0.89,
+        "p": 0.845
        },
        {
         "k": 49.25,
@@ -19246,9 +19266,9 @@
        },
        {
         "k": 49.5,
-        "bid": 0.78,
-        "ask": 0.87,
-        "p": 0.825
+        "bid": 0.79,
+        "ask": 0.88,
+        "p": 0.835
        },
        {
         "k": 49.75,
@@ -19258,9 +19278,9 @@
        },
        {
         "k": 50,
-        "bid": 0.77,
-        "ask": 0.86,
-        "p": 0.815
+        "bid": 0.78,
+        "ask": 0.87,
+        "p": 0.825
        },
        {
         "k": 50.25,
@@ -19270,9 +19290,9 @@
        },
        {
         "k": 50.5,
-        "bid": 0.76,
-        "ask": 0.85,
-        "p": 0.805
+        "bid": 0.77,
+        "ask": 0.86,
+        "p": 0.815
        },
        {
         "k": 50.75,
@@ -19282,9 +19302,9 @@
        },
        {
         "k": 51,
-        "bid": 0.75,
-        "ask": 0.84,
-        "p": 0.795
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.805
        },
        {
         "k": 51.25,
@@ -19294,9 +19314,9 @@
        },
        {
         "k": 51.5,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 51.75,
@@ -19306,9 +19326,9 @@
        },
        {
         "k": 52,
-        "bid": 0.73,
-        "ask": 0.82,
-        "p": 0.775
+        "bid": 0.74,
+        "ask": 0.83,
+        "p": 0.785
        },
        {
         "k": 52.25,
@@ -19318,15 +19338,15 @@
        },
        {
         "k": 52.5,
-        "bid": 0.72,
-        "ask": 0.81,
-        "p": 0.765
+        "bid": 0.73,
+        "ask": 0.82,
+        "p": 0.775
        },
        {
         "k": 52.75,
-        "bid": 0.71,
-        "ask": 0.8,
-        "p": 0.755
+        "bid": 0.72,
+        "ask": 0.81,
+        "p": 0.765
        },
        {
         "k": 53,
@@ -19336,9 +19356,9 @@
        },
        {
         "k": 53.25,
-        "bid": 0.7,
-        "ask": 0.79,
-        "p": 0.745
+        "bid": 0.71,
+        "ask": 0.8,
+        "p": 0.755
        },
        {
         "k": 53.5,
@@ -19348,9 +19368,9 @@
        },
        {
         "k": 53.75,
-        "bid": 0.69,
-        "ask": 0.78,
-        "p": 0.735
+        "bid": 0.7,
+        "ask": 0.79,
+        "p": 0.745
        },
        {
         "k": 54,
@@ -19360,15 +19380,15 @@
        },
        {
         "k": 54.25,
-        "bid": 0.68,
-        "ask": 0.77,
-        "p": 0.725
+        "bid": 0.69,
+        "ask": 0.78,
+        "p": 0.735
        },
        {
         "k": 54.5,
-        "bid": 0.67,
-        "ask": 0.76,
-        "p": 0.715
+        "bid": 0.68,
+        "ask": 0.77,
+        "p": 0.725
        },
        {
         "k": 54.75,
@@ -19378,9 +19398,9 @@
        },
        {
         "k": 55,
-        "bid": 0.66,
-        "ask": 0.75,
-        "p": 0.705
+        "bid": 0.67,
+        "ask": 0.76,
+        "p": 0.715
        },
        {
         "k": 55.25,
@@ -19390,9 +19410,9 @@
        },
        {
         "k": 55.5,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.66,
+        "ask": 0.75,
+        "p": 0.705
        },
        {
         "k": 55.75,
@@ -19411,16 +19431,16 @@
       },
       "medianBid": 55.75,
       "medianAsk": 55.75,
-      "mean": 54.098,
+      "mean": 65.437,
       "volume": 0,
       "openInterest": 0,
       "quotedAt": "2026-09-08",
       "strikes": [
        {
         "k": 48.5,
-        "bid": 0.77,
-        "ask": 0.86,
-        "p": 0.815
+        "bid": 0.78,
+        "ask": 0.87,
+        "p": 0.825
        },
        {
         "k": 48.75,
@@ -19448,9 +19468,9 @@
        },
        {
         "k": 49.75,
-        "bid": 0.75,
-        "ask": 0.84,
-        "p": 0.795
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.805
        },
        {
         "k": 50,
@@ -19460,9 +19480,9 @@
        },
        {
         "k": 50.25,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 50.5,
@@ -19472,9 +19492,9 @@
        },
        {
         "k": 50.75,
-        "bid": 0.73,
-        "ask": 0.82,
-        "p": 0.775
+        "bid": 0.74,
+        "ask": 0.83,
+        "p": 0.785
        },
        {
         "k": 51,
@@ -19484,9 +19504,9 @@
        },
        {
         "k": 51.25,
-        "bid": 0.72,
-        "ask": 0.81,
-        "p": 0.765
+        "bid": 0.73,
+        "ask": 0.82,
+        "p": 0.775
        },
        {
         "k": 51.5,
@@ -19496,9 +19516,9 @@
        },
        {
         "k": 51.75,
-        "bid": 0.71,
-        "ask": 0.8,
-        "p": 0.755
+        "bid": 0.72,
+        "ask": 0.81,
+        "p": 0.765
        },
        {
         "k": 52,
@@ -19508,9 +19528,9 @@
        },
        {
         "k": 52.25,
-        "bid": 0.7,
-        "ask": 0.79,
-        "p": 0.745
+        "bid": 0.71,
+        "ask": 0.8,
+        "p": 0.755
        },
        {
         "k": 52.5,
@@ -19520,9 +19540,9 @@
        },
        {
         "k": 52.75,
-        "bid": 0.69,
-        "ask": 0.78,
-        "p": 0.735
+        "bid": 0.7,
+        "ask": 0.79,
+        "p": 0.745
        },
        {
         "k": 53,
@@ -19532,9 +19552,9 @@
        },
        {
         "k": 53.25,
-        "bid": 0.68,
-        "ask": 0.77,
-        "p": 0.725
+        "bid": 0.69,
+        "ask": 0.78,
+        "p": 0.735
        },
        {
         "k": 53.5,
@@ -19544,9 +19564,9 @@
        },
        {
         "k": 53.75,
-        "bid": 0.67,
-        "ask": 0.76,
-        "p": 0.715
+        "bid": 0.68,
+        "ask": 0.77,
+        "p": 0.725
        },
        {
         "k": 54,
@@ -19556,15 +19576,15 @@
        },
        {
         "k": 54.25,
-        "bid": 0.66,
-        "ask": 0.75,
-        "p": 0.705
+        "bid": 0.67,
+        "ask": 0.76,
+        "p": 0.715
        },
        {
         "k": 54.5,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.66,
+        "ask": 0.75,
+        "p": 0.705
        },
        {
         "k": 54.75,
@@ -19574,9 +19594,9 @@
        },
        {
         "k": 55,
-        "bid": 0.64,
-        "ask": 0.73,
-        "p": 0.685
+        "bid": 0.65,
+        "ask": 0.74,
+        "p": 0.695
        },
        {
         "k": 55.25,
@@ -19586,9 +19606,9 @@
        },
        {
         "k": 55.5,
-        "bid": 0.63,
-        "ask": 0.72,
-        "p": 0.675
+        "bid": 0.64,
+        "ask": 0.73,
+        "p": 0.685
        },
        {
         "k": 55.75,
@@ -19607,16 +19627,16 @@
       },
       "medianBid": 55.75,
       "medianAsk": 55.75,
-      "mean": 64.591,
+      "mean": 53.982,
       "volume": 80,
       "openInterest": 40,
       "quotedAt": "2026-09-08",
       "strikes": [
        {
         "k": 48.5,
-        "bid": 0.75,
-        "ask": 0.84,
-        "p": 0.795
+        "bid": 0.76,
+        "ask": 0.85,
+        "p": 0.805
        },
        {
         "k": 48.75,
@@ -19626,9 +19646,9 @@
        },
        {
         "k": 49,
-        "bid": 0.74,
-        "ask": 0.83,
-        "p": 0.785
+        "bid": 0.75,
+        "ask": 0.84,
+        "p": 0.795
        },
        {
         "k": 49.25,
@@ -19638,9 +19658,9 @@
        },
        {
         "k": 49.5,
-        "bid": 0.73,
-        "ask": 0.82,
-        "p": 0.775
+        "bid": 0.74,
+        "ask": 0.83,
+        "p": 0.785
        },
        {
         "k": 49.75,
@@ -19650,9 +19670,9 @@
        },
        {
         "k": 50,
-        "bid": 0.72,
-        "ask": 0.81,
-        "p": 0.765
+        "bid": 0.73,
+        "ask": 0.82,
+        "p": 0.775
        },
        {
         "k": 50.25,
@@ -19680,9 +19700,9 @@
        },
        {
         "k": 51.25,
-        "bid": 0.7,
-        "ask": 0.79,
-        "p": 0.745
+        "bid": 0.71,
+        "ask": 0.8,
+        "p": 0.755
        },
        {
         "k": 51.5,
@@ -19692,9 +19712,9 @@
        },
        {
         "k": 51.75,
-        "bid": 0.69,
-        "ask": 0.78,
-        "p": 0.735
+        "bid": 0.7,
+        "ask": 0.79,
+        "p": 0.745
        },
        {
         "k": 52,
@@ -19704,9 +19724,9 @@
        },
        {
         "k": 52.25,
-        "bid": 0.68,
-        "ask": 0.77,
-        "p": 0.725
+        "bid": 0.69,
+        "ask": 0.78,
+        "p": 0.735
        },
        {
         "k": 52.5,
@@ -19716,9 +19736,9 @@
        },
        {
         "k": 52.75,
-        "bid": 0.67,
-        "ask": 0.76,
-        "p": 0.715
+        "bid": 0.68,
+        "ask": 0.77,
+        "p": 0.725
        },
        {
         "k": 53,
@@ -19728,9 +19748,9 @@
        },
        {
         "k": 53.25,
-        "bid": 0.66,
-        "ask": 0.75,
-        "p": 0.705
+        "bid": 0.67,
+        "ask": 0.76,
+        "p": 0.715
        },
        {
         "k": 53.5,
@@ -19740,9 +19760,9 @@
        },
        {
         "k": 53.75,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.66,
+        "ask": 0.75,
+        "p": 0.705
        },
        {
         "k": 54,
@@ -19752,9 +19772,9 @@
        },
        {
         "k": 54.25,
-        "bid": 0.64,
-        "ask": 0.73,
-        "p": 0.685
+        "bid": 0.65,
+        "ask": 0.74,
+        "p": 0.695
        },
        {
         "k": 54.5,
@@ -19764,9 +19784,9 @@
        },
        {
         "k": 54.75,
-        "bid": 0.63,
-        "ask": 0.72,
-        "p": 0.675
+        "bid": 0.64,
+        "ask": 0.73,
+        "p": 0.685
        },
        {
         "k": 55,
@@ -19776,9 +19796,9 @@
        },
        {
         "k": 55.25,
-        "bid": 0.62,
-        "ask": 0.71,
-        "p": 0.665
+        "bid": 0.63,
+        "ask": 0.72,
+        "p": 0.675
        },
        {
         "k": 55.5,
@@ -19788,9 +19808,9 @@
        },
        {
         "k": 55.75,
-        "bid": 0.61,
-        "ask": 0.7,
-        "p": 0.655
+        "bid": 0.62,
+        "ask": 0.71,
+        "p": 0.665
        }
       ]
      },
@@ -19803,7 +19823,7 @@
       },
       "medianBid": 58.75,
       "medianAsk": 58.75,
-      "mean": 56.426,
+      "mean": 65.232,
       "volume": 0,
       "openInterest": 0,
       "quotedAt": "2026-09-08",
@@ -19834,9 +19854,9 @@
        },
        {
         "k": 52.5,
-        "bid": 0.66,
-        "ask": 0.75,
-        "p": 0.705
+        "bid": 0.67,
+        "ask": 0.76,
+        "p": 0.715
        },
        {
         "k": 52.75,
@@ -19846,9 +19866,9 @@
        },
        {
         "k": 53,
-        "bid": 0.65,
-        "ask": 0.74,
-        "p": 0.695
+        "bid": 0.66,
+        "ask": 0.75,
+        "p": 0.705
        },
        {
         "k": 53.25,
@@ -19858,9 +19878,9 @@
        },
        {
         "k": 53.5,
-        "bid": 0.64,
-        "ask": 0.73,
-        "p": 0.685
+        "bid": 0.65,
+        "ask": 0.74,
+        "p": 0.695
        },
        {
         "k": 53.75,
@@ -19870,9 +19890,9 @@
        },
        {
         "k": 54,
-        "bid": 0.63,
-        "ask": 0.72,
-        "p": 0.675
+        "bid": 0.64,
+        "ask": 0.73,
+        "p": 0.685
        },
        {
         "k": 54.25,
@@ -19888,9 +19908,9 @@
        },
        {
         "k": 54.75,
-        "bid": 0.62,
-        "ask": 0.71,
-        "p": 0.665
+        "bid": 0.63,
+        "ask": 0.72,
+        "p": 0.675
        },
        {
         "k": 55,
@@ -19900,9 +19920,9 @@
        },
        {
         "k": 55.25,
-        "bid": 0.61,
-        "ask": 0.7,
-        "p": 0.655
+        "bid": 0.62,
+        "ask": 0.71,
+        "p": 0.665
        },
        {
         "k": 55.5,
@@ -19912,9 +19932,9 @@
        },
        {
         "k": 55.75,
-        "bid": 0.6,
-        "ask": 0.69,
-        "p": 0.645
+        "bid": 0.61,
+        "ask": 0.7,
+        "p": 0.655
        },
        {
         "k": 56,
@@ -19924,9 +19944,9 @@
        },
        {
         "k": 56.25,
-        "bid": 0.59,
-        "ask": 0.68,
-        "p": 0.635
+        "bid": 0.6,
+        "ask": 0.69,
+        "p": 0.645
        },
        {
         "k": 56.5,
@@ -19936,9 +19956,9 @@
        },
        {
         "k": 56.75,
-        "bid": 0.58,
-        "ask": 0.67,
-        "p": 0.625
+        "bid": 0.59,
+        "ask": 0.68,
+        "p": 0.635
        },
        {
         "k": 57,
@@ -19948,9 +19968,9 @@
        },
        {
         "k": 57.25,
-        "bid": 0.57,
-        "ask": 0.66,
-        "p": 0.615
+        "bid": 0.58,
+        "ask": 0.67,
+        "p": 0.625
        },
        {
         "k": 57.5,
@@ -19966,9 +19986,9 @@
        },
        {
         "k": 58,
-        "bid": 0.56,
-        "ask": 0.65,
-        "p": 0.605
+        "bid": 0.57,
+        "ask": 0.66,
+        "p": 0.615
        },
        {
         "k": 58.25,
@@ -19978,9 +19998,9 @@
        },
        {
         "k": 58.5,
-        "bid": 0.55,
-        "ask": 0.64,
-        "p": 0.595
+        "bid": 0.56,
+        "ask": 0.65,
+        "p": 0.605
        },
        {
         "k": 58.75,
@@ -19997,9 +20017,9 @@
        "value": 62.75,
        "censored": "above"
       },
-      "medianBid": 61,
+      "medianBid": 61.25,
       "medianAsk": 62.75,
-      "mean": 66.4,
+      "mean": 59.87,
       "volume": 0,
       "openInterest": 0,
       "quotedAt": "2026-10-01",
@@ -20012,9 +20032,9 @@
        },
        {
         "k": 55.75,
-        "bid": 0.59,
-        "ask": 0.68,
-        "p": 0.635
+        "bid": 0.6,
+        "ask": 0.69,
+        "p": 0.645
        },
        {
         "k": 56,
@@ -20024,9 +20044,9 @@
        },
        {
         "k": 56.25,
-        "bid": 0.58,
-        "ask": 0.67,
-        "p": 0.625
+        "bid": 0.59,
+        "ask": 0.68,
+        "p": 0.635
        },
        {
         "k": 56.5,
@@ -20042,9 +20062,9 @@
        },
        {
         "k": 57,
-        "bid": 0.57,
-        "ask": 0.66,
-        "p": 0.615
+        "bid": 0.58,
+        "ask": 0.67,
+        "p": 0.625
        },
        {
         "k": 57.25,
@@ -20054,9 +20074,9 @@
        },
        {
         "k": 57.5,
-        "bid": 0.56,
-        "ask": 0.65,
-        "p": 0.605
+        "bid": 0.57,
+        "ask": 0.66,
+        "p": 0.615
        },
        {
         "k": 57.75,
@@ -20066,9 +20086,9 @@
        },
        {
         "k": 58,
-        "bid": 0.55,
-        "ask": 0.64,
-        "p": 0.595
+        "bid": 0.56,
+        "ask": 0.65,
+        "p": 0.605
        },
        {
         "k": 58.25,
@@ -20084,9 +20104,9 @@
        },
        {
         "k": 58.75,
-        "bid": 0.54,
-        "ask": 0.63,
-        "p": 0.585
+        "bid": 0.55,
+        "ask": 0.64,
+        "p": 0.595
        },
        {
         "k": 59,
@@ -20096,9 +20116,9 @@
        },
        {
         "k": 59.25,
-        "bid": 0.53,
-        "ask": 0.62,
-        "p": 0.575
+        "bid": 0.54,
+        "ask": 0.63,
+        "p": 0.585
        },
        {
         "k": 59.5,
@@ -20108,9 +20128,9 @@
        },
        {
         "k": 59.75,
-        "bid": 0.52,
-        "ask": 0.61,
-        "p": 0.565
+        "bid": 0.53,
+        "ask": 0.62,
+        "p": 0.575
        },
        {
         "k": 60,
@@ -20126,9 +20146,9 @@
        },
        {
         "k": 60.5,
-        "bid": 0.51,
-        "ask": 0.6,
-        "p": 0.555
+        "bid": 0.52,
+        "ask": 0.61,
+        "p": 0.565
        },
        {
         "k": 60.75,
@@ -20138,9 +20158,9 @@
        },
        {
         "k": 61,
-        "bid": 0.5,
-        "ask": 0.59,
-        "p": 0.545
+        "bid": 0.51,
+        "ask": 0.6,
+        "p": 0.555
        },
        {
         "k": 61.25,
@@ -20150,15 +20170,15 @@
        },
        {
         "k": 61.5,
-        "bid": 0.49,
-        "ask": 0.58,
-        "p": 0.535
+        "bid": 0.5,
+        "ask": 0.59,
+        "p": 0.545
        },
        {
         "k": 61.75,
-        "bid": 0.49,
-        "ask": 0.58,
-        "p": 0.535
+        "bid": 0.5,
+        "ask": 0.59,
+        "p": 0.545
        },
        {
         "k": 62,
@@ -20168,9 +20188,9 @@
        },
        {
         "k": 62.25,
-        "bid": 0.48,
-        "ask": 0.57,
-        "p": 0.525
+        "bid": 0.49,
+        "ask": 0.58,
+        "p": 0.535
        },
        {
         "k": 62.5,
@@ -20180,9 +20200,9 @@
        },
        {
         "k": 62.75,
-        "bid": 0.47,
-        "ask": 0.56,
-        "p": 0.515
+        "bid": 0.48,
+        "ask": 0.57,
+        "p": 0.525
        }
       ]
      },
@@ -20190,21 +20210,21 @@
       "event": "KXDDR5MS-27NOV",
       "month": "2027-11",
       "median": {
-       "value": 65.375,
+       "value": 65.625,
        "censored": null
       },
-      "medianBid": 62.75,
-      "medianAsk": 68.25,
-      "mean": 64.29,
+      "medianBid": 63,
+      "medianAsk": 68.5,
+      "mean": 64.331,
       "volume": 3966,
       "openInterest": 2982,
       "quotedAt": "2026-11-03",
       "strikes": [
        {
         "k": 59,
-        "bid": 0.57,
-        "ask": 0.66,
-        "p": 0.615
+        "bid": 0.58,
+        "ask": 0.67,
+        "p": 0.625
        },
        {
         "k": 59.25,
@@ -20214,9 +20234,9 @@
        },
        {
         "k": 59.5,
-        "bid": 0.56,
-        "ask": 0.65,
-        "p": 0.605
+        "bid": 0.57,
+        "ask": 0.66,
+        "p": 0.615
        },
        {
         "k": 59.75,
@@ -20232,9 +20252,9 @@
        },
        {
         "k": 60.25,
-        "bid": 0.55,
-        "ask": 0.64,
-        "p": 0.595
+        "bid": 0.56,
+        "ask": 0.65,
+        "p": 0.605
        },
        {
         "k": 60.5,
@@ -20244,9 +20264,9 @@
        },
        {
         "k": 60.75,
-        "bid": 0.54,
-        "ask": 0.63,
-        "p": 0.585
+        "bid": 0.55,
+        "ask": 0.64,
+        "p": 0.595
        },
        {
         "k": 61,
@@ -20262,9 +20282,9 @@
        },
        {
         "k": 61.5,
-        "bid": 0.53,
-        "ask": 0.62,
-        "p": 0.575
+        "bid": 0.54,
+        "ask": 0.63,
+        "p": 0.585
        },
        {
         "k": 61.75,
@@ -20274,15 +20294,15 @@
        },
        {
         "k": 62,
-        "bid": 0.51,
-        "ask": 0.6,
-        "p": 0.555
+        "bid": 0.52,
+        "ask": 0.61,
+        "p": 0.565
        },
        {
         "k": 62.25,
-        "bid": 0.51,
-        "ask": 0.6,
-        "p": 0.555
+        "bid": 0.52,
+        "ask": 0.61,
+        "p": 0.565
        },
        {
         "k": 62.5,
@@ -20292,9 +20312,9 @@
        },
        {
         "k": 62.75,
-        "bid": 0.5,
-        "ask": 0.59,
-        "p": 0.545
+        "bid": 0.51,
+        "ask": 0.6,
+        "p": 0.555
        },
        {
         "k": 63,
@@ -20310,9 +20330,9 @@
        },
        {
         "k": 63.5,
-        "bid": 0.49,
-        "ask": 0.58,
-        "p": 0.535
+        "bid": 0.5,
+        "ask": 0.59,
+        "p": 0.545
        },
        {
         "k": 63.75,
@@ -20322,9 +20342,9 @@
        },
        {
         "k": 64,
-        "bid": 0.48,
-        "ask": 0.57,
-        "p": 0.525
+        "bid": 0.49,
+        "ask": 0.58,
+        "p": 0.535
        },
        {
         "k": 64.25,
@@ -20340,9 +20360,9 @@
        },
        {
         "k": 64.75,
-        "bid": 0.47,
-        "ask": 0.56,
-        "p": 0.515
+        "bid": 0.48,
+        "ask": 0.57,
+        "p": 0.525
        },
        {
         "k": 65,
@@ -20358,9 +20378,9 @@
        },
        {
         "k": 65.5,
-        "bid": 0.45,
-        "ask": 0.54,
-        "p": 0.495
+        "bid": 0.46,
+        "ask": 0.55,
+        "p": 0.505
        },
        {
         "k": 65.75,
@@ -20370,15 +20390,15 @@
        },
        {
         "k": 66,
-        "bid": 0.44,
-        "ask": 0.53,
-        "p": 0.485
+        "bid": 0.45,
+        "ask": 0.54,
+        "p": 0.495
        },
        {
         "k": 66.25,
-        "bid": 0.44,
-        "ask": 0.53,
-        "p": 0.485
+        "bid": 0.45,
+        "ask": 0.54,
+        "p": 0.495
        },
        {
         "k": 66.5,
@@ -20388,9 +20408,9 @@
        },
        {
         "k": 66.75,
-        "bid": 0.43,
-        "ask": 0.52,
-        "p": 0.475
+        "bid": 0.44,
+        "ask": 0.53,
+        "p": 0.485
        },
        {
         "k": 67,
@@ -20406,9 +20426,9 @@
        },
        {
         "k": 67.5,
-        "bid": 0.42,
-        "ask": 0.51,
-        "p": 0.465
+        "bid": 0.43,
+        "ask": 0.52,
+        "p": 0.475
        },
        {
         "k": 67.75,
@@ -20424,9 +20444,9 @@
        },
        {
         "k": 68.25,
-        "bid": 0.41,
-        "ask": 0.5,
-        "p": 0.455
+        "bid": 0.42,
+        "ask": 0.51,
+        "p": 0.465
        },
        {
         "k": 68.5,
@@ -20447,12 +20467,12 @@
   ]
  },
  "power": {
-  "asOf": "2026-11-18",
-  "realTimeLatest": 10.53,
-  "realTimeAvg": 14.28,
-  "realTimeMin": 5.24,
-  "realTimeMax": 24.27,
-  "dayAheadAvg": 29.55
+  "asOf": "2026-11-19",
+  "realTimeLatest": 6.17,
+  "realTimeAvg": 27.04,
+  "realTimeMin": 6.17,
+  "realTimeMax": 47.7,
+  "dayAheadAvg": 28.67
  },
  "twse": {
   "month": "2026-10",
