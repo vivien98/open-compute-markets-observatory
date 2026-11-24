@@ -2061,13 +2061,13 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-22,xiaomi/mimo-v2.6-flash|tenstorrent/fp8,Tenstorrent,,0.165,0.33,0.004
 2026-11-22,xiaomi/mimo-v2.6-flash|venice/fp8,Venice,,0.175,0.35,0.00375
 2026-11-22,xiaomi/mimo-v2.6-flash|xiaomi/fp8,Xiaomi,,0.14,0.28,0.0028
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|alibaba,Alibaba,,0.18,0.72,0.0036
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|alibaba,Alibaba,,0.09,0.36,0.0018
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|ambient/fp4,Ambient,,0.045,0.25,0.0025
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|antdigital/fp8,Ant Digital,,0.09,0.36,0.0018
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|baidu/fp8,Baidu,,0.09772,0.39437,0.002094
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|baseten,BaseTen,,0.3,1.2,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|baseten/fast,BaseTen,priority,0.6,2.4,0.014
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|cloudflare,Cloudflare,,0.1,0.6,0.003
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|cloudflare,Cloudflare,,0.075,0.3,0.003
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|cohere/fp8,Cohere,,0.115,0.4,0.0025
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|coreweave/fp8,CoreWeave,,0.3,1.2,0.006
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|crusoe/fp8,Crusoe,,0.1885,0.78,0.00455
@@ -2088,40 +2088,41 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|makora/fp8,Makora,,0.15,0.8,0.006
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|mistral/fp8,Mistral,,0.3,1.2,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|modal,Modal,,0.25,1,0.005
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|modelrun/fp4,ModelRun,,0.17,0.67,0.006
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|modelrun/fp4,ModelRun,,0.1,0.5,0.003
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|morph/fast,Morph,priority,0.6,2.4,0.014
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|morph/fp8,Morph,,0.059,0.52,0.005
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|near-ai,Near AI,,0.3,1.2,0.006
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|nebius/fp4,Nebius,,0.18,0.72,0.0036
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|novita/fp8,Novita,,0.165,0.66,0.0033
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|open-inference/fp4,OpenInference,,0.047,0.75,0.0037
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|open-inference/fp4,OpenInference,,0.047,0.8,0.0037
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|parasail/fp8,Parasail,,0.3,1.2,0.006
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|pareto-inference/fp8,Pareto Inference,,0.075,0.3,0.0015
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|particle-ai/us,Particle AI,,0.05,0.9,0.002
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|particle-ai/us/flex,Particle AI,flex,0.025,0.45,0.001
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|pearl-research/fp8,Pearl Research,,0.05,0.3,0.003
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|primalabs,PrimaLabs,,0.24,0.96,0.0048
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|primeintellect,PrimeIntellect,,0.075,0.7,0.007
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|primeintellect,PrimeIntellect,,0.175,0.7,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|reka,Reka,,0.3,1.2,0.006
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|relace/fp4,Relace,,0.12,0.5,0.003
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|river,River,,0.12,0.48,0.0024
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|sail-research/fp4,Sail Research,,0.04,0.1,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|sail-research/fp4/us,Sail Research,,0.04,0.1,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|siliconflow/fp8,SiliconFlow,,0.15,0.6,0.003
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|streamlake/fp8,StreamLake,,0.111,0.444,0.00222
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|streamlake/fp8,StreamLake,,0.09,0.36,0.0018
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|tenstorrent/fp8,Tenstorrent,,0.03,0.2,0.001
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|together,Together,,0.3,1.2,0.006
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|together/fast,Together,priority,0.6,2.4,0.012
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|together/us,Together,,0.375,1.5,0.0075
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|venice/fp8,Venice,,0.3,1.2,0.0075
-2026-11-24,deepseek/deepseek-v4.1-flash-1017|wafer/mxfp4,Wafer,,0.066,0.5,0.0065
+2026-11-24,deepseek/deepseek-v4.1-flash-1017|wafer/mxfp4,Wafer,,0.079,0.5,0.0079
 2026-11-24,deepseek/deepseek-v4.1-flash-1017|wafer/us,Wafer,,0.036,0.5,0.01
-2026-11-24,deepseek/deepseek-v4.1-flash|alibaba,Alibaba,,0.18,0.72,0.0036
-2026-11-24,deepseek/deepseek-v4.1-flash|baidu/fp8,Baidu,,0.0498,0.1992,0.000996
+2026-11-24,deepseek/deepseek-v4.1-flash|alibaba,Alibaba,,0.09,0.36,0.0018
+2026-11-24,deepseek/deepseek-v4.1-flash|baidu/fp8,Baidu,,0.0507,0.2028,0.001014
 2026-11-24,deepseek/deepseek-v4.1-flash|baseten,BaseTen,,0.3,1.2,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash|baseten/us,BaseTen,,0.3,1.2,0.007
 2026-11-24,deepseek/deepseek-v4.1-flash|cloudflare,Cloudflare,,0.1,0.9,0.03
 2026-11-24,deepseek/deepseek-v4.1-flash|cohere/fp8,Cohere,,0.195,0.66,0.003
-2026-11-24,deepseek/deepseek-v4.1-flash|coreweave/fp8,CoreWeave,,0.13,0.65,0.002
+2026-11-24,deepseek/deepseek-v4.1-flash|coreweave/fp8,CoreWeave,,0.13,0.59,0.002
 2026-11-24,deepseek/deepseek-v4.1-flash|crusoe/fp8,Crusoe,,0.1885,0.78,0.00455
 2026-11-24,deepseek/deepseek-v4.1-flash|deepinfra/fp8,DeepInfra,,0.14,0.42,0.0042
 2026-11-24,deepseek/deepseek-v4.1-flash|deepinfra/fp8/flex,DeepInfra,flex,0.112,0.336,0.00336
@@ -2139,7 +2140,7 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,deepseek/deepseek-v4.1-flash|modal,Modal,,0.3,1.2,0.03
 2026-11-24,deepseek/deepseek-v4.1-flash|nebius/fp8,Nebius,,0.24,0.96,0.008
 2026-11-24,deepseek/deepseek-v4.1-flash|novita/fp8,Novita,,0.15,0.6,0.003
-2026-11-24,deepseek/deepseek-v4.1-flash|open-inference/fp4,OpenInference,,0.052,0.75,0.009
+2026-11-24,deepseek/deepseek-v4.1-flash|open-inference/fp4,OpenInference,,0.052,0.8,0.009
 2026-11-24,deepseek/deepseek-v4.1-flash|parasail/fast,Parasail,priority,0.45,1.8,0.009
 2026-11-24,deepseek/deepseek-v4.1-flash|parasail/fp8,Parasail,,0.3,1.2,0.006
 2026-11-24,deepseek/deepseek-v4.1-flash|reka,Reka,,0.12,0.64,0.008
@@ -2155,7 +2156,7 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,deepseek/deepseek-v4.1-flash|wafer/us,Wafer,,0.051,0.567,0.018
 2026-11-24,minimax/minimax-m3.1-flash|digitalocean,DigitalOcean,,0.15,0.6,0.015
 2026-11-24,minimax/minimax-m3.1-flash|fireworks,Fireworks,,0.15,0.6,0.015
-2026-11-24,minimax/minimax-m3.1-flash|inferact-vllm/nvfp4,Inferact vLLM,,0.15,0.6,0.015
+2026-11-24,minimax/minimax-m3.1-flash|inferact-vllm/nvfp4,Inferact vLLM,,0.075,0.3,0.0075
 2026-11-24,minimax/minimax-m3.1-flash|inference-net/fp4,InferenceNet,,0.15,0.6,0.015
 2026-11-24,minimax/minimax-m3.1-flash|inference-net/fp4/us,InferenceNet,,0.15,0.6,0.015
 2026-11-24,minimax/minimax-m3.1-flash|makora/fp4,Makora,,0.1,0.4,0.025
@@ -2167,8 +2168,8 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,minimax/minimax-m3.1-flash|together,Together,,0.15,0.6,0.015
 2026-11-24,minimax/minimax-m3.1-flash|wafer/nvfp4,Wafer,,0.135,0.54,0.0135
 2026-11-24,moonshotai/kimi-k3.1-pro|akashml/fp4,AkashML,,1.75,10,0.18
-2026-11-24,moonshotai/kimi-k3.1-pro|alibaba,Alibaba,,2,10,0.2
-2026-11-24,moonshotai/kimi-k3.1-pro|alibaba/prime,Alibaba,priority,4,20,0.2
+2026-11-24,moonshotai/kimi-k3.1-pro|alibaba,Alibaba,,2.3,11.5,0.23
+2026-11-24,moonshotai/kimi-k3.1-pro|alibaba/prime,Alibaba,priority,4.6,23,0.23
 2026-11-24,moonshotai/kimi-k3.1-pro|amazon-bedrock/us-east-1,Amazon Bedrock,,4.4,22,0.22
 2026-11-24,moonshotai/kimi-k3.1-pro|amazon-bedrock/us-east-2,Amazon Bedrock,,4,20,0.2
 2026-11-24,moonshotai/kimi-k3.1-pro|decart/mxfp4,Decart,,1.24,6.2,0.124
@@ -2177,10 +2178,10 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,moonshotai/kimi-k3.1-pro|fireworks,Fireworks,,2,10,0.2
 2026-11-24,moonshotai/kimi-k3.1-pro|fireworks/us,Fireworks,,2.5,12.5,0.25
 2026-11-24,moonshotai/kimi-k3.1-pro|inference-net/fast,InferenceNet,priority,2.7,13.5,0.27
-2026-11-24,moonshotai/kimi-k3.1-pro|inference-net/mxfp4,InferenceNet,,1.8,9,0.198
-2026-11-24,moonshotai/kimi-k3.1-pro|inference-net/mxfp4/us,InferenceNet,,1.8,9,0.198
+2026-11-24,moonshotai/kimi-k3.1-pro|inference-net/mxfp4,InferenceNet,,1.8,9,0.207
+2026-11-24,moonshotai/kimi-k3.1-pro|inference-net/mxfp4/us,InferenceNet,,1.8,9,0.207
 2026-11-24,moonshotai/kimi-k3.1-pro|inference-net/us/fast,InferenceNet,priority,2.7,13.5,0.27
-2026-11-24,moonshotai/kimi-k3.1-pro|io-net/fp4,Io Net,,1.8,9,0.18
+2026-11-24,moonshotai/kimi-k3.1-pro|io-net/fp4,Io Net,,2.8,12,0.28
 2026-11-24,moonshotai/kimi-k3.1-pro|makora,Makora,,2,9.49,0.2
 2026-11-24,moonshotai/kimi-k3.1-pro|modal/mxfp4,Modal,,2,10,0.2
 2026-11-24,moonshotai/kimi-k3.1-pro|moonshotai/highspeed,Moonshot AI,priority,4,20,0.2
@@ -2202,7 +2203,7 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,nvidia/nemotron-3.5-super-vl|crusoe/bf16,Crusoe,,0.1,0.4,0.08
 2026-11-24,nvidia/nemotron-3.5-super-vl|darkbloom/nvfp4,Darkbloom,,0.06,0.35,0.01
 2026-11-24,nvidia/nemotron-3.5-super-vl|deepinfra/fp4,DeepInfra,,0.15,0.5,0.02
-2026-11-24,nvidia/nemotron-3.5-super-vl|io-net/nvfp4,Io Net,,0.51,1.53,0.102
+2026-11-24,nvidia/nemotron-3.5-super-vl|io-net/nvfp4,Io Net,,1,3,0.22
 2026-11-24,nvidia/nemotron-3.5-super-vl|nebius/fp4,Nebius,,0.3,0.9,0.06
 2026-11-24,nvidia/nemotron-3.5-super-vl|primalabs/nvfp4,PrimaLabs,,0.15,0.5,0.02
 2026-11-24,nvidia/nemotron-3.5-super-vl|primeintellect/nvfp4,PrimeIntellect,,0.15,0.45,0.02
@@ -2224,7 +2225,8 @@ date,model_endpoint,provider,tier,input,output,cached
 2026-11-24,xiaomi/mimo-v2.6-flash|cohere/fp8,Cohere,,0.14,0.28,0.003
 2026-11-24,xiaomi/mimo-v2.6-flash|darkbloom/fp4,Darkbloom,,0.1,0.28,0.0028
 2026-11-24,xiaomi/mimo-v2.6-flash|deepinfra/fp8,DeepInfra,,0.14,0.28,0.0028
-2026-11-24,xiaomi/mimo-v2.6-flash|makora/fp8,Makora,,0.2,0.4,0.015
+2026-11-24,xiaomi/mimo-v2.6-flash|featherless/fp8,Featherless,,0.10775,0.28,0.0216
+2026-11-24,xiaomi/mimo-v2.6-flash|makora/fp8,Makora,,0.14,0.28,0.004
 2026-11-24,xiaomi/mimo-v2.6-flash|tenstorrent/fp8,Tenstorrent,,0.165,0.33,0.004
-2026-11-24,xiaomi/mimo-v2.6-flash|venice/fp8,Venice,,0.175,0.35,0.00375
+2026-11-24,xiaomi/mimo-v2.6-flash|venice/fp8,Venice,,0.14,0.28,0.0028
 2026-11-24,xiaomi/mimo-v2.6-flash|xiaomi/fp8,Xiaomi,,0.14,0.28,0.0028
